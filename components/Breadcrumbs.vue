@@ -5,8 +5,8 @@
         <NuxtLink to="/">Home</NuxtLink>
       </li>
       <!-- Iterate over breadcrumbs and apply key to list items -->
-      <li v-for="(crumb, index) in crumbs" :key="'breadcrumb-' + index">
-        <NuxtLink :to="crumb.path">{{ crumb.label }}</NuxtLink>
+      <li v-for="(crumbs, index) in crumbs" :key="'breadcrumb-' + index">
+        <NuxtLink :to="crumbs.path">{{ crumbs.label }}</NuxtLink>
       </li>
     </ul>
   </nav>

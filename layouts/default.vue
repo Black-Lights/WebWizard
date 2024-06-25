@@ -1,24 +1,30 @@
 <template>
   <v-app>
     <Header />
-    <NavBar />
-    <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
-    </v-main>
-    <Footer />
+      <NavBar />
+        <!-- Chatbot component as an overlay -->
+        <Chatbot />
+          <v-main>
+            <v-container>
+              <Nuxt />
+            </v-container>
+          </v-main>
+      <Footer />
   </v-app>
 </template>
 
 <script>
+import NavBar from '@/components/NavBar.vue'
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
+import Chatbot from '@/components/Chatbot.vue';
 
 export default {
   components: {
+    NavBar,
     Header,
-    Footer
+    Footer,
+    Chatbot
   }
 }
 </script>
@@ -31,36 +37,40 @@ export default {
 
 
 
-<!--<template>-->
-<!--  <v-app>-->
-<!--    <Header />-->
-<!--    <NavBar />-->
-<!--    <v-main>-->
-<!--      <v-container>-->
-<!--        <Nuxt />-->
-<!--      </v-container>-->
-<!--    </v-main>-->
-<!--    <Footer />-->
-<!--  </v-app>-->
-<!--</template>-->
+<template>
+  <v-app>
+    <Header />
+    <NavBar />
+    <v-main>
+      <v-container>
+        <Nuxt />
+      </v-container>
+    </v-main>
+    <Chatbot />
+    <Footer />
+  </v-app>
+</template>
 
-<!--<script>-->
-<!--import NavBar from '@/components/NavBar.vue'-->
-<!--import Footer from '@/components/Footer.vue'-->
-<!--import Header from '@/components/Header.vue'-->
+<script>
+import NavBar from '@/components/NavBar.vue'
+import Footer from '@/components/Footer.vue'
+import Header from '@/components/Header.vue'
+import Chatbot from '@/components/Chatbot.vue';
 
-<!--export default {-->
-<!--  components: {-->
-<!--    NavBar,-->
-<!--    Footer,-->
-<!--    Header-->
-<!--  }-->
-<!--}-->
-<!--</script>-->
 
-<!--<style>-->
-<!--/* Add any global styles here if needed */-->
-<!--</style>-->
+export default {
+  components: {
+    NavBar,
+    Footer,
+    Header,
+    Chatbot
+  }
+}
+</script>
+
+<style>
+/* Add any global styles here if needed */
+</style>
 
 
 
@@ -74,6 +84,7 @@ export default {
 <!--    <main class="main">-->
 <!--      <Nuxt />-->
 <!--    </main>-->
+<!--    <Chatbot />-->
 <!--    <Footer />-->
 <!--  </div>-->
 <!--</template>-->
@@ -82,6 +93,8 @@ export default {
 <!--import NavBar from '@/components/NavBar.vue'-->
 <!--import Header from '@/components/Header.vue'-->
 <!--import Footer from '@/components/Footer.vue'-->
+<!--import Chatbot from '@/components/Chatbot.vue';-->
+
 
 
 <!--export default {-->
@@ -89,7 +102,8 @@ export default {
 <!--  components: {-->
 <!--    NavBar,-->
 <!--    Header,-->
-<!--    Footer-->
+<!--    Footer,-->
+<!--    Chatbot-->
 <!--  }-->
 <!--}-->
 <!--</script>-->
