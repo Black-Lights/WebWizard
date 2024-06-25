@@ -5,9 +5,11 @@
 <template>
   <div>
     <Breadcrumbs :items="breadcrumbs" />
-    Donate
+    <h1>Support Group</h1>
+    <p>Support Group content goes here.</p>
   </div>
 </template>
+
 
 <style scoped>
 

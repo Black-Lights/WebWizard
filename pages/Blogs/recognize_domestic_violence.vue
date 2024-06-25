@@ -5,7 +5,7 @@
 <template>
   <div>
     <Breadcrumbs :items="breadcrumbs" />
-    Donate
+    How to recognise domestic violence
   </div>
 </template>
 

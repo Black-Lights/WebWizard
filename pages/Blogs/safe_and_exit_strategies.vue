@@ -3,7 +3,10 @@
 </script>
 
 <template>
-  $END$
+  <div>
+    <Breadcrumbs :items="breadcrumbs" />
+    Safe and Exit strategies
+  </div>
 </template>
 
 <style scoped>

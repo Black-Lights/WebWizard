@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  $END$
+  <div>
+    Cooking Workshop
+  </div>
 </template>
 
 <style scoped>

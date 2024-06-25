@@ -5,7 +5,7 @@
 <template>
   <div>
     <Breadcrumbs :items="breadcrumbs" />
-    Donate
+    Yoga and Meditation Classes
   </div>
 </template>
 

@@ -5,7 +5,7 @@
 <template>
   <div>
     <Breadcrumbs :items="breadcrumbs" />
-    Donate
+    Contact Us Info
   </div>
 </template>
 

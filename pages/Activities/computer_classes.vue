@@ -3,7 +3,10 @@
 </script>
 
 <template>
-  $END$
+  <div>
+    <Breadcrumbs :items="breadcrumbs" />
+    Computer Classes
+  </div>
 </template>
 
 <style scoped>

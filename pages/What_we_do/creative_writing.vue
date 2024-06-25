@@ -5,7 +5,8 @@
 <template>
   <div>
     <Breadcrumbs :items="breadcrumbs" />
-    Donate
+    <h1>Creative writing</h1>
+    <p>Creative writing content goes here.</p>
   </div>
 </template>
 

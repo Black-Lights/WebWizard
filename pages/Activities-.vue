@@ -5,13 +5,14 @@
 <template>
   <div>
     <Breadcrumbs :items="breadcrumbs" />
-    Annual Reports
+    Activities
 
     <div>
       <PageBody />
     </div>
   </div>
 </template>
+
 
 <script>
 import PageBody from '~/components/PageBody.vue'
@@ -22,7 +23,6 @@ export default {
   }
 }
 </script>
-
 <style scoped>
 
 </style>

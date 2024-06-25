@@ -5,7 +5,7 @@
 <template>
   <div>
     <Breadcrumbs :items="breadcrumbs" />
-    Donate
+    Educational Support to Children
   </div>
 </template>
 

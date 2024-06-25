@@ -5,7 +5,7 @@
 <template>
   <div>
     <Breadcrumbs :items="breadcrumbs" />
-    Donate
+    Primary Healthcare and specialist consultation
   </div>
 </template>
 
