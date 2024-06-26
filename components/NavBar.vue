@@ -22,9 +22,10 @@
       <li>
         <NuxtLink to="/What-we-do">What We Do</NuxtLink>
         <ul class="dropdown">
-          <li><NuxtLink to="/What_we_do/support_group">Support group and counseling</NuxtLink></li>
-          <li><NuxtLink to="/What_we_do/creative_writing">Creative writing and Journaling</NuxtLink></li>
-          <li><NuxtLink to="/What_we_do/skill_development">Skill development</NuxtLink></li>
+          <li><NuxtLink to="/What_we_do/support_group">Support group</NuxtLink></li>
+          <li><NuxtLink to="/What_we_do/counselling">Counseling</NuxtLink></li>
+          <li><NuxtLink to="/What_we_do/inspire">Inspire</NuxtLink></li>
+          <li><NuxtLink to="/What_we_do/edu_programs">Educational Programs</NuxtLink></li>
           <li><NuxtLink to="/What_we_do/physical_wellness">Physical Wellness</NuxtLink></li>
         </ul>
       </li>
@@ -32,8 +33,8 @@
         <NuxtLink to="/We-provide">We Provide</NuxtLink>
         <ul class="dropdown">
           <li><NuxtLink to="/We_provide/therapy">Therapy</NuxtLink></li>
-          <li><NuxtLink to="/We_provide/career_counselling">Career Counselling</NuxtLink></li>
-          <li><NuxtLink to="/We_provide/educational_support">Educational support to Children</NuxtLink></li>
+          <li><NuxtLink to="/We_provide/individual_counselling">Individual Counselling</NuxtLink></li>
+          <li><NuxtLink to="/We_provide/child_care">Child Care Services</NuxtLink></li>
           <li><NuxtLink to="/We_provide/health_checkup">Health Checkup</NuxtLink></li>
           <li><NuxtLink to="/We_provide/advocacy">Advocacy</NuxtLink></li>
           <li><NuxtLink to="/We_provide/rehab_programs">Rehab Programs</NuxtLink></li>
@@ -42,20 +43,19 @@
       <li>
         <NuxtLink to="/Activities-">Activities</NuxtLink>
         <ul class="dropdown">
-          <li><NuxtLink to="/Activities/story_telling">Assistance with Story Telling</NuxtLink></li>
-          <li><NuxtLink to="/Activities/healthcare_consultation">Primary Healthcare and Consultation</NuxtLink></li>
-          <li><NuxtLink to="/Activities/yoga_meditation">Yoga and Meditation Classes</NuxtLink></li>
-          <li><NuxtLink to="/Activities/computer_classes">Computer classes</NuxtLink></li>
-          <li><NuxtLink to="/Activities/cooking_workshop">Cooking Workshop</NuxtLink></li>
+          <li><NuxtLink to="/Activities/fund_raising">Fund Raising</NuxtLink></li>
+          <li><NuxtLink to="/Activities/self_defence">Self Defence Activities</NuxtLink></li>
+          <li><NuxtLink to="/Activities/yoga_meditation">Yoga & Meditation</NuxtLink></li>
+          <li><NuxtLink to="/Activities/skill_workshop">Skill Build Workshops</NuxtLink></li>
+          <li><NuxtLink to="/Activities/cooking_workshop">Cooking Workshops</NuxtLink></li>
         </ul>
       </li>
       <li>
         <NuxtLink to="/Blogs-">Blogs</NuxtLink>
         <ul class="dropdown">
           <li><NuxtLink to="/Blogs/survivor_stories">Survivor stories</NuxtLink></li>
-          <li><NuxtLink to="/Blogs/recognize_domestic_violence">How to recognize domestic violence</NuxtLink></li>
+          <li><NuxtLink to="/Blogs/expert_advice">Expert Advice</NuxtLink></li>
           <li><NuxtLink to="/Blogs/legal_rights">Legal rights and supports</NuxtLink></li>
-          <li><NuxtLink to="/Blogs/safe_exit_strategies">Safe and exit strategies</NuxtLink></li>
         </ul>
       </li>
       <li>
@@ -71,8 +71,11 @@
 </template>
 
 <script>
+import Educational_support from "~/pages/We_provide/child_care.vue";
+
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+  components: {Educational_support}
 }
 </script>
 

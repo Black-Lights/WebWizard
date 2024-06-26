@@ -5,7 +5,7 @@
 <template>
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
-    About Us Info
+    <h1 style="text-align: center;">About Us </h1>
     <v-container>
       <rectangular-content-box-right
         title="Your Title"
