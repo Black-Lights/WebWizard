@@ -110,7 +110,7 @@ export default {
 }
 
 .nav-links a:hover {
-  color: #1abc9c;
+  color: #afeeee;
 }
 
 .dropdown {
@@ -118,7 +118,7 @@ export default {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: rgba(142, 149, 149, 0.44);
+  background-color: rgba(175, 238, 238, 0.7);
   list-style: none;
   padding: 0;
   margin: 0;

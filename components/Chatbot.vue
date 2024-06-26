@@ -36,7 +36,7 @@
             @keyup.enter="sendMessage"
             class="message-input"
           ></v-text-field>
-          <v-btn @click="sendMessage" color="#e6e6fa" class="send-button">Send</v-btn>
+          <v-btn @click="sendMessage" color="#afeeee" class="send-button">Send</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -54,7 +54,7 @@ export default {
       messages: JSON.parse(localStorage.getItem('chatMessages')) || [],
       isChatOpen: false,
       iconSize: '100px', // Customize icon size
-      iconColor: '#e6e6fa' // Customize icon color
+      iconColor: '#afeeee' // Customize icon color
     };
   },
   computed: {
@@ -205,7 +205,7 @@ export default {
 
 /* Added styles for chatbot header */
 .chatbot-header {
-  background-color: #e6e6fa; /* Changed to 'Lavender' color  */
+  background-color: #afeeee; /* Changed to 'Lavender' color  */
   color: black; /* Text color */
   display: flex;
   align-items: center;
