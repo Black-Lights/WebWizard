@@ -27,7 +27,7 @@ export default {
 <style scoped>
 .breadcrumbs {
   padding: 1rem;
-  background-color: #f0f0f0;
+  background-color: #afeeee;
 }
 
 ul {

@@ -1,4 +1,4 @@
-<!-- Chatbot.vue -->
+<!--ChatBOT Light-->
 
 <template>
   <div>
@@ -6,15 +6,15 @@
       <v-icon :size="iconSize" :color="iconColor">mdi-chat</v-icon>
     </v-btn>
 
-    <v-dialog v-model="isChatOpen" persistent max-width="500px" scrollable>
+    <v-dialog v-model="isChatOpen" persistent max-width="500px" scrollable :style="popupStyle">
       <v-card class="chatbot">
-        <v-card-title>
-          Chatbot
+        <v-card-title class="chatbot-header">
+          Light
           <v-spacer></v-spacer>
-          <v-btn icon @click="resetChat" color="error">
+          <v-btn icon @click="resetChat" color="black">
             <v-icon>mdi-refresh</v-icon>
           </v-btn>
-          <v-btn icon @click="closeChat">
+          <v-btn icon @click="closeChat" color="error">
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-card-title>
@@ -22,6 +22,7 @@
           <v-list class="chatbox" ref="chatbox">
             <v-list-item v-for="(message, index) in messages" :key="index" :class="message.type === 'outgoing' ? 'chat-outgoing' : 'chat-incoming'">
               <v-list-item-content>
+                <v-list-item-title v-html="message.type === 'outgoing' ? 'User' : 'Light'" class="message-title"></v-list-item-title>
                 <v-list-item-title v-html="message.content" class="message-content"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
@@ -35,12 +36,15 @@
             @keyup.enter="sendMessage"
             class="message-input"
           ></v-text-field>
-          <v-btn @click="sendMessage" color="primary" class="send-button">Send</v-btn>
+          <v-btn @click="sendMessage" color="#e6e6fa" class="send-button">Send</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
   </div>
 </template>
+
+
+<!--Script for ChaBot-->
 
 <script>
 export default {
@@ -49,9 +53,18 @@ export default {
       userMessage: '',
       messages: JSON.parse(localStorage.getItem('chatMessages')) || [],
       isChatOpen: false,
-      iconSize: '36px', // Customize icon size
-      iconColor: 'blue' // Customize icon color
+      iconSize: '100px', // Customize icon size
+      iconColor: '#e6e6fa' // Customize icon color
     };
+  },
+  computed: {
+    popupStyle() {
+      return {
+
+        position: 'absolute',
+        ...this.popupPosition
+      };
+    }
   },
   methods: {
     openChat() {
@@ -142,11 +155,14 @@ export default {
 };
 </script>
 
+
+<!--Style For ChatBot-->
+
 <style scoped>
 .chatbot-btn {
   position: fixed;
-  bottom: 150px;
-  right: 20px;
+  bottom: 175px;
+  right: 40px;
 }
 
 .chatbot {
@@ -165,7 +181,6 @@ export default {
 
 .message-content {
   white-space: pre-wrap; /* Ensures that the text wraps properly */
-  justify-content: ;
 }
 
 .v-card-actions {
@@ -178,7 +193,22 @@ export default {
 }
 
 .send-button {
+  color: black;
   margin-left: 10px; /* Adds some space between the input and the button */
-  margin-bottom: 25px;
+  margin-bottom: 28px;
+}
+
+.message-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Added styles for chatbot header */
+.chatbot-header {
+  background-color: #e6e6fa; /* Changed to 'Lavender' color  */
+  color: black; /* Text color */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 </style>

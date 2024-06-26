@@ -1,37 +1,37 @@
-<template>
-  <v-app>
-    <Header />
-      <NavBar />
-        <!-- Chatbot component as an overlay -->
-        <Chatbot />
-          <v-main>
-            <v-container>
-              <Nuxt />
-            </v-container>
-          </v-main>
-      <Footer />
-  </v-app>
-</template>
+<!--<template>-->
+<!--  <v-app>-->
+<!--    <Header />-->
+<!--      <NavBar />-->
+<!--        &lt;!&ndash; Chatbot component as an overlay &ndash;&gt;-->
+<!--        <Chatbot />-->
+<!--          <v-main>-->
+<!--            <v-container>-->
+<!--              <Nuxt />-->
+<!--            </v-container>-->
+<!--          </v-main>-->
+<!--      <Footer />-->
+<!--  </v-app>-->
+<!--</template>-->
 
-<script>
-import NavBar from '@/components/NavBar.vue'
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
-import Chatbot from '@/components/Chatbot.vue';
+<!--<script>-->
+<!--import NavBar from '@/components/NavBar.vue'-->
+<!--import Header from '@/components/Header.vue'-->
+<!--import Footer from '@/components/Footer.vue'-->
+<!--import Chatbot from '@/components/Chatbot.vue';-->
 
-export default {
-  components: {
-    NavBar,
-    Header,
-    Footer,
-    Chatbot
-  }
-}
-</script>
+<!--export default {-->
+<!--  components: {-->
+<!--    NavBar,-->
+<!--    Header,-->
+<!--    Footer,-->
+<!--    Chatbot-->
+<!--  }-->
+<!--}-->
+<!--</script>-->
 
-<style>
-/* Add any global styles here if needed */
-</style>
+<!--<style>-->
+<!--/* Add any global styles here if needed */-->
+<!--</style>-->
 
 
 
@@ -46,6 +46,7 @@ export default {
         <Nuxt />
       </v-container>
     </v-main>
+<!--    Chatbot component as an overlay-->
     <Chatbot />
     <Footer />
   </v-app>

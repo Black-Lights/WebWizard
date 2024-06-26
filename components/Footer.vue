@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 .site-footer {
-  background-color: #333;
+  background-color: #afeeee;
   color: #fff;
   padding: 2rem 1rem;
 }

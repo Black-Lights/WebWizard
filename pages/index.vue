@@ -1,14 +1,51 @@
+<!--<template>-->
+<!--  <div>-->
+<!--    <h1>Home Page</h1>-->
+<!--    <p>Welcome to the home page!</p>-->
+<!--  </div>-->
+<!--</template>-->
+
+<!--<script>-->
+<!--export default {-->
+<!--  name: 'HomePage'-->
+<!--}-->
+<!--</script>-->
+
 <template>
-  <div>
-    <h1>Home Page</h1>
-    <p>Welcome to the home page!</p>
-  </div>
+  <v-container>
+    <full-width-image image="https://picsum.photos/500/300?image=232" link="https://picsum.photos/500/300?image=232"></full-width-image>
+    <rectangular-content-box
+      title="Hello"
+      text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      image="https://picsum.photos/id/11/100/60"
+      link="https://picsum.photos/id/11/100/60">
+    </rectangular-content-box>
+    <rectangular-content-box
+      title="Hello"
+      text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      image="https://picsum.photos/id/11/100/60"
+      link="https://picsum.photos/id/11/100/60">
+    </rectangular-content-box>
+    <rectangular-content-box
+      title="Hello"
+      text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      image="https://picsum.photos/id/11/100/60"
+      link="https://picsum.photos/id/11/100/60">
+    </rectangular-content-box>
+  </v-container>
 </template>
 
 <script>
+import FullWidthImage from '@/components/main/FullWidthImage.vue';
+import RectangularContentBox from '@/components/main/RectangularContentBox.vue';
+
 export default {
-  name: 'HomePage'
-}
+  name: 'MainContent',
+  components: {
+    FullWidthImage,
+    RectangularContentBox
+  }
+};
 </script>
 
 
