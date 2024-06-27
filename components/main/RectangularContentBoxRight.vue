@@ -2,20 +2,23 @@
   <v-container>
     <v-row align="center">
       <v-col cols="4">
-        <v-card class="rectangular-content-box__image" :href="link" target="_blank">
-          <v-img :src="image" class="rectangular-content-box__img"></v-img>
+        <v-card class="rectangular-content-box__image">
+          <NuxtLink :to="link">
+            <v-img :src="image" class="rectangular-content-box__img"></v-img>
+          </NuxtLink>
         </v-card>
       </v-col>
       <v-col cols="8">
         <v-card class="rectangular-content-box">
-          <v-card-title class="rectangular-content-box__title">{{ title }}</v-card-title>
+          <v-card-title class="rectangular-content-box__title">
+            <NuxtLink :to="link" class="title-link">{{ title }}</NuxtLink>
+          </v-card-title>
           <v-card-text class="rectangular-content-box__text">{{ text }}</v-card-text>
         </v-card>
       </v-col>
     </v-row>
   </v-container>
 </template>
-
 
 <script>
 export default {
@@ -45,14 +48,6 @@ export default {
 .rectangular-content-box {
   padding: 20px;
 }
-/*
-.v-application .align-center {
-  margin-left: 50px;
-  margin-right: 50px;
-  align-items: center !important;
-
-}*/
-
 .rectangular-content-box__title {
   font-weight: bold;
   font-size: 1.5em;
@@ -68,5 +63,12 @@ export default {
 .rectangular-content-box__img {
   width: 100%;
   height: auto;
+}
+.title-link {
+  text-decoration: none;
+  color: inherit;
+}
+.title-link:hover {
+  text-decoration: underline;
 }
 </style>

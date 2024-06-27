@@ -1,38 +1,37 @@
 <script setup>
 
 </script>
-<template>
-  <v-container>
-    <div>
-      <Breadcrumbs :crumbs="breadcrumbs" />
-      <h1 style="text-align: center;">Counselling</h1>
-    </div>
 
-  </v-container>
+<template>
+  <div>
+    <Breadcrumbs :crumbs="breadcrumbs" />
+    <h1>Counselling</h1>
+    <p>Counselling content goes here.</p>
+  </div>
 </template>
 
-<script>
 
-import Breadcrumbs from "~/components/Breadcrumbs.vue";
+<script>
+import Breadcrumbs from '@/components/Breadcrumbs.vue';
 
 
 export default {
-  data() {
-    return {
-      breadcrumbs: [
-        // { label: 'Home', path: '/' },
-        { label: 'What We Do', path: '/What-we-do' },
-        { label: 'Counselling', path: '/What_we_do/counselling' },
-        // Add more breadcrumbs as needed
-      ]
-    };
-  },
   components: {
     Breadcrumbs,
+  },
+  computed: {
+    breadcrumbs() {
+      return [
+        { label: 'What We Do', path: '/What-we-do' },
+        { label: 'Counselling', path: '/What_we_do/counselling' },
+        // Add more breadcrumb items as needed
+      ];
+    }
   }
 }
-
-
 </script>
+
+
 <style scoped>
+
 </style>

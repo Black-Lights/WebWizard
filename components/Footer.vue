@@ -1,18 +1,24 @@
 <template>
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="footer-content">
-      <nav class="footer-nav">
-        <ul>
-          <li><NuxtLink to="/">Home</NuxtLink></li>
-          <li><NuxtLink to="/About-us">About</NuxtLink></li>
-          <li><NuxtLink to="/We-provide">Services</NuxtLink></li>
+      <nav class="footer-nav" aria-labelledby="footer-navigation">
+        <ul role="navigation">
+          <li><NuxtLink to="/" aria-label="Go to Home">Home</NuxtLink></li>
+          <li><NuxtLink to="/About-us" aria-label="About Us">About</NuxtLink></li>
+          <li><NuxtLink to="/We-provide" aria-label="Our Services">Services</NuxtLink></li>
           <!-- Add more navigation links as needed -->
         </ul>
       </nav>
-      <div class="social-links">
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-        <a href="https://x.com/?lang=en"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+      <div class="social-links" aria-labelledby="footer-social">
+        <v-btn icon href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+          <v-icon size="24">mdi-facebook</v-icon>
+        </v-btn>
+        <v-btn icon href="https://twitter.com/" target="_blank" aria-label="Twitter">
+          <v-icon size="24">mdi-twitter</v-icon>
+        </v-btn>
+        <v-btn icon href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+          <v-icon size="24">mdi-instagram</v-icon>
+        </v-btn>
         <!-- Add more social media icons or links as needed -->
       </div>
     </div>
@@ -31,7 +37,7 @@ export default {
 <style scoped>
 .site-footer {
   background-color: #afeeee;
-  color: #fff;
+  color: #333; /* Adjust text color for better contrast */
   padding: 2rem 1rem;
 }
 
@@ -53,7 +59,7 @@ export default {
 }
 
 .footer-nav a {
-  color: #fff;
+  color: #333; /* Adjust link color for better contrast */
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
@@ -63,8 +69,12 @@ export default {
   color: #1abc9c;
 }
 
-.social-links a {
-  color: #fff;
+.social-links {
+  display: flex;
+}
+
+.social-links .v-btn {
+  color: #333; /* Adjust icon color for better contrast */
   text-decoration: none;
   margin-right: 1rem;
   font-size: 1.5rem;
@@ -73,6 +83,7 @@ export default {
 .footer-bottom {
   margin-top: 1rem;
   text-align: center;
+  font-size: 0.8rem; /* Adjust font size for copyright text */
 }
 </style>
 

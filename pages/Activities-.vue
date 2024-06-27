@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <Breadcrumbs :items="breadcrumbs" />
+    <Breadcrumbs :crumbs="breadcrumbs" />
     Activities
 
     <div>
@@ -16,13 +16,23 @@
 
 <script>
 import PageBody from '~/components/PageBody.vue'
-
+import Breadcrumbs from '@/components/Breadcrumbs.vue';
 export default {
   components: {
-    PageBody
+    PageBody,
+    Breadcrumbs
+  },
+  computed: {
+    breadcrumbs() {
+      return [
+        { label: 'Activities', path: '/Activities-' },
+        // Add more breadcrumb items as needed
+      ];
+    }
   }
 }
 </script>
+
 <style scoped>
 
 </style>
