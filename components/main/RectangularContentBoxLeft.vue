@@ -44,13 +44,13 @@ export default {
 .rectangular-content-box {
   padding: 20px;
 }
-
+/*
 .v-application .align-center {
   margin-left: 50px;
   margin-right: 50px;
   align-items: center !important;
 
-}
+  }*/
 .rectangular-content-box__title {
   font-weight: bold;
   font-size: 1.5em;
