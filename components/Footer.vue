@@ -86,28 +86,3 @@ export default {
   font-size: 0.8rem; /* Adjust font size for copyright text */
 }
 </style>
-
-
-
-
-
-<!--&lt;!&ndash;<template>&ndash;&gt;-->
-<!--&lt;!&ndash;  <footer>&ndash;&gt;-->
-<!--&lt;!&ndash;    <p>&copy; 2024 MyCoolSite. All rights reserved.</p>&ndash;&gt;-->
-<!--&lt;!&ndash;  </footer>&ndash;&gt;-->
-<!--&lt;!&ndash;</template>&ndash;&gt;-->
-
-<!--&lt;!&ndash;<script>&ndash;&gt;-->
-<!--&lt;!&ndash;export default {&ndash;&gt;-->
-<!--&lt;!&ndash;  name: 'Footer'&ndash;&gt;-->
-<!--&lt;!&ndash;}&ndash;&gt;-->
-<!--&lt;!&ndash;</script>&ndash;&gt;-->
-
-<!--&lt;!&ndash;<style scoped>&ndash;&gt;-->
-<!--&lt;!&ndash;footer {&ndash;&gt;-->
-<!--&lt;!&ndash;  background-color: #2c3e50;&ndash;&gt;-->
-<!--&lt;!&ndash;  color: white;&ndash;&gt;-->
-<!--&lt;!&ndash;  text-align: center;&ndash;&gt;-->
-<!--&lt;!&ndash;  padding: 1rem 0;&ndash;&gt;-->
-<!--&lt;!&ndash;}&ndash;&gt;-->
-<!--&lt;!&ndash;</style>&ndash;&gt;-->
