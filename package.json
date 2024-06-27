@@ -28,7 +28,7 @@
     "@nuxtjs/vuetify": "^1.12.3",
     "chromedriver": "^106.0.1",
     "eslint-config-prettier": "^8.5.0",
-    "nightwatch": "^2.3.9",
+    "nightwatch": "^3.6.3",
     "prettier": "^2.7.1"
   }
 }
