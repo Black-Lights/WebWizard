@@ -1,68 +1,25 @@
-# web-wizard
+# WebWizard
+This repository contains the codebase for our Vue3 and Nuxt3 web technology project developed for a non-profit center. The project includes functionalities such as displaying information about the center, showcasing persons, projects, services, and activities, and setting up relationships between them. The website is designed to be responsive, accessible, and optimized for SEO.
 
-## Build Setup
+### Project Features:
+- Homepage with general information
+- "About Us" page detailing the center's mission and goals
+- "Contact Us" page for reaching out
+- Multiple topics pages to showcase persons, projects, and services
+- Group pages for viewing all persons, projects, services, and activities
 
-```bash
-# install dependencies
-$ npm install
+### Technologies Used:
+- Vue3
+- Nuxt3
+- [List any additional libraries or modules used]
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+### Deployment:
+- The project is hosted online for evaluation purposes
+- [Mention the hosting service used]
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+### Repository Access:
+- Team members: [List all team members]
+- Instructors: [List instructor names]
+- Access: Private (for project confidentiality)
 
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
-
-## Special Directories
-
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
-
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+---
