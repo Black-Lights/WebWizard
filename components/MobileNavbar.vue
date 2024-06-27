@@ -140,7 +140,7 @@ export default {
       whatWeDoItems: [
         { title: 'Support group', link: '/What_we_do/support_group' },
         { title: 'Counselling', link: '/What_we_do/counselling' },
-        { title: 'Inspire', link: '/What_we_do/inspire' },
+        { title: 'Inspire', link: '/What_we_do/inspire_us' },
         { title: 'Educational Programs', link: '/What_we_do/edu_programs' },
         { title: 'Physical Wellness', link: '/What_we_do/physical_wellness' },
       ],

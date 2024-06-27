@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <Breadcrumbs :items="breadcrumbs" />
+    <Breadcrumbs :crumbs="breadcrumbs" />
     Annual Reports
 
     <div>
@@ -14,11 +14,21 @@
 </template>
 
 <script>
-import PageBody from '~/components/PageBody.vue'
+import Breadcrumbs from '@/components/Breadcrumbs.vue';
+
 
 export default {
   components: {
-    PageBody
+    Breadcrumbs,
+  },
+  computed: {
+    breadcrumbs() {
+      return [
+        { label: 'About Us', path: '/about' },
+        { label: 'Annual Reports', path: '/About_us/annual_reports' },
+        // Add more breadcrumb items as needed
+      ];
+    }
   }
 }
 </script>

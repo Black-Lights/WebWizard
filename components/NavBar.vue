@@ -494,7 +494,7 @@
         <ul class="dropdown">
           <li><NuxtLink to="/What_we_do/support_group">Support group</NuxtLink></li>
           <li><NuxtLink to="/What_we_do/counselling">Counselling</NuxtLink></li>
-          <li><NuxtLink to="/What_we_do/inspire">Inspire</NuxtLink></li>
+          <li><NuxtLink to="/What_we_do/inspire_us">Inspire</NuxtLink></li>
           <li><NuxtLink to="/What_we_do/edu_programs">Educational Programs</NuxtLink></li>
           <li><NuxtLink to="/What_we_do/physical_wellness">Physical Wellness</NuxtLink></li>
         </ul>
@@ -517,7 +517,7 @@
           <li><NuxtLink to="/Activities/self_defence">Self Defence Activities</NuxtLink></li>
           <li><NuxtLink to="/Activities/yoga_meditation">Yoga & Meditation</NuxtLink></li>
           <li><NuxtLink to="/Activities/skill_workshop">Skill Build Workshops</NuxtLink></li>
-          <li><NuxtLink to="/Activities/cooking_workshop">Cooking Workshops</NuxtLink></li>
+          <li><NuxtLink to="/Activities/cooking_workshop">Cooking Workshop</NuxtLink></li>
         </ul>
       </li>
       <li>
