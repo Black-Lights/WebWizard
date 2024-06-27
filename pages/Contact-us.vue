@@ -7,16 +7,18 @@
     <Breadcrumbs :crumbs="breadcrumbs" />
     <h1>Contact Us</h1>
     <p>Contact Us content goes here.</p>
+    <ContactForm />
   </div>
 </template>
 
 <script>
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
-
+import ContactForm  from "~/components/ContactForm.vue";
 
 export default {
   components: {
     Breadcrumbs,
+    ContactForm
   },
   computed: {
     breadcrumbs() {

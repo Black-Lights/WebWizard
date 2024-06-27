@@ -29,6 +29,11 @@ export default {
     '~/assets/css/tailwind.css',
   ],
 
+  // Server for Postgres
+  serverMiddleware: [
+    { path: '/api/contact', handler: '~/api/contact.js' },
+  ],
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['@/plugins/vuetify.js'],
 
