@@ -1,3 +1,17 @@
+<template>
+  <div>
+    <Nuxt/>
+  </div>
+</template>
+
+<script></script>
+
+
+
+
+
+
+
 <!--<template>-->
 <!--  <v-app>-->
 <!--    &lt;!&ndash; Render mobile navigation on small screens &ndash;&gt;-->

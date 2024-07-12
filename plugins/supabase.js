@@ -1,6 +1,8 @@
+// plugins/supabase.js
+
 import { createClient } from '@supabase/supabase-js';
 
-export default ({ $config }, inject) => {
+export default ({ $config, app }, inject) => {
   const supabaseUrl = $config.SUPABASE_URL;
   const supabaseKey = $config.SUPABASE_KEY;
 
@@ -10,5 +12,6 @@ export default ({ $config }, inject) => {
 
   const supabase = createClient(supabaseUrl, supabaseKey);
 
+  // Inject $supabase into the context as $supabase
   inject('supabase', supabase);
 };

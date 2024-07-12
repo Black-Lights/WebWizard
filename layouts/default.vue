@@ -7,6 +7,7 @@
       <header class="bg-gray-800 text-white">
         <Header v-if="$vuetify.breakpoint.lgAndUp" />
       </header>
+
       <!-- Render mobile navigation on small screens -->
       <MobileNavbar v-if="$vuetify.breakpoint.smAndDown" />
 
