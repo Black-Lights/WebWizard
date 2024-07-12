@@ -1,5 +1,6 @@
 <script setup>
-
+import Breadcrumbs from '@/components/Breadcrumbs.vue';
+import ContactForm from "@/components/ContactForm.vue";
 </script>
 
 <template>
@@ -7,21 +8,16 @@
     <Breadcrumbs :crumbs="breadcrumbs" />
     <h1>Contact Us</h1>
     <p>Contact Us content goes here.</p>
+    <ContactForm />
   </div>
 </template>
 
 <script>
-import Breadcrumbs from '@/components/Breadcrumbs.vue';
-
-
 export default {
-  components: {
-    Breadcrumbs,
-  },
   computed: {
     breadcrumbs() {
       return [
-        { label: 'Contact Us', path: '/Contact-us' },
+        { label: 'Contact Us', path: '/contact-us' },
         // Add more breadcrumb items as needed
       ];
     }
@@ -30,5 +26,5 @@ export default {
 </script>
 
 <style scoped>
-
+/* Add some basic styling if needed */
 </style>

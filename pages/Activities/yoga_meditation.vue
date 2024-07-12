@@ -23,7 +23,7 @@ export default {
     breadcrumbs() {
       return [
         {label: 'Activities', path: '/Activities-'},
-        {label: 'Yoga & Meditation', path: '/Activities-/yoga_meditation'}
+        {label: 'Yoga & Meditation', path: '/Activities/yoga_meditation'}
         // Add more breadcrumb items as needed
       ];
     }

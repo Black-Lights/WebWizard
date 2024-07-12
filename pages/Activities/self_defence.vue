@@ -23,7 +23,7 @@ export default {
     breadcrumbs() {
       return [
         {label: 'Activities', path: '/Activities-'},
-        {label: 'Self Defence', path: '/Activities-/self_defence'}
+        {label: 'Self Defence', path: '/Activities/self_defence'}
         // Add more breadcrumb items as needed
       ];
     }
