@@ -5,34 +5,29 @@
 <template>
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
-    <h1>Fund Raising</h1>
-    <PageBody />
+    <h1>Medical Camps</h1>
+    <p>Medical Camps content goes here.</p>
   </div>
 </template>
 
 <script>
-import PageBody from '~/components/PageBody.vue'
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
 
 export default {
   components: {
-    PageBody,
-    Breadcrumbs
+    Breadcrumbs,
   },
   computed: {
     breadcrumbs() {
       return [
-        {label: 'Activities', path: '/Activities-'},
-        {label: 'Fund raising', path: '/Activities-/fund_raising'}
+        { label: 'Activities', path: '/Activities-' },
+        { label: 'Medical Camps', path: '/Activities/medical_camps' },
         // Add more breadcrumb items as needed
       ];
     }
   }
 }
-
 </script>
-
-
 
 <style scoped>
 

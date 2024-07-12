@@ -21,7 +21,7 @@ export default {
   computed: {
     breadcrumbs() {
       return [
-        { label: 'About Us', path: '/about' },
+        { label: 'About Us', path: '/About-us' },
         { label: 'Team', path: '/About_us/team' },
         // Add more breadcrumb items as needed
       ];

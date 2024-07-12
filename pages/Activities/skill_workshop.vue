@@ -23,7 +23,7 @@ export default {
     breadcrumbs() {
       return [
         {label: 'Activities', path: '/Activities-'},
-        {label: 'Skill Build Workshop', path: '/Activities-/skill_workshop'}
+        {label: 'Skill Build Workshop', path: '/Activities/skill_workshop'}
         // Add more breadcrumb items as needed
       ];
     }

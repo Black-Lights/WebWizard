@@ -38,17 +38,18 @@
           <li><NuxtLink to="/We_provide/child_care">Child Care Services</NuxtLink></li>
           <li><NuxtLink to="/We_provide/health_checkup">Health Checkup</NuxtLink></li>
           <li><NuxtLink to="/We_provide/advocacy">Advocacy</NuxtLink></li>
-          <li><NuxtLink to="/We_provide/rehab_programs">Rehab Programs</NuxtLink></li>
+<!--          <li><NuxtLink to="/We_provide/rehab_programs">Rehab Programs</NuxtLink></li>-->
         </ul>
       </li>
       <li>
         <NuxtLink to="/Activities-">Activities</NuxtLink>
         <ul class="dropdown">
-          <li><NuxtLink to="/Activities/fund_raising">Fund Raising</NuxtLink></li>
+          <li><NuxtLink to="/Activities/counselling">Counselling Workshops</NuxtLink></li>
           <li><NuxtLink to="/Activities/self_defence">Self Defence Activities</NuxtLink></li>
           <li><NuxtLink to="/Activities/yoga_meditation">Yoga & Meditation</NuxtLink></li>
           <li><NuxtLink to="/Activities/skill_workshop">Skill Build Workshops</NuxtLink></li>
-          <li><NuxtLink to="/Activities/cooking_workshop">Cooking Workshop</NuxtLink></li>
+          <li><NuxtLink to="/Activities/awareness">Awareness Campaigns</NuxtLink></li>
+          <li><NuxtLink to="/Activities/medical_camps">Medical Camps</NuxtLink></li>
         </ul>
       </li>
       <li>

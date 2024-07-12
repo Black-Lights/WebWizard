@@ -24,7 +24,7 @@ export default {
   computed: {
     breadcrumbs() {
       return [
-        { label: 'About Us', path: '/about' },
+        { label: 'About Us', path: '/About-us' },
         { label: 'Annual Reports', path: '/About_us/annual_reports' },
         // Add more breadcrumb items as needed
       ];

@@ -150,14 +150,15 @@ export default {
         { title: 'Child Care Services', link: '/We_provide/child_care' },
         { title: 'Health Checkup', link: '/We_provide/health_checkup' },
         { title: 'Advocacy', link: '/We_provide/advocacy' },
-        { title: 'Rehab Programs', link: '/We_provide/rehab_programs' },
+        // { title: 'Rehab Programs', link: '/We_provide/rehab_programs' },
       ],
       activitiesItems: [
-        { title: 'Fund Raising', link: '/Activities/fund_raising' },
+        { title: 'Counselling Workshops', link: '/Activities/counselling' },
         { title: 'Self Defence Activities', link: '/Activities/self_defence' },
         { title: 'Yoga & Meditation', link: '/Activities/yoga_meditation' },
         { title: 'Skill Build Workshops', link: '/Activities/skill_workshop' },
-        { title: 'Cooking Workshops', link: '/Activities/cooking_workshop' },
+        { title: 'Awareness Campaigns', link: '/Activities/awareness' },
+        { title: 'Medical Camps', link: '/Activities/medical_camps' },
       ],
       blogsItems: [
         { title: 'Survivor stories', link: '/Blogs/survivor_stories' },
