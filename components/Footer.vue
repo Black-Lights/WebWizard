@@ -36,7 +36,8 @@ export default {
 
 <style scoped>
 .site-footer {
-  background-color: #afeeee;
+/*  background-color: #afeeee;*/
+  background-color: #f6f6f8;
   color: #333; /* Adjust text color for better contrast */
   padding: 2rem 1rem;
 }
@@ -66,7 +67,7 @@ export default {
 }
 
 .footer-nav a:hover {
-  color: #1abc9c;
+  color: #69c3a0;
 }
 
 .social-links {

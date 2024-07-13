@@ -7,6 +7,7 @@
       <header class="bg-gray-800 text-white">
         <Header v-if="$vuetify.breakpoint.lgAndUp" />
       </header>
+
       <!-- Render mobile navigation on small screens -->
       <MobileNavbar v-if="$vuetify.breakpoint.smAndDown" />
 
@@ -15,9 +16,7 @@
 
       <!-- Main Content -->
       <v-main class="flex-1">
-        <v-container class="px-4 py-8">
           <Nuxt />
-        </v-container>
       </v-main>
 
       <!-- Footer -->

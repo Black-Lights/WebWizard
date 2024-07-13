@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 .site-header {
-  background-color: #afeeee;
+  background-color: #f6f6f8;
   padding: 1rem;
   display: flex;
   justify-content: center;
