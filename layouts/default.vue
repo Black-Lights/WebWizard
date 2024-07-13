@@ -16,9 +16,7 @@
 
       <!-- Main Content -->
       <v-main class="flex-1">
-        <v-container class="px-4 py-8">
           <Nuxt />
-        </v-container>
       </v-main>
 
       <!-- Footer -->
