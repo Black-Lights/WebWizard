@@ -7,21 +7,11 @@ import CircularImageCard from '~/components/main/CircularImageCard.vue';
 <template>
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
-    <h1>Legal Rights</h1>
-    <p>Legal rights content goes here.</p>
-  </div>
-</template>
-
-
-
-<template>
-  <div>
-    <Breadcrumbs :crumbs="breadcrumbs" />
     <div class="top-section">
       <div>
-        <h1>Legal Rights</h1>
+        <h1></h1>
       </div>
-      <p>Legal rights content goes here.</p>
+      <p></p>
     </div>
     <div class="text-section">
       <div>
@@ -43,12 +33,17 @@ import CircularImageCard from '~/components/main/CircularImageCard.vue';
         link="/About_us/partnerships">
       </circular-img-content-box-right>
     </div>
-    <div class="circular-card-section">
+
+    <div class="text-section">
       <div>
-        <h1>Meet Our Legal Advisors</h1></div>
+        <h1>Meet Our Legal Advisors</h1>
+      </div>
       <p>Explore the profiles of our experts who are dedicated to helping others through their expertise and experience.</p>
-      <div class="circular-image-card-container">
-        <div style="margin: 20px auto">
+    </div>
+    <div class="circular-card-section">
+        <div class="circular-image-card-container">
+          <v-container>
+        <div >
           <circular-image-card
             title="Advisor 1"
             text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -56,7 +51,9 @@ import CircularImageCard from '~/components/main/CircularImageCard.vue';
             link="/About_us/team">
           </circular-image-card>
         </div>
-        <div style="margin: 20px auto">
+          </v-container>
+          <v-container>
+        <div>
           <circular-image-card
             title="Advisor 2"
             text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -64,6 +61,7 @@ import CircularImageCard from '~/components/main/CircularImageCard.vue';
             link="/About_us/partnerships">
           </circular-image-card>
         </div>
+          </v-container>
       </div>
     </div>
   </div>
@@ -122,7 +120,8 @@ export default {
 }
 
 .text-section {
-  background: url('static/img_legal_rights_02.jpg') no-repeat center center fixed;
+  /*background: url('static/img_legal_rights_02.jpg') no-repeat center center fixed;*/
+  background-color: #f6f6f8;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -212,8 +211,13 @@ export default {
 .circular-image-card-container {
   display: flex;
   justify-content: center; /* Center items horizontally */
-  gap: 20px; /* Space between the cards */
+  gap: 8%; /* Space between the cards */
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.circular-image-card-container div {
+  max-width: 700px; /* Set a maximum width for the cards */
+  flex: 1;
 }
 
 @media (max-width: 600px) {
