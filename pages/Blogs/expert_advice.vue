@@ -10,9 +10,9 @@ import ContactForm from '~/components/ContactForm.vue'
     <Breadcrumbs :crumbs="breadcrumbs" />
     <div class="top-section">
       <div>
-        <h1>Expert Advice</h1>
+        <h1></h1>
       </div>
-      <p>Expert Advice content goes here.</p>
+      <p></p>
     </div>
     <div class="text-section">
       <div>
@@ -23,7 +23,7 @@ import ContactForm from '~/components/ContactForm.vue'
     <div class="card-section">
       <circular-img-content-box-left
         title="Expert 1"
-        text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         image="https://picsum.photos/id/11/100/60"
         link="/About_us/team">
       </circular-img-content-box-left>
@@ -34,12 +34,17 @@ import ContactForm from '~/components/ContactForm.vue'
         link="/About_us/partnerships">
       </circular-img-content-box-right>
     </div>
-    <div class="circular-card-section">
+
+    <div class="text-section">
       <div>
-        <h1>Meet Our Experts</h1></div>
+        <h1>Meet Our Experts</h1>
+      </div>
       <p>Explore the profiles of our experts who are dedicated to helping others through their expertise and experience.</p>
+    </div>
+    <div class="circular-card-section">
       <div class="circular-image-card-container">
-        <div style="margin: 20px auto">
+        <v-container>
+        <div >
           <circular-image-card
             title="Expert 1"
             text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -47,18 +52,22 @@ import ContactForm from '~/components/ContactForm.vue'
             link="/About_us/team">
           </circular-image-card>
         </div>
-        <div style="margin: 20px auto">
+        </v-container>
+        <v-container>
+        <div>
           <circular-image-card
             title="Expert 2"
-            text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             image="https://picsum.photos/id/11/100/60"
             link="/About_us/partnerships">
           </circular-image-card>
         </div>
+        </v-container>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
@@ -80,13 +89,14 @@ export default {
 }
 </script>
 
+
 <style scoped>
 .top-section {
   background: url('static/img_expert_advice_01.jpg') no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;
-  margin-top: 20px; /* Add some margin for spacing */
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -112,7 +122,7 @@ export default {
 }
 
 .text-section {
-  background: url('static/img_expert_advice_02.jpg') no-repeat center center fixed;
+  background-color: #f6f6f8;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -201,9 +211,21 @@ export default {
 
 .circular-image-card-container {
   display: flex;
-  justify-content: center; /* Center items horizontally */
-  gap: 20px; /* Space between the cards */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: center;
+  gap: 8%;
+  flex-wrap: wrap;
+}
+
+.circular-image-card-container div {
+  max-width: 700px; /* Set a maximum width for the cards */
+  flex: 1;
+}
+
+.circular-image-card-container circular-image-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-wrap: break-word; /* Ensure text wraps appropriately */
 }
 
 @media (max-width: 600px) {
@@ -305,7 +327,8 @@ export default {
   }
 
   .circular-image-card-container {
-    flex-direction: column; /* Stack the cards vertically on small screens */
+    flex-direction: column;
   }
 }
 </style>
+

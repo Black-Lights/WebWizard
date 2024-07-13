@@ -46,6 +46,7 @@ export default {
 
 <style scoped>
 .rectangular-content-box {
+  opacity: 0.7;
   padding: 20px;
 }
 
