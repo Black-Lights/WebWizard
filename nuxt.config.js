@@ -3,6 +3,9 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   ssr: false,
   target: 'static',
+  generate: {
+    dir: 'dist' // this is the default value, so it may not be necessary
+  },
   head: {
     titleTemplate: '%s - web-wizard',
     title: 'web-wizard',
