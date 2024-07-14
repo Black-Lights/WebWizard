@@ -34,14 +34,14 @@
           <template v-slot:activator>
             <v-list-item-content>
               <v-list-item-title>
-                <NuxtLink to="/What-we-do">What We Do</NuxtLink>
+                <NuxtLink to="/projects">Projects</NuxtLink>
               </v-list-item-title>
             </v-list-item-content>
           </template>
-          <v-list-item v-for="item in whatWeDoItems" :key="item.title">
+          <v-list-item v-for="project in projects" :key="project.id">
             <v-list-item-content>
               <v-list-item-title>
-                <NuxtLink :to="item.link">{{ item.title }}</NuxtLink>
+                <NuxtLink :to="`/projects/${project.id}`">{{ project.name }}</NuxtLink>
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -50,14 +50,14 @@
           <template v-slot:activator>
             <v-list-item-content>
               <v-list-item-title>
-                <NuxtLink to="/We-provide">We Provide</NuxtLink>
+                <NuxtLink to="/services">Services</NuxtLink>
               </v-list-item-title>
             </v-list-item-content>
           </template>
-          <v-list-item v-for="item in weProvideItems" :key="item.title">
+          <v-list-item v-for="service in services" :key="service.id">
             <v-list-item-content>
               <v-list-item-title>
-                <NuxtLink :to="item.link">{{ item.title }}</NuxtLink>
+                <NuxtLink :to="`/services/${service.id}`">{{ service.name }}</NuxtLink>
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -66,14 +66,14 @@
           <template v-slot:activator>
             <v-list-item-content>
               <v-list-item-title>
-                <NuxtLink to="/Activities-">Activities</NuxtLink>
+                <NuxtLink to="/activities">Activities</NuxtLink>
               </v-list-item-title>
             </v-list-item-content>
           </template>
-          <v-list-item v-for="item in activitiesItems" :key="item.title">
+          <v-list-item v-for="activity in activities" :key="activity.id">
             <v-list-item-content>
               <v-list-item-title>
-                <NuxtLink :to="item.link">{{ item.title }}</NuxtLink>
+                <NuxtLink :to="`/activities/${activity.id}`">{{ activity.name }}</NuxtLink>
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -82,14 +82,14 @@
           <template v-slot:activator>
             <v-list-item-content>
               <v-list-item-title>
-                <NuxtLink to="/Blogs-">Blogs</NuxtLink>
+                <NuxtLink to="/blogs">Blogs</NuxtLink>
               </v-list-item-title>
             </v-list-item-content>
           </template>
-          <v-list-item v-for="item in blogsItems" :key="item.title">
+          <v-list-item v-for="blog in blogs" :key="blog.id">
             <v-list-item-content>
               <v-list-item-title>
-                <NuxtLink :to="item.link">{{ item.title }}</NuxtLink>
+                <NuxtLink :to="`/blogs/${blog.id}`">{{ blog.name }}</NuxtLink>
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -125,7 +125,6 @@
   </div>
 </template>
 
-
 <script>
 export default {
   data() {
@@ -137,48 +136,65 @@ export default {
         { title: 'Partners', link: '/About_us/partnerships' },
         { title: 'Annual Reports', link: '/About_us/annual_reports' },
       ],
-      whatWeDoItems: [
-        { title: 'Support group', link: '/What_we_do/support_group' },
-        { title: 'Counselling', link: '/What_we_do/counselling' },
-        { title: 'Inspire', link: '/What_we_do/inspire_us' },
-        { title: 'Educational Programs', link: '/What_we_do/edu_programs' },
-        { title: 'Physical Wellness', link: '/What_we_do/physical_wellness' },
-      ],
-      weProvideItems: [
-        { title: 'Therapy', link: '/We_provide/therapy' },
-        { title: 'Individual Counselling', link: '/We_provide/individual_counselling' },
-        { title: 'Child Care Services', link: '/We_provide/child_care' },
-        { title: 'Health Checkup', link: '/We_provide/health_checkup' },
-        { title: 'Advocacy', link: '/We_provide/advocacy' },
-        // { title: 'Rehab Programs', link: '/We_provide/rehab_programs' },
-      ],
-      activitiesItems: [
-        { title: 'Counselling Workshops', link: '/Activities/counselling' },
-        { title: 'Self Defence Activities', link: '/Activities/self_defence' },
-        { title: 'Yoga & Meditation', link: '/Activities/yoga_meditation' },
-        { title: 'Skill Build Workshops', link: '/Activities/skill_workshop' },
-        { title: 'Awareness Campaigns', link: '/Activities/awareness' },
-        { title: 'Medical Camps', link: '/Activities/medical_camps' },
-      ],
-      blogsItems: [
-        { title: 'Survivor stories', link: '/Blogs/survivor_stories' },
-        { title: 'Expert Advice', link: '/Blogs/expert_advice' },
-        { title: 'Legal rights and supports', link: '/Blogs/legal_rights' },
-      ],
+      // blogsItems: [
+      //   { title: 'Survivor stories', link: '/Blogs/survivor_stories' },
+      //   { title: 'Expert Advice', link: '/Blogs/expert_advice' },
+      //   { title: 'Legal rights and supports', link: '/Blogs/legal_rights' },
+      // ],
       contactUsItems: [
         { title: 'General enquiries', link: '/Contact_Us/general_enquiries' },
         { title: 'Volunteer', link: '/Contact_Us/volunteer' },
         { title: 'Donate', link: '/Contact_Us/donate' },
       ],
+      projects: [],
+      services: [],
+      activities: [],
+      blogs: [],
     };
+  },
+  async mounted() {
+    try {
+      // Fetch projects
+      const { data: projectData, error: projectError } = await this.$supabase
+        .from('projects')
+        .select('id, name, priority')
+        .order('priority', { ascending: true });
+      if (projectError) throw projectError;
+      this.projects = projectData;
+
+      // Fetch services
+      const { data: serviceData, error: serviceError } = await this.$supabase
+        .from('services')
+        .select('id, name, priority')
+        .order('priority', { ascending: true });
+      if (serviceError) throw serviceError;
+      this.services = serviceData;
+
+      // Fetch activities
+      const { data: activityData, error: activityError } = await this.$supabase
+        .from('activities')
+        .select('id, name, priority')
+        .order('priority', { ascending: true });
+      if (activityError) throw activityError;
+      this.activities = activityData;
+
+      // Fetch blogs
+      const { data: blogData, error: blogError } = await this.$supabase
+        .from('blogs')
+        .select('id, name, priority')
+        .order('priority', { ascending: true });
+      if (blogError) throw blogError;
+      this.blogs = blogData;
+    } catch (error) {
+      console.error('Error fetching data:', error.message);
+    }
   },
 };
 </script>
 
-
 <style scoped>
-
 .logo .logo-image {
   height: 50px; /* Adjust the height as needed */
-}/* Add scoped styles if needed */
+}
+/* Add scoped styles if needed */
 </style>

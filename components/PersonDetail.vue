@@ -62,7 +62,7 @@
               <v-img :src="person.img_url" class="rounded-circle person-detail-image" height="300px" width="300px" />
             </v-col>
             <v-col cols="12" md="8">
-              <p>{{ person.bio }}</p>
+              <p>{{ person.description }}</p>
             </v-col>
           </v-row>
         </v-card-text>

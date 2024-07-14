@@ -72,7 +72,7 @@
     <v-card-title class="text-center mt-4">
       <div>
         <h3 class="person-name">{{ person.name }} {{ person.surname }}</h3>
-        <p class="person-description">{{ person.description }}</p>
+        <p class="person-description">{{ person.bio }}</p>
         <v-btn @click="handleLearnMore" color="primary" class="learn-more-btn">Learn More</v-btn>
       </div>
     </v-card-title>

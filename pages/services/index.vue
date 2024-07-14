@@ -1,98 +1,109 @@
-<script setup>
-import circularImgContentBoxLeft from '~/components/main/circularImgContentBoxLeft.vue';
-import circularImgContentBoxRight from '~/components/main/circularImgContentBoxRight.vue';
-import CircularImageCard from '~/components/main/CircularImageCard.vue';
-import ContactForm from '~/components/ContactForm.vue'
-</script>
-
 <template>
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
     <div class="top-section">
       <div>
-        <h1></h1>
+        <h1>Our Services</h1>
       </div>
-      <p></p>
+      <p>Guiding Light offers a wide range of services aimed at improving the well-being of our community. From healthcare to education, our dedicated team is here to support you.</p>
     </div>
     <div class="text-section">
-      <div>
-        <h1 class="wrap">About Expert Advice</h1>
-      </div>
-      <p>Our Expert Advice page is dedicated to providing valuable insights and guidance for women facing maltreatment by family members. This page highlights the benefits of seeking expert advice, including gaining a clearer understanding of your situation, learning practical steps to ensure your safety, and finding resources for emotional and legal support. By leveraging expert knowledge, you can make informed decisions and take empowered actions towards a safer and healthier future. Below, you will find comprehensive advice from professionals to help you navigate these challenging circumstances and reclaim your life.</p>
+      <h1 class="wrap">About Our Services</h1>
+      <p>At Guiding Light, we provide a variety of services designed to support the community. Our services include healthcare, education, and community support, delivered by a team of committed professionals.</p>
     </div>
     <div class="card-section">
       <circular-img-content-box-left
-        title="Expert 1"
-        text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        image="https://picsum.photos/id/11/100/60"
-        link="/About_us/team">
-      </circular-img-content-box-left>
+        v-if="topServices.length > 0"
+        :title="topServices[0].name"
+        :text="truncateText(topServices[0].description)"
+        :image="topServices[0].img_url"
+        :link="`/services/${topServices[0].id}`"
+      />
       <circular-img-content-box-right
-        title="Expert 2"
-        text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        image="https://picsum.photos/id/11/100/60"
-        link="/About_us/partnerships">
-      </circular-img-content-box-right>
+        v-if="topServices.length > 1"
+        :title="topServices[1].name"
+        :text="truncateText(topServices[1].description)"
+        :image="topServices[1].img_url"
+        :link="`/services/${topServices[1].id}`"
+      />
     </div>
-
     <div class="text-section">
-      <div>
-        <h1>Meet Our Experts</h1>
-      </div>
-      <p>Explore the profiles of our experts who are dedicated to helping others through their expertise and experience.</p>
+      <h1>Other Projects and Activities</h1>
+      <p>In addition to our services, we manage various projects and activities that aim to foster community growth and well-being. Explore our initiatives to learn more.</p>
     </div>
     <div class="circular-card-section">
       <div class="circular-image-card-container">
-        <v-container>
-        <div >
-          <circular-image-card
-            title="Expert 1"
-            text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            image="https://picsum.photos/id/11/100/60"
-            link="/About_us/team">
-          </circular-image-card>
-        </div>
-        </v-container>
-        <v-container>
-        <div>
-          <circular-image-card
-            title="Expert 2"
-            text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            image="https://picsum.photos/id/11/100/60"
-            link="/About_us/partnerships">
-          </circular-image-card>
-        </div>
-        </v-container>
+        <circular-image-card
+          title="Projects"
+          text="Discover our various projects that aim to create a positive impact in the community."
+          image='static/img_project_04.jpg'
+          link="/projects"
+        />
+        <circular-image-card
+          title="Activities"
+          text="Join our activities such as workshops, seminars, and community events."
+          image="static/img_services_02.jpg"
+          link="/activities"
+        />
       </div>
     </div>
   </div>
 </template>
 
-
 <script>
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
-
+import CircularImgContentBoxLeft from '~/components/main/circularImgContentBoxLeft.vue';
+import CircularImgContentBoxRight from '~/components/main/circularImgContentBoxRight.vue';
+import CircularImageCard from '~/components/main/CircularImageCard.vue';
+import { createClient } from '@supabase/supabase-js';
 
 export default {
   components: {
     Breadcrumbs,
+    CircularImgContentBoxLeft,
+    CircularImgContentBoxRight,
+    CircularImageCard,
+  },
+  data() {
+    return {
+      topServices: [],
+    };
   },
   computed: {
     breadcrumbs() {
       return [
-        { label: 'Blogs', path: '/Blogs-' },
-        { label: 'Expert Advice', path: '/Blogs/expert_advice' },
-        // Add more breadcrumb items as needed
+        { label: 'Services', path: '/services' },
       ];
-    }
-  }
-}
-</script>
+    },
+  },
+  methods: {
+    async fetchTopServices() {
+      const supabase = createClient(this.$config.SUPABASE_URL, this.$config.SUPABASE_KEY);
+      const { data, error } = await supabase
+        .from('services')
+        .select('*')
+        .order('priority', { ascending: false })
+        .limit(2);
 
+      if (error) {
+        console.error(error);
+      } else {
+        this.topServices = data;
+      }
+    },
+    truncateText(text, length = 50) {
+      return text.split(' ').slice(0, length).join(' ') + '...';
+    },
+  },
+  async mounted() {
+    await this.fetchTopServices();
+  },
+};
+</script>
 
 <style scoped>
 .top-section {
-  background: url('static/img_expert_advice_01.jpg') no-repeat center center fixed;
+  background: url('static/img_services_01.jpg') no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;
@@ -151,7 +162,7 @@ export default {
 }
 
 .card-section {
-  background: url('static/img_expert_advice_03.jpg') no-repeat center center fixed;
+  background: url('static/img_services_02.jpg') no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -180,7 +191,7 @@ export default {
 }
 
 .circular-card-section {
-  background: url('static/img_stories_04.jpg') no-repeat center center fixed;
+  background: url('static/img_services_03.jpg') no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -331,4 +342,3 @@ export default {
   }
 }
 </style>
-

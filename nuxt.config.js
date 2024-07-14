@@ -3,6 +3,9 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   ssr: false,
   target: 'static',
+  generate: {
+    dir: 'dist' // this is the default value, so it may not be necessary
+  },
   head: {
     titleTemplate: '%s - web-wizard',
     title: 'web-wizard',
@@ -55,7 +58,12 @@ export default {
     }
   },
   build: {
-    extend(config, ctx) {}
+    // Extend Webpack configuration as needed
+    extend(config, { isDev, isClient }) {
+      if (isClient) {
+        // Add custom Webpack configuration here
+      }
+    }
   },
   server: {
     host: '0.0.0.0',
