@@ -7,7 +7,7 @@
     "build": "nuxt build --output dist",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint:prettier": "prettier --check .",s
+    "lint:prettier": "prettier --check .",
     "lint": "npm run lint:prettier",
     "lintfix": "prettier --write --list-different ."
   },
