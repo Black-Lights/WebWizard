@@ -19,6 +19,16 @@
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
 
 export default {
+  head() {
+    return {
+      title: `${this.blog.title} - Blogs - Guiding-Light`,
+      meta: [
+        { hid: 'description', name: 'description', content: `Read more about "${this.blog.title}" and explore insights from our team.` },
+        { hid: 'keywords', name: 'keywords', content: `${this.blog.title}, Guiding-Light, Blogs, Insights, Team Updates` },
+     ],
+    };
+  },
+
   async asyncData({ params, $supabase }) {
     try {
       // Fetch the blog with the given id

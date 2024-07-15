@@ -17,6 +17,15 @@ import PageBody from '@/components/PageBody.vue';
 
 
 export default {
+  head() {
+    return {
+      title: 'Partners - Guiding-Light',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Discover the partners and collaborators of Guiding-Light who support our mission.' },
+        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Partners, Collaborations, Supporters' },
+      ],
+    };
+  },
   components: {
     Breadcrumbs,
     PageBody

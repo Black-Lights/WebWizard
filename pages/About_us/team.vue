@@ -16,7 +16,7 @@
         At Guiding Light, we believe in the power of community and compassion. Our dedicated team of professionals and volunteers work tirelessly to support women facing family maltreatment. With a blend of personal experience, professional expertise, and a shared mission to create a safer world, each team member plays a crucial role in driving our cause forward.
       </p>
     </div>
-<!--    <h2 class="h2">Meet Our Team</h2>-->
+
     <v-container>
       <v-row class="justify-center">
         <v-col
@@ -41,6 +41,15 @@ import PersonCard from '~/components/PersonCard.vue';
 import PersonDetail from '~/components/PersonDetail.vue';
 
 export default {
+  head() {
+    return {
+      title: 'Team - Guiding-Light',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Meet the dedicated team members of Guiding-Light who work tirelessly for our cause.' },
+        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Team, Meet Our Team, Nonprofit' },
+      ],
+    };
+  },
   components: {
     Breadcrumbs,
     PersonCard,

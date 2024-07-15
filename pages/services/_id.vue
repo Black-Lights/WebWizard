@@ -18,6 +18,16 @@
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
 
 export default {
+  head() {
+    return {
+      title: `${this.service.name} - Services - Guiding-Light`,
+      meta: [
+        { hid: 'description', name: 'description', content: `Learn more about our ${this.service.name} service and how it can help you.` },
+        { hid: 'keywords', name: 'keywords', content: `${this.service.name}, Guiding-Light, Services, Service Details` },
+      ],
+    };
+  },
+
   async asyncData({ params, $supabase }) {
     const { data: service, error } = await $supabase
       .from('services')

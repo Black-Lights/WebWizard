@@ -16,6 +16,15 @@ import ContactForm from "@/components/ContactForm.vue";
 
 <script>
 export default {
+  head() {
+    return {
+      title: 'Contact Us - Guiding-Light',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Get in touch with Guiding-Light for general inquiries, volunteer opportunities, or donations.' },
+        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Contact Us, General Enquiries, Volunteer, Donate' },
+      ],
+    };
+  },
   computed: {
     breadcrumbs() {
       return [

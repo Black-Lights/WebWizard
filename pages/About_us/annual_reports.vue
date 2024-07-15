@@ -18,6 +18,15 @@ import Breadcrumbs from '@/components/Breadcrumbs.vue';
 
 
 export default {
+  head() {
+    return {
+      title: 'Annual Reports - Guiding-Light',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Browse through Guiding-Light’s annual reports to see our achievements and progress.' },
+        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Annual Reports, Reports, Achievements' },
+      ],
+    };
+  },
   components: {
     Breadcrumbs,
   },

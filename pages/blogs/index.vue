@@ -16,18 +16,18 @@
       </p>
     </div>
     <div class="card-section">
-      <!-- Display the two latest blogs with truncated text -->
+      <!-- Display the two latest blogs  -->
       <circular-img-content-box-left
         v-if="latestBlogs.length > 0"
         :title="latestBlogs[0].name"
-        :text="truncateText(latestBlogs[0].description)"
+        :text="latestBlogs[0].brief_description"
         :image="latestBlogs[0].img_url"
         :link="`/blogs/${latestBlogs[0].id}`"
       />
       <circular-img-content-box-right
         v-if="latestBlogs.length > 1"
         :title="latestBlogs[1].name"
-        :text="truncateText(latestBlogs[1].description)"
+        :text="latestBlogs[1].brief_description"
         :image="latestBlogs[1].img_url"
         :link="`/blogs/${latestBlogs[1].id}`"
       />
@@ -56,6 +56,15 @@ import CircularImgContentBoxLeft from '~/components/main/circularImgContentBoxLe
 import CircularImgContentBoxRight from '~/components/main/circularImgContentBoxRight.vue';
 
 export default {
+  head() {
+    return {
+      title: 'Blogs - Guiding-Light',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Read the latest blogs from Guiding-Light to stay informed about our updates and stories.' },
+        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Blogs, Updates, Stories, News' },
+      ],
+    };
+  },
   components: {
     Breadcrumbs,
     CircularImgContentBoxLeft,
@@ -75,14 +84,6 @@ export default {
     },
   },
   methods: {
-    truncateText(text, length = 50) {
-      // Add a check to ensure text is defined
-      if (text) {
-        return text.split(' ').slice(0, length).join(' ') + '...';
-      } else {
-        return '';
-      }
-    },
     async fetchBlogs() {
       try {
         // Fetch all blogs

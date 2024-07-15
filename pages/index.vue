@@ -33,6 +33,15 @@ export default {
   components: {
     FullWidthImage,
     RectangularContentBoxLeft
-  }
-};
+  },
+  head() {
+    return {
+      title: 'Guiding-Light',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Welcome to Guiding-Light. Discover our mission, projects, services, and how you can get involved.' },
+        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Home, Nonprofit, Community, Support' },
+      ],
+    };
+  },
+}
 </script>

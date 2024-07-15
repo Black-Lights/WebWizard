@@ -1,10 +1,3 @@
-
-<!--    <div class="logo">-->
-<!--      <NuxtLink to="/">-->
-<!--        <img src="/logo5.png" alt="GuidingLight Logo" class="logo-image" />-->
-<!--      </NuxtLink>-->
-
-<!--    </div>-->
 <template>
   <nav class="navbar">
     <div>
@@ -55,11 +48,6 @@
         </li>
         <li>
           <NuxtLink to="/Contact-us">Contact Us</NuxtLink>
-          <ul class="dropdown">
-            <li><NuxtLink to="/Contact_Us/general_enquiries">General Enquiries</NuxtLink></li>
-            <li><NuxtLink to="/Contact_Us/volunteer">Volunteer</NuxtLink></li>
-            <li><NuxtLink to="/Contact_Us/donate">Donate</NuxtLink></li>
-          </ul>
         </li>
       </ul>
     </div>

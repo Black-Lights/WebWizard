@@ -94,27 +94,18 @@
             </v-list-item-content>
           </v-list-item>
         </v-list-group>
-        <v-list-group>
-          <template v-slot:activator>
+          <v-list-item>
             <v-list-item-content>
               <v-list-item-title>
                 <NuxtLink to="/Contact-us">Contact Us</NuxtLink>
               </v-list-item-title>
             </v-list-item-content>
-          </template>
-          <v-list-item v-for="item in contactUsItems" :key="item.title">
-            <v-list-item-content>
-              <v-list-item-title>
-                <NuxtLink :to="item.link">{{ item.title }}</NuxtLink>
-              </v-list-item-title>
-            </v-list-item-content>
           </v-list-item>
-        </v-list-group>
       </v-list>
     </v-navigation-drawer>
 
     <!-- Mobile App Bar -->
-    <v-app-bar app color="cyan" dense>
+    <v-app-bar app color="#f6f6f8" dense>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>
         <div class="logo">
@@ -136,16 +127,7 @@ export default {
         { title: 'Partners', link: '/About_us/partnerships' },
         { title: 'Annual Reports', link: '/About_us/annual_reports' },
       ],
-      // blogsItems: [
-      //   { title: 'Survivor stories', link: '/Blogs/survivor_stories' },
-      //   { title: 'Expert Advice', link: '/Blogs/expert_advice' },
-      //   { title: 'Legal rights and supports', link: '/Blogs/legal_rights' },
-      // ],
-      contactUsItems: [
-        { title: 'General enquiries', link: '/Contact_Us/general_enquiries' },
-        { title: 'Volunteer', link: '/Contact_Us/volunteer' },
-        { title: 'Donate', link: '/Contact_Us/donate' },
-      ],
+
       projects: [],
       services: [],
       activities: [],
