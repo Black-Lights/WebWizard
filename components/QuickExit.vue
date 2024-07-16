@@ -31,7 +31,7 @@ export default {
 
 .quick-exit-button {
   padding: 10px 20px;
-  background-color: #ff6347;
+  background-color: #ff2700;
   color: white;
   border: none;
   cursor: pointer;
@@ -40,6 +40,6 @@ export default {
 }
 
 .quick-exit-button:hover {
-  background-color: #cc4125;
+  background-color: #afeeee;
 }
 </style>

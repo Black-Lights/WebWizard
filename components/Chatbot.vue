@@ -2,9 +2,15 @@
 
 <template>
   <div>
+
+    <!-- Chat Bot Button -->
     <v-btn @click="openChat" icon large class="chatbot-btn">
-      <v-icon :size="iconSize" :color="iconColor">mdi-chat</v-icon>
+      <img src="/cb.png" alt="Chatbot Icon" :style="{ width: iconSize, height: iconSize }" />
     </v-btn>
+<!--    -->
+<!--    <v-btn @click="openChat" icon large class="chatbot-btn">-->
+<!--      <v-icon :size="iconSize" :color="iconColor">mdi-chat</v-icon>-->
+<!--    </v-btn>-->
 
     <v-dialog v-model="isChatOpen" persistent max-width="500px" scrollable :style="popupStyle">
       <v-card class="chatbot">
@@ -525,7 +531,7 @@ export default {
 
 /* Added styles for chatbot header */
 .chatbot-header {
-  background-color: #afeeee; /* Changed to 'Lavender' color  */
+  background-color: #f6f6f8; /* Changed to 'Lavender' color  */
   color: black; /* Text color */
   display: flex;
   align-items: center;

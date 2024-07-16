@@ -9,7 +9,9 @@ const props = defineProps({
 </script>
 <template>
   <div class="text-section">
+    <div>
     <h1>{{ title }}</h1>
+    </div>
   <p>{{ text }}</p>
   </div>
 </template>

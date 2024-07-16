@@ -1,6 +1,7 @@
 <script setup>
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
 import ContactForm from "@/components/ContactForm.vue";
+import MapComponent from '~/components/MapComponent.vue';
 </script>
 
 <template>
@@ -12,6 +13,17 @@ import ContactForm from "@/components/ContactForm.vue";
       </div>
       <p>For inquiries or support, reach out to Guiding Light by filling the following form. We’re here to help and support you.</p>
       <ContactForm  />
+    </div>
+
+    <div>
+      <text-component
+        title="Emergency Contacts"
+        text="Phone: 555 (855 845 6258), Email: support@guiding.light.com, Address: Via Larga 12, Milan Italy" >
+      </text-component>
+    </div>
+    <div>
+      <map-component/>
+
     </div>
   </div>
 </template>

@@ -5,7 +5,14 @@ export default {
   generate: {
     dir: 'dist' // this is the default value, so it may not be necessary
   },
+
   head: {
+    script: [
+      {
+        src: `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&libraries=places`,
+        defer: true,
+      },
+    ],
     titleTemplate: '%s - Guiding Light',
     title: 'Guiding Light',
     htmlAttrs: {
@@ -56,6 +63,10 @@ export default {
     SUPABASE_URL: process.env.SUPABASE_URL,
     SUPABASE_KEY: process.env.SUPABASE_KEY,
   },
+
+  env: {
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY},
+
   components: true,
   buildModules: [
     '@nuxtjs/vuetify',

@@ -1,9 +1,9 @@
 <script setup>
 // Import necessary components
-import circularImgContentBoxLeft from '~/components/main/circularImgContentBoxLeft.vue';
-import circularImgContentBoxRight from '~/components/main/circularImgContentBoxRight.vue';
-import CircularImageCard from '~/components/main/CircularImageCard.vue';
-import textComponent from '~/components/main/textComponent.vue';
+import circularImgContentBoxLeft from '~/components/circularImgContentBoxLeft.vue';
+import circularImgContentBoxRight from '~/components/circularImgContentBoxRight.vue';
+import CircularImageCard from '~/components/CircularImageCard.vue';
+import textComponent from '~/components/textComponent.vue';
 
 </script>
 
