@@ -45,7 +45,13 @@ export default {
     '~/assets/styles/main.css',
     '~/assets/css/tailwind.css',
   ],
-  plugins: ['@/plugins/vuetify.js', '@/plugins/supabase.js'],
+  plugins: ['@/plugins/vuetify.js',
+    '~/plugins/composition-api.js', // For enabling Composition API in Vue 2.x
+    '~/plugins/supabase.js',        // For Supabase client
+    '~/plugins/toast.js' // For toast notifications
+    ],
+
+
   publicRuntimeConfig: {
     SUPABASE_URL: process.env.SUPABASE_URL,
     SUPABASE_KEY: process.env.SUPABASE_KEY,

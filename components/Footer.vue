@@ -1,25 +1,52 @@
+
 <template>
   <footer class="site-footer" role="contentinfo">
     <div class="footer-content">
-      <nav class="footer-nav" aria-labelledby="footer-navigation">
-        <ul role="navigation">
-          <li><NuxtLink to="/" aria-label="Go to Home">Home</NuxtLink></li>
-          <li><NuxtLink to="/About-us" aria-label="About Us">About</NuxtLink></li>
-          <li><NuxtLink to="/We-provide" aria-label="Our Services">Services</NuxtLink></li>
-          <!-- Add more navigation links as needed -->
+      <div class="footer-column logo-column">
+        <NuxtLink to="/" aria-label="Go to Home">
+          <img src="/logo5.png" alt="Logo" class="footer-logo" />
+        </NuxtLink>
+      </div>
+      <div class="footer-column">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="/path/to/documentation.pdf" target="_blank" aria-label="Documentation">Documentation</a></li>
+          <li><NuxtLink to="/faq" aria-label="FAQ">FAQ</NuxtLink></li>
         </ul>
-      </nav>
-      <div class="social-links" aria-labelledby="footer-social">
-        <v-btn icon href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-          <v-icon size="24">mdi-facebook</v-icon>
-        </v-btn>
-        <v-btn icon href="https://twitter.com/" target="_blank" aria-label="Twitter">
-          <v-icon size="24">mdi-twitter</v-icon>
-        </v-btn>
-        <v-btn icon href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-          <v-icon size="24">mdi-instagram</v-icon>
-        </v-btn>
-        <!-- Add more social media icons or links as needed -->
+      </div>
+      <div class="footer-column">
+        <h3>Services</h3>
+        <ul>
+          <li v-for="service in services" :key="service.id">
+            <NuxtLink :to="`/services/${service.id}`" aria-label="Service">{{ service.name }}</NuxtLink>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Organization</h3>
+        <ul>
+          <li><NuxtLink to="/contact-us" aria-label="Contact Us">Contact Us</NuxtLink></li>
+          <li><NuxtLink to="/projects" aria-label="Projects">Projects</NuxtLink></li>
+          <li><NuxtLink to="/blogs" aria-label="Blogs">Blogs</NuxtLink></li>
+          <li><NuxtLink to="/activities" aria-label="Activities">Activities</NuxtLink></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Social</h3>
+        <div class="social-links" aria-labelledby="footer-social">
+          <v-btn icon href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+            <v-icon size="24">mdi-instagram</v-icon>
+          </v-btn>
+          <v-btn icon href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+            <v-icon size="24">mdi-facebook</v-icon>
+          </v-btn>
+          <v-btn icon href="https://twitter.com/" target="_blank" aria-label="Twitter">
+            <v-icon size="24">mdi-twitter</v-icon>
+          </v-btn>
+          <v-btn icon href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+            <v-icon size="24">mdi-linkedin</v-icon>
+          </v-btn>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -30,43 +57,80 @@
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  data() {
+    return {
+      services: []
+    };
+  },
+  async fetch() {
+    const { data, error } = await this.$supabase
+      .from('services')
+      .select('id, name')
+      .order('priority', { ascending: true })
+      .limit(4);
+
+    if (error) {
+      console.error(error);
+    } else {
+      this.services = data;
+    }
+  }
 }
 </script>
 
 <style scoped>
 .site-footer {
-/*  background-color: #afeeee;*/
-  background-color: #f6f6f8;
-  color: #333; /* Adjust text color for better contrast */
+  background-color: #1d2641;
+  color: #ffffff;
   padding: 2rem 1rem;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.footer-nav ul {
+.footer-column {
+  flex: 1;
+  margin: 1rem;
+}
+
+.logo-column {
+  flex: 1 100%;
+  text-align: center;
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-column ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
 }
 
-.footer-nav li {
-  margin-right: 1rem;
+.footer-column li {
+  margin-bottom: 0.5rem;
 }
 
-.footer-nav a {
-  color: #333; /* Adjust link color for better contrast */
+.footer-column a {
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
-.footer-nav a:hover {
+.footer-column a:hover {
   color: #69c3a0;
 }
 
@@ -75,7 +139,7 @@ export default {
 }
 
 .social-links .v-btn {
-  color: #333; /* Adjust icon color for better contrast */
+  color: #ffffff !important;
   text-decoration: none;
   margin-right: 1rem;
   font-size: 1.5rem;
@@ -84,6 +148,6 @@ export default {
 .footer-bottom {
   margin-top: 1rem;
   text-align: center;
-  font-size: 0.8rem; /* Adjust font size for copyright text */
+  font-size: 0.8rem;
 }
 </style>

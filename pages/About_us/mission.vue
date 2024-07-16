@@ -1,70 +1,47 @@
-<script setup>
-import circularImgContentBoxLeft from '~/components/main/circularImgContentBoxLeft.vue';
-import circularImgContentBoxRight from '~/components/main/circularImgContentBoxRight.vue';
-import CircularImageCard from '~/components/main/CircularImageCard.vue';
-
-</script>
-
 <template>
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
     <div class="top-section">
     </div>
     <div class="text-section">
-      <div>
-        <h1 class="wrap">Mission</h1>
-      </div>
-      <p>Guiding Light is a dedicated non-profit organization committed to empowering women who have been maltreated by their families. Our mission is to provide a safe haven, comprehensive support, and transformative opportunities for these women to rebuild their lives. We believe in the inherent strength and resilience of women and strive to create an environment where they can heal, grow, and thrive. Our services include shelter, counseling, education, physical wellness programs, and mentorship. Through our holistic approach, we aim to restore hope and foster self-sufficiency. At Guiding Light, we envision a world where every woman can live free from abuse and with dignity and respect. Our mission is not just to support survivors but to inspire them to reach their full potential and become beacons of hope for others. Together, we are lighting the path to a brighter, more equitable future.</p>
-    </div>
-    <div class="card-section">
-      <circular-img-content-box-left
-        title="Team"
-        text="At Guiding Light, our team is composed of dedicated professionals committed to supporting and empowering women who have been maltreated by their families. Our staff includes experienced counselors, social workers, educators, and health professionals who work collaboratively to provide comprehensive care and support. Each team member brings a wealth of knowledge and a compassionate approach, ensuring that every woman receives personalized and effective assistance. Our leadership team is passionate about our mission and works tirelessly to advocate for the rights and well-being of women. Together, we strive to create a safe, nurturing environment where women can heal, grow, and thrive."
-        image="https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_about_team_01.jpg"
-        link="/About_us/team">
-      </circular-img-content-box-left>
-      <circular-img-content-box-right
-        title="Partners"
-        text="Guiding Light is proud to collaborate with a diverse network of partners who share our commitment to empowering women. Our partnerships include local businesses, healthcare providers, educational institutions, and other non-profit organizations. These collaborations enable us to offer a wide range of services and resources to the women we support. Our partners provide invaluable expertise, funding, and volunteer support, enhancing our ability to meet the complex needs of our community. By working together, we amplify our impact and move closer to our vision of a world where every woman can live free from abuse. We are deeply grateful for the ongoing support and dedication of our partners."
-        image="https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_partners_01.jpg"
-        link="/About_us/partnerships">
-      </circular-img-content-box-right>
-    </div>
+      <div class="mission-container">
+        <div class="mission-inner">
+          <h1>Our Mission</h1>
+          <p>
+            At <strong>Guiding Light</strong>, our mission is to empower and support survivors of domestic violence by providing comprehensive resources and services that address their physical, emotional, and psychological needs. We are committed to fostering a safe and nurturing environment where individuals can heal, rebuild their lives, and regain their sense of self-worth and independence.
+          </p>
 
-    <div class="text-section">
-      <div>
-        <h1>Meet Our Experts</h1>
-      </div>
-      <p>Explore the profiles of our experts who are dedicated to helping others through their expertise and experience.</p>
-    </div>
-    <div class="circular-card-section">
-      <div class="circular-image-card-container">
-        <v-container>
-          <div >
-            <circular-image-card
-              title="Expert 1"
-              text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-              image="https://picsum.photos/id/11/100/60"
-              link="/About_us/team">
-            </circular-image-card>
-          </div>
-        </v-container>
-        <v-container>
-          <div>
-            <circular-image-card
-              title="Expert 2"
-              text="Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Some text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-              image="https://picsum.photos/id/11/100/60"
-              link="/About_us/partnerships">
-            </circular-image-card>
-          </div>
-        </v-container>
+          <h2>Holistic Care Programs</h2>
+          <ul>
+            <li><strong>Individual Counseling:</strong> Personalized sessions to help survivors navigate their healing journey.</li>
+            <li><strong>Skill-Building Workshops:</strong> Programs designed to promote resilience and personal development.</li>
+            <li><strong>Self-Defense Training:</strong> Practical training to enhance safety and confidence.</li>
+            <li><strong>Yoga and Meditation:</strong> Sessions aimed at promoting mental and physical wellness.</li>
+            <li><strong>Medical Camps and Health Check-ups:</strong> Ensuring access to essential healthcare services.</li>
+            <li><strong>Advocacy Services:</strong> Protecting survivors' rights and connecting them with vital resources.</li>
+          </ul>
+
+          <h2>Education and Awareness</h2>
+          <ul>
+            <li><strong>Targeted Awareness Campaigns:</strong> Educating the community about domestic violence and reducing stigma.</li>
+            <li><strong>Community Engagement:</strong> Encouraging collective action and support for those affected by abuse.</li>
+          </ul>
+
+          <h2>Community and Connection</h2>
+          <ul>
+            <li><strong>Supportive Networks:</strong> Fostering a sense of belonging and mutual support among survivors.</li>
+            <li><strong>Empathy and Empowerment:</strong> Promoting a culture of empathy and empowerment to pave the way for brighter futures.</li>
+          </ul>
+
+          <h2>Significant Impact</h2>
+          <p>
+            The impact of our mission is profound. We aim to create a supportive and informed community that stands together against domestic violence and supports those affected by it. By addressing the diverse needs of survivors and promoting a culture of empathy and empowerment, we strive to pave the way for brighter, healthier futures for all those impacted by domestic violence.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </template>
-
-
 
 <script>
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
@@ -86,17 +63,15 @@ export default {
       return [
         { label: 'About Us', path: '/About-us' },
         { label: 'Mission', path: '/About_us/mission' },
-        // Add more breadcrumb items as needed
       ];
     }
   },
 }
 </script>
 
-
 <style scoped>
 .top-section {
-  background: url('static/img_about_us_01.jpg') no-repeat center center fixed;
+  background: url('https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_about_mission_01.jpg') no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;
@@ -127,109 +102,58 @@ export default {
 
 .text-section {
   background-color: #f6f6f8;
-  background-size: cover;
   padding: 40px;
   margin: 0 auto;
-  text-align: center;
 }
 
-.text-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
+.mission-container {
+  text-align: left;
+  color: #333;
+}
+
+.mission-inner {
+  max-width: 80%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.mission-inner h1 {
   text-align: center;
-  display: inline-block;
+  color: #0056b3;
+  font-size: x-large;
+  margin-bottom: 1em;
+}
+
+.mission-inner p {
+  margin: 10px 0;
+}
+
+.mission-inner ul {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mission-inner ul li {
+  background: #e0f7fa;
+  margin: 10px 0;
   padding: 10px;
+  border-left: 5px solid #00796b;
+  border-radius: 4px;
 }
 
-.text-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
+.mission-inner h2 {
+  color: #0056b3;
+  margin-top: 1em;
 }
 
-.card-section {
-  background: url('static/img_expert_advice_03.jpg') no-repeat center center fixed;
-  background-size: cover;
-  padding: 40px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.card-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.card-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.circular-card-section {
-  background: url('static/img_stories_04.jpg') no-repeat center center fixed;
-  background-size: cover;
-  padding: 40px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.circular-card-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.circular-card-section p {
-  margin-top: 2px;
-  margin-bottom: 30px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.circular-image-card-container {
-  display: flex;
-  justify-content: center;
-  gap: 8%;
-  flex-wrap: wrap;
-}
-
-.circular-image-card-container div {
-  max-width: 700px; /* Set a maximum width for the cards */
-  flex: 1;
-}
-
-.circular-image-card-container circular-image-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-wrap: break-word; /* Ensure text wraps appropriately */
+.highlight {
+  background-color: #ffe0b2;
+  padding: 5px;
+  border-radius: 4px;
 }
 
 @media (max-width: 600px) {
@@ -239,341 +163,26 @@ export default {
 
   .top-section h1 {
     font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
   }
 
   .top-section p {
     font-size: 1em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
   }
 
   .text-section {
     padding: 20px;
   }
 
-  .text-section h1 {
+  .mission-inner h1 {
     font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
   }
 
-  .text-section p {
+  .mission-inner p {
     font-size: 1em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
   }
 
-  .card-section {
-    padding: 20px;
-  }
-
-  .card-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .card-section p {
-    font-size: 1em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .circular-card-section {
-    padding: 20px;
-  }
-
-  .circular-card-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .circular-card-section p {
-    font-size: 1em;
-    margin-top: 2px;
-    margin-bottom: 30px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .circular-image-card-container {
-    flex-direction: column;
-  }
-}
-</style>
-
-<style scoped>
-.top-section {
-  background: url('static/img_expert_advice_01.jpg') no-repeat center center fixed;
-  background-size: cover;
-  padding: 40px;
-  height: 600px;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.top-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.top-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.text-section {
-  background-color: #f6f6f8;
-  background-size: cover;
-  padding: 40px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.text-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.text-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.card-section {
-  background: url('static/img_expert_advice_03.jpg') no-repeat center center fixed;
-  background-size: cover;
-  padding: 40px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.card-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.card-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.circular-card-section {
-  background: url('static/img_stories_04.jpg') no-repeat center center fixed;
-  background-size: cover;
-  padding: 40px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.circular-card-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.circular-card-section p {
-  margin-top: 2px;
-  margin-bottom: 30px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.circular-image-card-container {
-  display: flex;
-  justify-content: center;
-  gap: 8%;
-  flex-wrap: wrap;
-}
-
-.circular-image-card-container div {
-  max-width: 700px; /* Set a maximum width for the cards */
-  flex: 1;
-}
-
-.circular-image-card-container circular-image-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-wrap: break-word; /* Ensure text wraps appropriately */
-}
-
-@media (max-width: 600px) {
-  .top-section {
-    padding: 20px;
-  }
-
-  .top-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .top-section p {
-    font-size: 1em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .text-section {
-    padding: 20px;
-  }
-
-  .text-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .text-section p {
-    font-size: 1em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .card-section {
-    padding: 20px;
-  }
-
-  .card-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .card-section p {
-    font-size: 1em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .circular-card-section {
-    padding: 20px;
-  }
-
-  .circular-card-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .circular-card-section p {
-    font-size: 1em;
-    margin-top: 2px;
-    margin-bottom: 30px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .circular-image-card-container {
-    flex-direction: column;
+  .mission-inner ul li {
+    font-size: 0.9em;
   }
 }
 </style>
