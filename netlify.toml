@@ -1,8 +1,26 @@
 # example netlify.toml
-[build]
-  command = "npm run generate"
-  functions = "netlify/functions"
-  publish = "dist"
+  [build]
+    command = "npm install --legacy-peer-deps && nuxt generate"
+    functions = "netlify/functions"
+    publish = "dist"
+
+  [context.production.environment]
+    NODE_ENV = "production"
+
+  [context.deploy-preview]
+    command = "npm run generate"
+    publish = "dist"
+
+  [context.deploy-preview.environment]
+    NODE_ENV = "development"
+
+  [context.branch-deploy]
+    command = "npm run generate"
+    publish = "dist"
+
+  [context.branch-deploy.environment]
+    NODE_ENV = "development"
+
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
