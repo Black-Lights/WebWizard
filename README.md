@@ -23,3 +23,6 @@ This repository contains the codebase for our Vue3 and Nuxt3 web technology proj
 - Access: Private (for project confidentiality)
 
 ---
+### Deploy status Badge
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8eb61fa9-1a27-423e-9999-fadd3ba0fd9a/deploy-status)](https://app.netlify.com/sites/guiding-light/deploys)
