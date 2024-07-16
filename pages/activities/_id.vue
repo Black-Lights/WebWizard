@@ -19,6 +19,16 @@
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
 
 export default {
+  head() {
+    return {
+      title: `${this.activity.title} - Activities - Guiding-Light`,
+      meta: [
+        { hid: 'description', name: 'description', content: `Discover more about the ${this.activity.title} activity and its impact.` },
+        { hid: 'keywords', name: 'keywords', content: `${this.activity.title}, Guiding-Light, Activities, Community Impact` },
+      ],
+    };
+  },
+
   async asyncData({ params, $supabase }) {
     const { data: activities, error } = await $supabase
       .from('activities')
@@ -44,8 +54,6 @@ export default {
   },
 };
 </script>
-
-
 
 <style scoped>
 .top-section {
@@ -107,84 +115,6 @@ export default {
   padding: 10px;
 }
 
-.card-section {
-  background: url('static/img_proj_counsel_02.jpg') no-repeat center center fixed;
-  background-size: cover;
-  padding: 40px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.card-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.card-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.circular-card-section {
-  background: url('static/img_proj_counsel_03.jpg') no-repeat center center fixed;
-  background-size: cover;
-  padding: 40px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.circular-card-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.circular-card-section p {
-  margin-top: 2px;
-  margin-bottom: 30px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.circular-image-card-container {
-  display: flex;
-  justify-content: center;
-  gap: 8%;
-  flex-wrap: wrap;
-}
-
-.circular-image-card-container div {
-  max-width: 700px; /* Set a maximum width for the cards */
-  flex: 1;
-}
-
-.circular-image-card-container circular-image-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-wrap: break-word; /* Ensure text wraps appropriately */
-}
-
 @media (max-width: 600px) {
   .top-section {
     padding: 20px;
@@ -232,59 +162,6 @@ export default {
     color: #000000;
     text-align: center;
     display: inline-block;
-  }
-
-  .card-section {
-    padding: 20px;
-  }
-
-  .card-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .card-section p {
-    font-size: 1em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .circular-card-section {
-    padding: 20px;
-  }
-
-  .circular-card-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .circular-card-section p {
-    font-size: 1em;
-    margin-top: 2px;
-    margin-bottom: 30px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .circular-image-card-container {
-    flex-direction: column;
   }
 }
 </style>

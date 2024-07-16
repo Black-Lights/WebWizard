@@ -1,48 +1,72 @@
+<script setup>
+// Import necessary components
+import circularImgContentBoxLeft from '~/components/main/circularImgContentBoxLeft.vue';
+import circularImgContentBoxRight from '~/components/main/circularImgContentBoxRight.vue';
+import CircularImageCard from '~/components/main/CircularImageCard.vue';
+import textComponent from '~/components/main/textComponent.vue';
+
+</script>
+
 <template>
   <div>
+    <!-- Breadcrumbs navigation component -->
     <Breadcrumbs :crumbs="breadcrumbs" />
+
+    <!-- Top section with a title and description -->
     <div class="top-section">
       <div>
         <h1>Our Services</h1>
       </div>
       <p>Guiding Light offers a wide range of services aimed at improving the well-being of our community. From healthcare to education, our dedicated team is here to support you.</p>
     </div>
-    <div class="text-section">
-      <h1 class="wrap">About Our Services</h1>
-      <p>At Guiding Light, we provide a variety of services designed to support the community. Our services include healthcare, education, and community support, delivered by a team of committed professionals.</p>
+
+    <!-- Text component with information about the services -->
+    <div>
+      <text-component
+        title="About Our Services"
+        text="At Guiding Light, we provide a variety of services designed to support the community. Our services include healthcare, education, and community support, delivered by a team of committed professionals.">
+      </text-component>
     </div>
+
+    <!-- Section displaying top services using circular image content boxes -->
     <div class="card-section">
       <circular-img-content-box-left
         v-if="topServices.length > 0"
         :title="topServices[0].name"
-        :text="truncateText(topServices[0].description)"
+        :text="topServices[0].brief_description"
         :image="topServices[0].img_url"
         :link="`/services/${topServices[0].id}`"
       />
       <circular-img-content-box-right
         v-if="topServices.length > 1"
         :title="topServices[1].name"
-        :text="truncateText(topServices[1].description)"
+        :text="topServices[1].brief_description"
         :image="topServices[1].img_url"
         :link="`/services/${topServices[1].id}`"
       />
     </div>
-    <div class="text-section">
-      <h1>Other Projects and Activities</h1>
-      <p>In addition to our services, we manage various projects and activities that aim to foster community growth and well-being. Explore our initiatives to learn more.</p>
+
+    <!-- Additional text component for other projects and activities -->
+    <div>
+      <text-component
+        title="Other Projects and Activities"
+        text="In addition to our services, we manage various projects and activities that aim to foster community growth and well-being. Explore our initiatives to learn more.">
+      </text-component>
     </div>
+
+    <!-- Section with circular image cards for projects and activities -->
     <div class="circular-card-section">
       <div class="circular-image-card-container">
         <circular-image-card
           title="Projects"
           text="Discover our various projects that aim to create a positive impact in the community."
-          image='static/img_project_04.jpg'
+          image='https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_project_01.jpg'
           link="/projects"
         />
         <circular-image-card
           title="Activities"
           text="Join our activities such as workshops, seminars, and community events."
-          image="static/img_services_02.jpg"
+          image="https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_activities_01.jpg"
           link="/activities"
         />
       </div>
@@ -51,25 +75,32 @@
 </template>
 
 <script>
+// Import Breadcrumbs component
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
-import CircularImgContentBoxLeft from '~/components/main/circularImgContentBoxLeft.vue';
-import CircularImgContentBoxRight from '~/components/main/circularImgContentBoxRight.vue';
-import CircularImageCard from '~/components/main/CircularImageCard.vue';
+// Import Supabase client for fetching data
 import { createClient } from '@supabase/supabase-js';
 
 export default {
+  // Set the head information for the page
+  head() {
+    return {
+      title: 'Services - Guiding-Light',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Learn about the different services offered by Guiding-Light to support and uplift the community.' },
+        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Services, Community Support, Assistance' },
+      ],
+    };
+  },
   components: {
-    Breadcrumbs,
-    CircularImgContentBoxLeft,
-    CircularImgContentBoxRight,
-    CircularImageCard,
+    Breadcrumbs, // Register Breadcrumbs component
   },
   data() {
     return {
-      topServices: [],
+      topServices: [], // Initialize topServices array
     };
   },
   computed: {
+    // Compute breadcrumbs data for Breadcrumbs component
     breadcrumbs() {
       return [
         { label: 'Services', path: '/services' },
@@ -77,6 +108,7 @@ export default {
     },
   },
   methods: {
+    // Method to fetch top services from the database
     async fetchTopServices() {
       const supabase = createClient(this.$config.SUPABASE_URL, this.$config.SUPABASE_KEY);
       const { data, error } = await supabase
@@ -91,10 +123,12 @@ export default {
         this.topServices = data;
       }
     },
+    // Method to truncate text to a specified length
     truncateText(text, length = 50) {
       return text.split(' ').slice(0, length).join(' ') + '...';
     },
   },
+  // Fetch top services when the component is mounted
   async mounted() {
     await this.fetchTopServices();
   },
@@ -102,6 +136,7 @@ export default {
 </script>
 
 <style scoped>
+/* Styles for the top section */
 .top-section {
   background: url('static/img_services_01.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -132,35 +167,7 @@ export default {
   padding: 10px;
 }
 
-.text-section {
-  background-color: #f6f6f8;
-  background-size: cover;
-  padding: 40px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.text-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.text-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
+/* Styles for the card section */
 .card-section {
   background: url('static/img_services_02.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -190,6 +197,7 @@ export default {
   padding: 10px;
 }
 
+/* Styles for the circular card section */
 .circular-card-section {
   background: url('static/img_services_03.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -220,6 +228,7 @@ export default {
   padding: 10px;
 }
 
+/* Styles for the circular image card container */
 .circular-image-card-container {
   display: flex;
   justify-content: center;
@@ -239,6 +248,7 @@ export default {
   overflow-wrap: break-word; /* Ensure text wraps appropriately */
 }
 
+/* Responsive styles for smaller screens */
 @media (max-width: 600px) {
   .top-section {
     padding: 20px;
@@ -255,30 +265,6 @@ export default {
   }
 
   .top-section p {
-    font-size: 1em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .text-section {
-    padding: 20px;
-  }
-
-  .text-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .text-section p {
     font-size: 1em;
     margin: 2px;
     background: rgba(246, 246, 248, 0.7);

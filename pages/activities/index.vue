@@ -1,52 +1,70 @@
+<script setup>
+// Import components to be used within this component
+import circularImgContentBoxLeft from '~/components/main/circularImgContentBoxLeft.vue';
+import circularImgContentBoxRight from '~/components/main/circularImgContentBoxRight.vue';
+import CircularImageCard from '~/components/main/CircularImageCard.vue';
+import textComponent from '~/components/main/textComponent.vue';
+
+</script>
+
 <template>
   <div>
+    <!-- Breadcrumbs navigation component -->
     <Breadcrumbs :crumbs="breadcrumbs" />
+
+    <!-- Top section with title and description -->
+
     <div class="top-section">
       <div>
         <h1>Our Activities</h1>
       </div>
       <p>Guiding Light organizes a range of activities aimed at community engagement and personal development. Join us in making a positive impact.</p>
     </div>
-    <div class="text-section">
-      <div>
-      <h1 class="wrap">About Our Activities</h1>
-      </div>
-      <p>Our activities are designed to foster community engagement and personal growth. We offer workshops, seminars, and events to help individuals and the community thrive.</p>
+    <!-- Activities text component -->
+    <div>
+      <text-component
+        title="About Our Activities"
+        text="Our activities are designed to foster community engagement and personal growth. We offer workshops, seminars, and events to help individuals and the community thrive.">
+      </text-component>
     </div>
+    <!-- Section displaying top services with circular image content boxes -->
+
     <div class="card-section">
       <circular-img-content-box-left
         v-if="topActivities.length > 0"
         :title="topActivities[0].name"
-        :text="truncateText(topActivities[0].description)"
+        :text="topActivities[0].brief_description"
         :image="topActivities[0].img_url"
         :link="`/activities/${topActivities[0].id}`"
       />
       <circular-img-content-box-right
         v-if="topActivities.length > 1"
         :title="topActivities[1].name"
-        :text="truncateText(topActivities[1].description)"
+        :text="topActivities[1].brief_description"
         :image="topActivities[1].img_url"
         :link="`/activities/${topActivities[1].id}`"
       />
     </div>
-    <div class="text-section">
-      <div>
-      <h1>Other Projects and Services</h1>
-      </div>
-      <p>In addition to our activities, we manage various projects and offer services that aim to improve community well-being. Explore our initiatives to learn more.</p>
+    <!-- Additional text component about other projects and services -->
+    <div>
+      <text-component
+        title="Other Projects and Services"
+        text="In addition to our activities, we manage various projects and offer services that aim to improve community well-being. Explore our initiatives to learn more.">
+      </text-component>
     </div>
+
     <div class="circular-card-section">
       <div class="circular-image-card-container">
         <circular-image-card
           title="Services"
           text="We provide various services including healthcare, education, and community support."
-          image="static/img_activities_01.jpg"
+          image="https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_services_01.jpg"
           link="/services"
         />
         <circular-image-card
           title="Projects"
           text="Discover our various projects that aim to create a positive impact in the community."
-          image="static/img_activities_02.jpg"
+          image="https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_project_01.jpg"
           link="/projects"
         />
       </div>
@@ -56,17 +74,20 @@
 
 <script>
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
-import CircularImgContentBoxLeft from '~/components/main/circularImgContentBoxLeft.vue';
-import CircularImgContentBoxRight from '~/components/main/circularImgContentBoxRight.vue';
-import CircularImageCard from '~/components/main/CircularImageCard.vue';
 import { createClient } from '@supabase/supabase-js';
 
 export default {
+  head() {
+    return {
+      title: 'Activities - Guiding-Light',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Discover the various activities organized by Guiding-Light for community engagement and personal development.' },
+        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Activities, Community Engagement, Workshops' },
+      ],
+    };
+  },
   components: {
     Breadcrumbs,
-    CircularImgContentBoxLeft,
-    CircularImgContentBoxRight,
-    CircularImageCard,
   },
   data() {
     return {
@@ -127,35 +148,6 @@ export default {
 }
 
 .top-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.text-section {
-  background-color: #f6f6f8;
-  background-size: cover;
-  padding: 40px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.text-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.text-section p {
   margin: 2px;
   background: rgba(246, 246, 248, 0.7);
   border-radius: 20px;
@@ -259,30 +251,6 @@ export default {
   }
 
   .top-section p {
-    font-size: 1em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .text-section {
-    padding: 20px;
-  }
-
-  .text-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .text-section p {
     font-size: 1em;
     margin: 2px;
     background: rgba(246, 246, 248, 0.7);

@@ -51,13 +51,17 @@ export default {
 }
 
 .rectangular-content-box__title {
+  color: #000000 !important;
   font-weight: bold;
   font-size: 1.5em;
 }
 
 .rectangular-content-box__text {
-  font-size: 1em;
+  color: #000000 !important;
+  font-size: 1.3em;
+  line-height: 1.6;
   margin-top: 10px;
+  text-align: justify;
 }
 
 .rectangular-content-box__image {

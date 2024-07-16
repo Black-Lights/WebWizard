@@ -25,6 +25,7 @@ const props = defineProps({
 
 <style scoped>
 .circular-image-card {
+  opacity: 0.7;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,11 +45,15 @@ const props = defineProps({
 
 .circular-image-card__title {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .circular-image-card__text {
-  font-size: 0.9em;
+  color: #000000 !important;
+  font-size: 1.3em;
+  line-height: 1.6;
+  margin-top: 10px;
+  text-align: justify;
 }
 
 .title-link {
