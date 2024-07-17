@@ -31,6 +31,6 @@
     "@nuxtjs/vuetify": "^1.12.3",
     "chromedriver": "^106.0.1",
     "eslint-config-prettier": "^8.5.0",
-    "prettier": "^2.7.1"
+    "prettier": "^3.3.3"
   }
 }
