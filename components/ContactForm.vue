@@ -55,7 +55,7 @@ export default {
       email: "",
       message: "",
       valid: false,
-      subjects: ["General Inquiry", "Support", "Sales", "Feedback"],
+      subjects: ["General Inquiry", "Support", "Immediate Help", "Feedback"],
     };
   },
   methods: {
