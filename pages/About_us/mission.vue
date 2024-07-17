@@ -79,27 +79,6 @@ export default {
   text-align: center;
 }
 
-.top-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.top-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
 .text-section {
   background-color: #f6f6f8;
   padding: 40px;
@@ -127,6 +106,13 @@ export default {
   margin-bottom: 1em;
 }
 
+.mission-inner h2 {
+  text-align: center;
+  color: #0056b3;
+  font-size: large;
+  margin-top: 1em;
+}
+
 .mission-inner p {
   margin: 10px 0;
 }
@@ -145,16 +131,6 @@ export default {
   border-radius: 4px;
 }
 
-.mission-inner h2 {
-  color: #0056b3;
-  margin-top: 1em;
-}
-
-.highlight {
-  background-color: #ffe0b2;
-  padding: 5px;
-  border-radius: 4px;
-}
 
 @media (max-width: 600px) {
   .top-section {

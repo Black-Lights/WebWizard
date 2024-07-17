@@ -6,7 +6,7 @@
         <h1>{{ blog.name }}</h1>
       </div>
       <p>Author: {{ blog.author }}</p>
-      <p>Date: {{ blog.date }}, Time: {{ blog.time }}</p>
+      <p>Published date: {{ blog.date }} at {{ blog.time }}</p>
     </div>
     <div class="text-section">
       <!-- Render the HTML content from the description field -->

@@ -56,7 +56,7 @@ import textComponent from '~/components/textComponent.vue';
               title="Annual Report"
               text="Our Annual Report details Guiding Light's yearly progress, program impacts, and financial stewardship. It highlights the support of partners and donors, essential to our mission. By sharing these insights, we demonstrate our commitment to transparency and the significant difference made in empowering women facing familial maltreatment."
               image="https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_about_reports_01.jpg"
-              link="/About_us/partnerships">
+              link="/About_us/annual_reports">
             </circular-image-card>
           </div>
         </v-container>
@@ -294,56 +294,6 @@ export default {
   text-align: center;
 }
 
-.top-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.top-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.text-section {
-  background-color: #f6f6f8;
-  background-size: cover;
-  padding: 40px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.text-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.text-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
 .card-section {
   background: url('static/img_about_us_02.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -438,30 +388,6 @@ export default {
   }
 
   .top-section p {
-    font-size: 1em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .text-section {
-    padding: 20px;
-  }
-
-  .text-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .text-section p {
     font-size: 1em;
     margin: 2px;
     background: rgba(246, 246, 248, 0.7);

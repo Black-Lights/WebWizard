@@ -19,7 +19,6 @@ const head = {
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
     <div class="top-section">
-      <h1>Annual Reports</h1>
     </div>
     <div class="text-section">
       <div class="report-container">
@@ -66,8 +65,8 @@ const head = {
             The impact of our work is best reflected through personal testimonies and success stories. These narratives honor the journeys of survivors, highlighting their resilience and courage.
           </p>
           <ul>
-            <li><span class="highlight">Inspiring Journeys:</span> Personal testimonies that inspire and affirm the importance of our mission.</li>
-            <li><span class="highlight">Profound Impact:</span> Stories that underscore the transformative effect of our programs.</li>
+            <li><strong>Inspiring Journeys:</strong> Personal testimonies that inspire and affirm the importance of our mission.</li>
+            <li><strong>Profound Impact:</strong> Stories that underscore the transformative effect of our programs.</li>
           </ul>
           <p>
             Guiding Light’s annual reports serve as a testament to our ongoing commitment to supporting survivors of domestic violence. By documenting our achievements and reflecting on our challenges, we aim to continuously improve and expand our services, ensuring that we remain a beacon of hope and empowerment for all those affected by domestic violence.
@@ -83,21 +82,11 @@ const head = {
   background: url('https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_about_reports_01.jpg') no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
-  height: 400px; /* Adjusted for the content */
+  height: 600px; /* Adjusted for the content */
   margin-top: 20px;
   text-align: center;
 }
 
-.top-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
 
 .text-section {
   background-color: #f6f6f8;
@@ -152,11 +141,7 @@ const head = {
   border-radius: 4px;
 }
 
-.highlight {
-  background-color: #ffe0b2;
-  padding: 5px;
-  border-radius: 4px;
-}
+
 
 @media (max-width: 600px) {
   .top-section {

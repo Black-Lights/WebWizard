@@ -3,18 +3,12 @@
     <Breadcrumbs :crumbs="breadcrumbs" />
 
     <div class="top-section">
-      <div>
-        <h1></h1>
-      </div>
-      <p></p>
     </div>
-    <div class="text-section">
-      <div>
-        <h1>Our Team</h1>
-      </div>
-      <p>
-        At Guiding Light, we believe in the power of community and compassion. Our dedicated team of professionals and volunteers work tirelessly to support women facing family maltreatment. With a blend of personal experience, professional expertise, and a shared mission to create a safer world, each team member plays a crucial role in driving our cause forward.
-      </p>
+    <div>
+      <text-component
+        title="Our Team"
+        text="At Guiding Light, we believe in the power of community and compassion. Our dedicated team of professionals and volunteers work tirelessly to support women facing family maltreatment. With a blend of personal experience, professional expertise, and a shared mission to create a safer world, each team member plays a crucial role in driving our cause forward." >
+      </text-component>
     </div>
 
     <v-container>
@@ -119,57 +113,6 @@ export default {
   text-align: center;
 }
 
-.top-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.top-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.text-section {
-  background-color: #f6f6f8;
-  background-size: cover;
-  padding: 40px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.text-section h1 {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  font-size: xx-large;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-.text-section p {
-  margin: 2px;
-  background: rgba(246, 246, 248, 0.7);
-  border-radius: 20px;
-  color: #000000;
-  text-align: center;
-  display: inline-block;
-  padding: 10px;
-}
-
-
 .fade-in-card {
   opacity: 0;
   transform: scale(0.95) translateY(20px);
@@ -213,50 +156,6 @@ p {
 @media (max-width: 600px) {
   .top-section {
     padding: 20px;
-  }
-
-  .top-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .top-section p {
-    font-size: 1em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .text-section {
-    padding: 20px;
-  }
-
-  .text-section h1 {
-    font-size: 1.5em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .text-section p {
-    font-size: 1em;
-    margin: 2px;
-    background: rgba(246, 246, 248, 0.7);
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    display: inline-block;
   }
 }
 </style>

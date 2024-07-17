@@ -5,8 +5,8 @@
       <div>
         <h1>{{ project.name }}</h1>
       </div>
-      <p>Maintained by: {{ maintainer.name }}</p>
-      <p>Date: {{ project.date }}, Time: {{ project.time }}</p>
+      <p>Project Manager: {{ maintainer.name }}</p>
+      <p> Project Started on: {{ project.date }} at {{ project.time }}</p>
     </div>
     <div class="text-section">
       <!-- Render the HTML content from the description field -->

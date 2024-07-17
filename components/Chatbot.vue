@@ -487,7 +487,7 @@ export default {
 <style scoped>
 .chatbot-btn {
   position: fixed;
-  bottom: 175px;
+  bottom: 150px;
   right: 40px;
 }
 
@@ -536,5 +536,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .chatbot-btn {
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+  }
 }
 </style>

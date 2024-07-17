@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
@@ -5,8 +6,8 @@
       <div>
         <h1>{{ activities.name }}</h1>
       </div>
-      <p>Maintained by: {{ maintainer.name }}</p>
-      <p>Date: {{ activities.date }}, Time: {{ activities.time }}</p>
+      <p>Organised by: {{ maintainer.name }}</p>
+
     </div>
     <div class="text-section">
       <!-- Render the HTML content from the description field -->
@@ -20,11 +21,15 @@ import Breadcrumbs from '@/components/Breadcrumbs.vue';
 
 export default {
   head() {
+    const title = this.activities ? this.activities.name : 'Loading...';
+    const description = this.activities ? `Discover more about the ${this.activities.name} activity and its impact.` : 'Activity details';
+    const keywords = this.activities ? `${this.activities.name}, Guiding-Light, Activities, Community Impact` : 'Activities';
+
     return {
-      title: `${this.activity.title} - Activities - Guiding-Light`,
+      title: `${title} - Activities - Guiding-Light`,
       meta: [
-        { hid: 'description', name: 'description', content: `Discover more about the ${this.activity.title} activity and its impact.` },
-        { hid: 'keywords', name: 'keywords', content: `${this.activity.title}, Guiding-Light, Activities, Community Impact` },
+        { hid: 'description', name: 'description', content: description },
+        { hid: 'keywords', name: 'keywords', content: keywords },
       ],
     };
   },
