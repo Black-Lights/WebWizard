@@ -70,15 +70,15 @@ export default {
         content: `
           <v-card width="100%" max-width="400px" class="info-window-card">
             <v-card-title>
-              <span class="headline">Welcome to Milan!</span>
+              <span class="headline">Guiding Light Office</span>
             </v-card-title>
             <v-card-text>
-              <p style="font-size: 16px;">If you need help, please visit: <a href="https://example.com/help" target="_blank">Our Help Center</a></p>
+              <p style="font-size: 16px;">Via Larga 12, 20122, Milan Italy</p>
               <v-btn @click="getDirections()" color="primary">Get Directions</v-btn>
             </v-card-text>
           </v-card>
         `,
-        ariaLabel: 'Welcome to Milan',
+        ariaLabel: 'Guiding Light Office',
       });
 
       this.addDefaultMarker();
@@ -98,7 +98,7 @@ export default {
       this.marker = new google.maps.Marker({
         position: this.defaultLocation,
         map: this.map,
-        title: 'Welcome to Milan!',
+        title: 'Guiding Light Office',
       });
 
       // Add a click listener to the marker to reopen the info window

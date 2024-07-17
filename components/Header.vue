@@ -1,6 +1,6 @@
 
 <template>
-  <header class="site-header">
+  <header class="site-header" id="head">
     <div class="logo">
       <NuxtLink to="/">
         <img src="/logo5.png" alt="GuidingLight Logo" class="logo-image" />

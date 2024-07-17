@@ -3,7 +3,7 @@
   <footer class="site-footer" role="contentinfo">
     <div class="footer-content">
       <div class="footer-column logo-column">
-        <NuxtLink to="/" aria-label="Go to Home">
+        <NuxtLink to="/#head" aria-label="Go to Home">
           <img src="/logo-white-back.png" alt="Logo" class="footer-logo" />
         </NuxtLink>
       </div>
