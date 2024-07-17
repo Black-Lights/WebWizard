@@ -1,10 +1,8 @@
 <script setup>
 // Import necessary components
-import circularImgContentBoxLeft from '~/components/circularImgContentBoxLeft.vue';
-import circularImgContentBoxRight from '~/components/circularImgContentBoxRight.vue';
-import textComponent from '~/components/textComponent.vue';
-
-
+import circularImgContentBoxLeft from "~/components/circularImgContentBoxLeft.vue";
+import circularImgContentBoxRight from "~/components/circularImgContentBoxRight.vue";
+import textComponent from "~/components/textComponent.vue";
 </script>
 
 <template>
@@ -15,13 +13,17 @@ import textComponent from '~/components/textComponent.vue';
       <div>
         <h1>Our Blogs</h1>
       </div>
-      <p>Stay updated with our latest blogs on various topics. Explore our posts and engage with our content.</p>
+      <p>
+        Stay updated with our latest blogs on various topics. Explore our posts
+        and engage with our content.
+      </p>
     </div>
     <!-- Text component with information about the services -->
     <div>
       <text-component
         title="Discover Our Insights"
-        text="Welcome to our blog section, where we share our latest news, updates, and insights. Our blogs cover a range of topics, including community initiatives, project updates, and personal stories from our team and volunteers. Each post is crafted to keep you informed and engaged with our ongoing efforts and achievements. Whether you’re interested in learning more about our projects, getting involved in our initiatives, or simply staying connected with our community, you’ll find valuable content here. Dive into our blog posts to explore stories of impact, success, and inspiration from those who are making a difference. We invite you to join the conversation and become a part of our vibrant community.">
+        text="Welcome to our blog section, where we share our latest news, updates, and insights. Our blogs cover a range of topics, including community initiatives, project updates, and personal stories from our team and volunteers. Each post is crafted to keep you informed and engaged with our ongoing efforts and achievements. Whether you’re interested in learning more about our projects, getting involved in our initiatives, or simply staying connected with our community, you’ll find valuable content here. Dive into our blog posts to explore stories of impact, success, and inspiration from those who are making a difference. We invite you to join the conversation and become a part of our vibrant community."
+      >
       </text-component>
     </div>
 
@@ -47,10 +49,11 @@ import textComponent from '~/components/textComponent.vue';
     <div>
       <text-component
         title="All Blogs"
-        text="Explore our entire collection of blog posts to stay up-to-date with our latest activities and initiatives. From behind-the-scenes looks at our projects to personal reflections from our team members, our blog is a space where we share our experiences and successes with you. Browse through our posts to find out how we’re making a difference in the community, discover new opportunities for involvement, and gain insight into the passion that drives our mission. We hope our blog inspires you to connect with us and be part of our journey.">
+        text="Explore our entire collection of blog posts to stay up-to-date with our latest activities and initiatives. From behind-the-scenes looks at our projects to personal reflections from our team members, our blog is a space where we share our experiences and successes with you. Browse through our posts to find out how we’re making a difference in the community, discover new opportunities for involvement, and gain insight into the passion that drives our mission. We hope our blog inspires you to connect with us and be part of our journey."
+      >
       </text-component>
     </div>
-<!--    List of All blogs Automatically updating-->
+    <!--    List of All blogs Automatically updating-->
     <div class="blog-list">
       <ul>
         <li v-for="blog in allBlogs" :key="blog.id">
@@ -58,25 +61,33 @@ import textComponent from '~/components/textComponent.vue';
         </li>
       </ul>
     </div>
-<!--    Subscribers form-->
+    <!--    Subscribers form-->
     <div class="sub-form">
-    <BlogSubscriptionForm />
+      <BlogSubscriptionForm />
     </div>
-
   </div>
 </template>
 
 <script>
-import Breadcrumbs from '@/components/Breadcrumbs.vue';
-import BlogSubscriptionForm from '~/components/BlogSubscriptionForm.vue';
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
+import BlogSubscriptionForm from "~/components/BlogSubscriptionForm.vue";
 
 export default {
   head() {
     return {
-      title: 'Blogs - Guiding-Light',
+      title: "Blogs - Guiding-Light",
       meta: [
-        { hid: 'description', name: 'description', content: 'Read the latest blogs from Guiding-Light to stay informed about our updates and stories.' },
-        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Blogs, Updates, Stories, News' },
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Read the latest blogs from Guiding-Light to stay informed about our updates and stories.",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "Guiding-Light, Blogs, Updates, Stories, News",
+        },
       ],
     };
   },
@@ -92,9 +103,7 @@ export default {
   },
   computed: {
     breadcrumbs() {
-      return [
-        { label: 'Blogs', path: '/blogs' },
-      ];
+      return [{ label: "Blogs", path: "/blogs" }];
     },
   },
   methods: {
@@ -102,9 +111,9 @@ export default {
       try {
         // Fetch all blogs
         const { data: blogs, error } = await this.$supabase
-          .from('blogs')
-          .select('*')
-          .order('date', { ascending: false });
+          .from("blogs")
+          .select("*")
+          .order("date", { ascending: false });
 
         if (error) throw error;
 
@@ -114,7 +123,7 @@ export default {
         // Get the list of all blogs for the blog list section
         this.allBlogs = blogs;
       } catch (error) {
-        console.error('Error fetching blogs data:', error.message);
+        console.error("Error fetching blogs data:", error.message);
       }
     },
   },
@@ -124,11 +133,9 @@ export default {
 };
 </script>
 
-
-
 <style scoped>
 .top-section {
-  background: url('static/img_blogs_01.jpg') no-repeat center center fixed;
+  background: url("static/img_blogs_01.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;
@@ -158,7 +165,7 @@ export default {
 }
 
 .card-section {
-  background: url('static/img_blogs_02.jpg') no-repeat center center fixed;
+  background: url("static/img_blogs_02.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -187,7 +194,7 @@ export default {
 }
 
 .circular-card-section {
-  background: url('static/img_blogs_03.jpg') no-repeat center center fixed;
+  background: url("static/img_blogs_03.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -236,7 +243,7 @@ export default {
 }
 
 .blog-list {
-  background: url('static/img_blogs_03.jpg') no-repeat center center fixed;
+  background: url("static/img_blogs_03.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -263,9 +270,9 @@ export default {
 }
 
 .sub-form {
-  background: url('static/img_blogs_04.jpg') no-repeat center center fixed;
+  background: url("static/img_blogs_04.jpg") no-repeat center center fixed;
   background-size: cover;
-/*  padding: 40px;
+  /*  padding: 40px;
   margin-top: 20px;
   text-align: center;*/
 }
@@ -372,6 +379,4 @@ export default {
     flex-direction: column;
   }
 }
-
-
 </style>

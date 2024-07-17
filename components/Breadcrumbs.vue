@@ -6,7 +6,9 @@
       </li>
       <li v-for="(crumb, index) in crumbs" :key="'breadcrumb-' + index">
         <span class="breadcrumb-arrow"> > </span>
-        <NuxtLink :to="crumb.path" class="breadcrumb-link">{{ crumb.label }}</NuxtLink>
+        <NuxtLink :to="crumb.path" class="breadcrumb-link">{{
+          crumb.label
+        }}</NuxtLink>
       </li>
     </ul>
   </nav>
@@ -14,14 +16,14 @@
 
 <script>
 export default {
-  name: 'Breadcrumbs',
+  name: "Breadcrumbs",
   props: {
     crumbs: {
       type: Array,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>
 
 <style scoped>

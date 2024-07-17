@@ -1,10 +1,9 @@
 <script setup>
 // Import necessary components
-import circularImgContentBoxLeft from '~/components/circularImgContentBoxLeft.vue';
-import circularImgContentBoxRight from '~/components/circularImgContentBoxRight.vue';
-import CircularImageCard from '~/components/CircularImageCard.vue';
-import textComponent from '~/components/textComponent.vue';
-
+import circularImgContentBoxLeft from "~/components/circularImgContentBoxLeft.vue";
+import circularImgContentBoxRight from "~/components/circularImgContentBoxRight.vue";
+import CircularImageCard from "~/components/CircularImageCard.vue";
+import textComponent from "~/components/textComponent.vue";
 </script>
 
 <template>
@@ -17,14 +16,19 @@ import textComponent from '~/components/textComponent.vue';
       <div>
         <h1>Our Services</h1>
       </div>
-      <p>Guiding Light offers a wide range of services aimed at improving the well-being of our community. From healthcare to education, our dedicated team is here to support you.</p>
+      <p>
+        Guiding Light offers a wide range of services aimed at improving the
+        well-being of our community. From healthcare to education, our dedicated
+        team is here to support you.
+      </p>
     </div>
 
     <!-- Text component with information about the services -->
     <div>
       <text-component
         title="About Our Services"
-        text="At Guiding Light, we provide a variety of services designed to support the community. Our services include healthcare, education, and community support, delivered by a team of committed professionals.">
+        text="At Guiding Light, we provide a variety of services designed to support the community. Our services include healthcare, education, and community support, delivered by a team of committed professionals."
+      >
       </text-component>
     </div>
 
@@ -50,7 +54,8 @@ import textComponent from '~/components/textComponent.vue';
     <div>
       <text-component
         title="Other Projects and Activities"
-        text="In addition to our services, we manage various projects and activities that aim to foster community growth and well-being. Explore our initiatives to learn more.">
+        text="In addition to our services, we manage various projects and activities that aim to foster community growth and well-being. Explore our initiatives to learn more."
+      >
       </text-component>
     </div>
 
@@ -60,7 +65,7 @@ import textComponent from '~/components/textComponent.vue';
         <circular-image-card
           title="Projects"
           text="Discover our various projects that aim to create a positive impact in the community."
-          image='https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_project_01.jpg'
+          image="https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_project_01.jpg"
           link="/projects"
         />
         <circular-image-card
@@ -76,18 +81,27 @@ import textComponent from '~/components/textComponent.vue';
 
 <script>
 // Import Breadcrumbs component
-import Breadcrumbs from '@/components/Breadcrumbs.vue';
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
 // Import Supabase client for fetching data
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from "@supabase/supabase-js";
 
 export default {
   // Set the head information for the page
   head() {
     return {
-      title: 'Services - Guiding-Light',
+      title: "Services - Guiding-Light",
       meta: [
-        { hid: 'description', name: 'description', content: 'Learn about the different services offered by Guiding-Light to support and uplift the community.' },
-        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Services, Community Support, Assistance' },
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Learn about the different services offered by Guiding-Light to support and uplift the community.",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "Guiding-Light, Services, Community Support, Assistance",
+        },
       ],
     };
   },
@@ -102,19 +116,20 @@ export default {
   computed: {
     // Compute breadcrumbs data for Breadcrumbs component
     breadcrumbs() {
-      return [
-        { label: 'Services', path: '/services' },
-      ];
+      return [{ label: "Services", path: "/services" }];
     },
   },
   methods: {
     // Method to fetch top services from the database
     async fetchTopServices() {
-      const supabase = createClient(this.$config.SUPABASE_URL, this.$config.SUPABASE_KEY);
+      const supabase = createClient(
+        this.$config.SUPABASE_URL,
+        this.$config.SUPABASE_KEY
+      );
       const { data, error } = await supabase
-        .from('services')
-        .select('*')
-        .order('priority', { ascending: false })
+        .from("services")
+        .select("*")
+        .order("priority", { ascending: false })
         .limit(2);
 
       if (error) {
@@ -125,7 +140,7 @@ export default {
     },
     // Method to truncate text to a specified length
     truncateText(text, length = 50) {
-      return text.split(' ').slice(0, length).join(' ') + '...';
+      return text.split(" ").slice(0, length).join(" ") + "...";
     },
   },
   // Fetch top services when the component is mounted
@@ -138,7 +153,7 @@ export default {
 <style scoped>
 /* Styles for the top section */
 .top-section {
-  background: url('static/img_services_01.jpg') no-repeat center center fixed;
+  background: url("static/img_services_01.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;
@@ -169,7 +184,7 @@ export default {
 
 /* Styles for the card section */
 .card-section {
-  background: url('static/img_services_02.jpg') no-repeat center center fixed;
+  background: url("static/img_services_02.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -199,7 +214,7 @@ export default {
 
 /* Styles for the circular card section */
 .circular-card-section {
-  background: url('static/img_services_03.jpg') no-repeat center center fixed;
+  background: url("static/img_services_03.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;

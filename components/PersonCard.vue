@@ -1,11 +1,18 @@
 <template>
   <v-card class="person-card pa-4">
-    <v-img :src="person.img_url" class="rounded-circle person-image" height="200px" width="200px" />
+    <v-img
+      :src="person.img_url"
+      class="rounded-circle person-image"
+      height="200px"
+      width="200px"
+    />
     <v-card-title class="text-center mt-4">
       <div>
         <h3 class="person-name">{{ person.name }} {{ person.surname }}</h3>
         <p class="person-description">{{ person.bio }}</p>
-        <v-btn @click="handleLearnMore" color="primary" class="learn-more-btn">Learn More</v-btn>
+        <v-btn @click="handleLearnMore" color="primary" class="learn-more-btn"
+          >Learn More</v-btn
+        >
       </div>
     </v-card-title>
   </v-card>
@@ -13,19 +20,19 @@
 
 <script>
 export default {
-  name: 'PersonCard',
+  name: "PersonCard",
   props: {
     person: {
       type: Object,
       required: true,
-    }
+    },
   },
   methods: {
     handleLearnMore() {
-      this.$emit('learn-more', this.person);
-    }
-  }
-}
+      this.$emit("learn-more", this.person);
+    },
+  },
+};
 </script>
 
 <style scoped>

@@ -1,9 +1,8 @@
 <script setup>
-import RectangularContentBoxLeft from '~/components/RectangularContentBoxLeft';
-import CircularImageCard from '~/components/CircularImageCard.vue';
-import textComponent from '~/components/textComponent.vue';
-import RectangularContentBoxRight from '~/components/RectangularContentBoxRight.vue'
-
+import RectangularContentBoxLeft from "~/components/RectangularContentBoxLeft";
+import CircularImageCard from "~/components/CircularImageCard.vue";
+import textComponent from "~/components/textComponent.vue";
+import RectangularContentBoxRight from "~/components/RectangularContentBoxRight.vue";
 </script>
 
 <template>
@@ -11,10 +10,14 @@ import RectangularContentBoxRight from '~/components/RectangularContentBoxRight.
     <div class="top-section">
       <div class="text-section">
         <h1>Explore Our Initiatives</h1>
-        <p>Discover the diverse projects and services Guiding Light offers to empower women and make a positive impact in our community. From education to wellness, our initiatives are designed to foster growth and resilience.</p>
+        <p>
+          Discover the diverse projects and services Guiding Light offers to
+          empower women and make a positive impact in our community. From
+          education to wellness, our initiatives are designed to foster growth
+          and resilience.
+        </p>
       </div>
     </div>
-
 
     <div class="card-section">
       <rectangular-content-box-left
@@ -31,9 +34,7 @@ import RectangularContentBoxRight from '~/components/RectangularContentBoxRight.
       />
     </div>
     <div>
-      <text-component
-        title="We're here for you every step of the way."
-        text="">
+      <text-component title="We're here for you every step of the way." text="">
       </text-component>
     </div>
     <div class="circular-card-section">
@@ -44,7 +45,6 @@ import RectangularContentBoxRight from '~/components/RectangularContentBoxRight.
           :text="latestProjects[1].brief_description"
           :image="latestProjects[1].img_url"
           :link="`/projects/${latestProjects[1].id}`"
-
         />
         <circular-image-card
           v-if="latestProjects.length > 0"
@@ -52,7 +52,6 @@ import RectangularContentBoxRight from '~/components/RectangularContentBoxRight.
           :text="latestProjects[0].brief_description"
           :image="latestProjects[0].img_url"
           :link="`/projects/${latestProjects[0].id}`"
-
         />
       </div>
     </div>
@@ -60,20 +59,28 @@ import RectangularContentBoxRight from '~/components/RectangularContentBoxRight.
 </template>
 
 <script>
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from "@supabase/supabase-js";
 
 export default {
   head() {
     return {
-      title: 'Projects - Guiding-Light',
+      title: "Projects - Guiding-Light",
       meta: [
-        { hid: 'description', name: 'description', content: 'Explore the various projects undertaken by Guiding-Light to make a positive impact.' },
-        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Projects, Community Initiatives, Impact' },
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Explore the various projects undertaken by Guiding-Light to make a positive impact.",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "Guiding-Light, Projects, Community Initiatives, Impact",
+        },
       ],
     };
   },
-  components: {
-  },
+  components: {},
   data() {
     return {
       latestProjects: [],
@@ -81,18 +88,19 @@ export default {
   },
   computed: {
     breadcrumbs() {
-      return [
-        { label: 'Projects', path: '/projects' },
-      ];
+      return [{ label: "Projects", path: "/projects" }];
     },
   },
   methods: {
     async fetchLatestProjects() {
-      const supabase = createClient(this.$config.SUPABASE_URL, this.$config.SUPABASE_KEY);
+      const supabase = createClient(
+        this.$config.SUPABASE_URL,
+        this.$config.SUPABASE_KEY
+      );
       const { data, error } = await supabase
-        .from('projects')
-        .select('*')
-        .order('date', { ascending: false })
+        .from("projects")
+        .select("*")
+        .order("date", { ascending: false })
         .limit(2);
 
       if (error) {
@@ -102,7 +110,7 @@ export default {
       }
     },
     truncateText(text, length = 50) {
-      return text.split(' ').slice(0, length).join(' ') + '...';
+      return text.split(" ").slice(0, length).join(" ") + "...";
     },
   },
   async mounted() {
@@ -113,7 +121,8 @@ export default {
 
 <style scoped>
 .top-section {
-  background: url('https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_home_03.jpg') no-repeat center center fixed;
+  background: url("https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_home_03.jpg")
+    no-repeat center center fixed;
   background-size: cover;
   padding: 0;
   height: 600px;
@@ -123,7 +132,6 @@ export default {
   flex-direction: column;
   justify-content: flex-end; /* This will push the content to the bottom */
 }
-
 
 .text-section {
   background-color: rgba(255, 255, 255, 0.7) !important;
@@ -155,7 +163,7 @@ export default {
 
 .card-section {
   background-color: #dcd7d7;
- /* background: url('static/img_project_02.jpg') no-repeat center center fixed;*/
+  /* background: url('static/img_project_02.jpg') no-repeat center center fixed;*/
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -184,7 +192,8 @@ export default {
 }
 
 .circular-card-section {
-  background: url('https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_home_05.jpg') no-repeat center center fixed;
+  background: url("https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_home_05.jpg")
+    no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -256,8 +265,6 @@ export default {
     text-align: center;
     display: inline-block;
   }
-
-
 
   .card-section {
     padding: 20px;

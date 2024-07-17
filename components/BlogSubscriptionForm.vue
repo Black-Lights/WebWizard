@@ -3,7 +3,9 @@
     <v-row align="center" justify="center">
       <v-col cols="12" md="8" lg="6">
         <v-card>
-          <v-card-title class="v-card-title">Subscribe to our Blog</v-card-title>
+          <v-card-title class="v-card-title"
+            >Subscribe to our Blog</v-card-title
+          >
           <v-card-text>
             <v-form v-model="valid" ref="form">
               <v-text-field
@@ -12,11 +14,15 @@
                 :rules="emailRules"
                 required
               ></v-text-field>
-              <v-alert v-if="errorMessage" type="error">{{ errorMessage }}</v-alert>
+              <v-alert v-if="errorMessage" type="error">{{
+                errorMessage
+              }}</v-alert>
             </v-form>
           </v-card-text>
           <v-card-actions>
-            <v-btn color="primary" @click="subscribe" :disabled="!valid">Subscribe</v-btn>
+            <v-btn color="primary" @click="subscribe" :disabled="!valid"
+              >Subscribe</v-btn
+            >
           </v-card-actions>
         </v-card>
       </v-col>
@@ -28,12 +34,12 @@
 export default {
   data() {
     return {
-      email: '',
+      email: "",
       valid: false,
-      errorMessage: '',
+      errorMessage: "",
       emailRules: [
-        (v) => !!v || 'Email is required',
-        (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+        (v) => !!v || "Email is required",
+        (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
       ],
     };
   },
@@ -42,14 +48,14 @@ export default {
       if (this.$refs.form.validate()) {
         try {
           const { data, error } = await this.$supabase
-            .from('subscribers')
+            .from("subscribers")
             .insert([{ email: this.email, created_at: new Date() }]);
           if (error) {
             this.errorMessage = error.message;
           } else {
             this.$refs.form.reset();
             this.$refs.form.resetValidation();
-            this.$toast.success('Subscribed successfully!');
+            this.$toast.success("Subscribed successfully!");
           }
         } catch (error) {
           this.errorMessage = error.message;
@@ -59,7 +65,6 @@ export default {
   },
 };
 </script>
-
 
 <style scoped>
 .subscribe-form {

@@ -1,4 +1,3 @@
-
 <template>
   <header class="site-header" id="head">
     <div class="logo">
@@ -11,8 +10,8 @@
 
 <script>
 export default {
-  name: 'Header'
-}
+  name: "Header",
+};
 </script>
 
 <style scoped>

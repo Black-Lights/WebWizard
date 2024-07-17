@@ -1,13 +1,14 @@
-
 <template>
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
-    <div class="top-section" :style="{ backgroundImage: `url(${activities.img_url})` }">
+    <div
+      class="top-section"
+      :style="{ backgroundImage: `url(${activities.img_url})` }"
+    >
       <div>
         <h1>{{ activities.name }}</h1>
       </div>
       <p>Organised by: {{ maintainer.name }}</p>
-
     </div>
     <div class="text-section">
       <!-- Render the HTML content from the description field -->
@@ -17,35 +18,39 @@
 </template>
 
 <script>
-import Breadcrumbs from '@/components/Breadcrumbs.vue';
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
 
 export default {
   head() {
-    const title = this.activities ? this.activities.name : 'Loading...';
-    const description = this.activities ? `Discover more about the ${this.activities.name} activity and its impact.` : 'Activity details';
-    const keywords = this.activities ? `${this.activities.name}, Guiding-Light, Activities, Community Impact` : 'Activities';
+    const title = this.activities ? this.activities.name : "Loading...";
+    const description = this.activities
+      ? `Discover more about the ${this.activities.name} activity and its impact.`
+      : "Activity details";
+    const keywords = this.activities
+      ? `${this.activities.name}, Guiding-Light, Activities, Community Impact`
+      : "Activities";
 
     return {
       title: `${title} - Activities - Guiding-Light`,
       meta: [
-        { hid: 'description', name: 'description', content: description },
-        { hid: 'keywords', name: 'keywords', content: keywords },
+        { hid: "description", name: "description", content: description },
+        { hid: "keywords", name: "keywords", content: keywords },
       ],
     };
   },
 
   async asyncData({ params, $supabase }) {
     const { data: activities, error } = await $supabase
-      .from('activities')
-      .select('*, persons!activities_maintained_by_fkey(id, name)')
-      .eq('id', params.id)
+      .from("activities")
+      .select("*, persons!activities_maintained_by_fkey(id, name)")
+      .eq("id", params.id)
       .single();
     if (error) throw error;
 
     // Create breadcrumbs with only the activities name
     const breadcrumbs = [
-      { label: 'Activities', path: '/activities' },
-      { label: activities.name, path: `/activities/${activities.id}` }
+      { label: "Activities", path: "/activities" },
+      { label: activities.name, path: `/activities/${activities.id}` },
     ];
 
     return {
@@ -62,7 +67,8 @@ export default {
 
 <style scoped>
 .top-section {
-  background: url('static/img_proj_counsel_01.jpg') no-repeat center center fixed;
+  background: url("static/img_proj_counsel_01.jpg") no-repeat center center
+    fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;

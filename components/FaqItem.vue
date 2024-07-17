@@ -4,7 +4,9 @@
       <span class="faq-question">{{ question }}</span>
       <v-spacer></v-spacer>
       <v-btn icon @click.stop="toggleAnswer">
-        <v-icon>{{ isExpanded ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+        <v-icon>{{
+          isExpanded ? "mdi-chevron-up" : "mdi-chevron-down"
+        }}</v-icon>
       </v-btn>
     </v-card-title>
     <v-expand-transition>
@@ -20,23 +22,23 @@ export default {
   props: {
     question: {
       type: String,
-      required: true
+      required: true,
     },
     answer: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      isExpanded: false
+      isExpanded: false,
     };
   },
   methods: {
     toggleAnswer() {
       this.isExpanded = !this.isExpanded;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -56,7 +58,6 @@ export default {
 .faq-answer {
   font-size: 18px;
   line-height: 1.6;
-
 }
 
 @media (max-width: 600px) {

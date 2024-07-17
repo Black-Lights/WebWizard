@@ -1,16 +1,25 @@
 <script setup>
-import Breadcrumbs from '@/components/Breadcrumbs.vue';
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
 
 const breadcrumbs = [
-  { label: 'About Us', path: '/About-us' },
-  { label: 'Annual Reports', path: '/About_us/annual_reports' },
+  { label: "About Us", path: "/About-us" },
+  { label: "Annual Reports", path: "/About_us/annual_reports" },
 ];
 
 const head = {
-  title: 'Annual Reports - Guiding-Light',
+  title: "Annual Reports - Guiding-Light",
   meta: [
-    { hid: 'description', name: 'description', content: 'Browse through Guiding-Light’s annual reports to see our achievements and progress.' },
-    { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Annual Reports, Reports, Achievements' },
+    {
+      hid: "description",
+      name: "description",
+      content:
+        "Browse through Guiding-Light’s annual reports to see our achievements and progress.",
+    },
+    {
+      hid: "keywords",
+      name: "keywords",
+      content: "Guiding-Light, Annual Reports, Reports, Achievements",
+    },
   ],
 };
 </script>
@@ -18,58 +27,110 @@ const head = {
 <template>
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
-    <div class="top-section">
-    </div>
+    <div class="top-section"></div>
     <div class="text-section">
       <div class="report-container">
         <div class="report-inner">
           <h1>Guiding Light Annual Reports</h1>
           <p>
-            Annual reports provide a comprehensive overview of our efforts to support survivors of domestic violence over the past year. These reports highlight our achievements, outline the impact of our programs, and reflect our unwavering commitment to fostering healing, empowerment, and resilience within our community.
+            Annual reports provide a comprehensive overview of our efforts to
+            support survivors of domestic violence over the past year. These
+            reports highlight our achievements, outline the impact of our
+            programs, and reflect our unwavering commitment to fostering
+            healing, empowerment, and resilience within our community.
           </p>
 
           <h2>Comprehensive Services Overview</h2>
           <ul>
-            <li><strong>Individual Counseling:</strong> Progress and outcomes of our personalized counseling sessions.</li>
-            <li><strong>Skill-Building Workshops:</strong> Impact of workshops designed to promote resilience and personal development.</li>
-            <li><strong>Self-Defense Training:</strong> Practical training sessions enhancing safety and confidence.</li>
-            <li><strong>Yoga and Meditation:</strong> Activities aimed at promoting mental and physical wellness.</li>
+            <li>
+              <strong>Individual Counseling:</strong> Progress and outcomes of
+              our personalized counseling sessions.
+            </li>
+            <li>
+              <strong>Skill-Building Workshops:</strong> Impact of workshops
+              designed to promote resilience and personal development.
+            </li>
+            <li>
+              <strong>Self-Defense Training:</strong> Practical training
+              sessions enhancing safety and confidence.
+            </li>
+            <li>
+              <strong>Yoga and Meditation:</strong> Activities aimed at
+              promoting mental and physical wellness.
+            </li>
           </ul>
 
           <h2>Medical Camps and Health Check-ups</h2>
           <ul>
-            <li><strong>Participant Statistics:</strong> Number of individuals served and types of medical services provided.</li>
-            <li><strong>Health Improvements:</strong> Overall improvements in physical health among survivors.</li>
+            <li>
+              <strong>Participant Statistics:</strong> Number of individuals
+              served and types of medical services provided.
+            </li>
+            <li>
+              <strong>Health Improvements:</strong> Overall improvements in
+              physical health among survivors.
+            </li>
           </ul>
 
           <h2>Advocacy Efforts</h2>
           <ul>
-            <li><strong>Collaborations:</strong> Partnerships with legal professionals, community organizations, and policymakers.</li>
-            <li><strong>Systemic Change:</strong> Efforts to protect survivors' rights and connect them with essential resources.</li>
+            <li>
+              <strong>Collaborations:</strong> Partnerships with legal
+              professionals, community organizations, and policymakers.
+            </li>
+            <li>
+              <strong>Systemic Change:</strong> Efforts to protect survivors'
+              rights and connect them with essential resources.
+            </li>
           </ul>
 
           <h2>Education and Awareness Initiatives</h2>
           <ul>
-            <li><strong>Awareness Campaigns:</strong> Summaries of campaigns aimed at raising public awareness about domestic violence.</li>
-            <li><strong>Community Outreach:</strong> Insights into community response and increased understanding and support.</li>
+            <li>
+              <strong>Awareness Campaigns:</strong> Summaries of campaigns aimed
+              at raising public awareness about domestic violence.
+            </li>
+            <li>
+              <strong>Community Outreach:</strong> Insights into community
+              response and increased understanding and support.
+            </li>
           </ul>
 
           <h2>Financial Transparency</h2>
           <ul>
-            <li><strong>Funding Breakdown:</strong> Clear breakdown of funding sources, expenditures, and financial health.</li>
-            <li><strong>Accountability:</strong> Ensuring accountability to supporters and stakeholders.</li>
+            <li>
+              <strong>Funding Breakdown:</strong> Clear breakdown of funding
+              sources, expenditures, and financial health.
+            </li>
+            <li>
+              <strong>Accountability:</strong> Ensuring accountability to
+              supporters and stakeholders.
+            </li>
           </ul>
 
           <h2>Celebrating Survivors</h2>
           <p>
-            The impact of our work is best reflected through personal testimonies and success stories. These narratives honor the journeys of survivors, highlighting their resilience and courage.
+            The impact of our work is best reflected through personal
+            testimonies and success stories. These narratives honor the journeys
+            of survivors, highlighting their resilience and courage.
           </p>
           <ul>
-            <li><strong>Inspiring Journeys:</strong> Personal testimonies that inspire and affirm the importance of our mission.</li>
-            <li><strong>Profound Impact:</strong> Stories that underscore the transformative effect of our programs.</li>
+            <li>
+              <strong>Inspiring Journeys:</strong> Personal testimonies that
+              inspire and affirm the importance of our mission.
+            </li>
+            <li>
+              <strong>Profound Impact:</strong> Stories that underscore the
+              transformative effect of our programs.
+            </li>
           </ul>
           <p>
-            Guiding Light’s annual reports serve as a testament to our ongoing commitment to supporting survivors of domestic violence. By documenting our achievements and reflecting on our challenges, we aim to continuously improve and expand our services, ensuring that we remain a beacon of hope and empowerment for all those affected by domestic violence.
+            Guiding Light’s annual reports serve as a testament to our ongoing
+            commitment to supporting survivors of domestic violence. By
+            documenting our achievements and reflecting on our challenges, we
+            aim to continuously improve and expand our services, ensuring that
+            we remain a beacon of hope and empowerment for all those affected by
+            domestic violence.
           </p>
         </div>
       </div>
@@ -79,14 +140,14 @@ const head = {
 
 <style scoped>
 .top-section {
-  background: url('https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_about_reports_01.jpg') no-repeat center center fixed;
+  background: url("https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_about_reports_01.jpg")
+    no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   height: 600px; /* Adjusted for the content */
   margin-top: 20px;
   text-align: center;
 }
-
 
 .text-section {
   background-color: #f6f6f8;
@@ -140,8 +201,6 @@ const head = {
   border-left: 5px solid #00796b;
   border-radius: 4px;
 }
-
-
 
 @media (max-width: 600px) {
   .top-section {

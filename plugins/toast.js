@@ -1,6 +1,6 @@
-import Vue from 'vue';
-import Toast, { POSITION } from 'vue-toastification';
-import 'vue-toastification/dist/index.css';
+import Vue from "vue";
+import Toast, { POSITION } from "vue-toastification";
+import "vue-toastification/dist/index.css";
 
 Vue.use(Toast, {
   position: POSITION.TOP_RIGHT,
@@ -12,7 +12,7 @@ Vue.use(Toast, {
   draggablePercent: 0.6,
   showCloseButtonOnHover: false,
   hideProgressBar: false,
-  closeButton: 'button',
+  closeButton: "button",
   icon: true,
   rtl: false,
 });

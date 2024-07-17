@@ -1,23 +1,21 @@
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps } from "vue";
 
 const props = defineProps({
   title: String,
   text: String,
-})
-
+});
 </script>
 <template>
   <div class="text-section">
     <div>
-    <h1>{{ title }}</h1>
+      <h1>{{ title }}</h1>
     </div>
-  <p>{{ text }}</p>
+    <p>{{ text }}</p>
   </div>
 </template>
 
 <style scoped>
-
 .text-section {
   background-color: #f6f6f8;
   background-size: cover;

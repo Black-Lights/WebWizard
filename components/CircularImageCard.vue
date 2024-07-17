@@ -1,9 +1,13 @@
-
 <template>
   <v-card class="circular-image-card">
     <div class="circular-image-card__image">
       <NuxtLink :to="link">
-        <v-img :src="image" class="circular-image-card__img" width="100" height="100"></v-img>
+        <v-img
+          :src="image"
+          class="circular-image-card__img"
+          width="100"
+          height="100"
+        ></v-img>
       </NuxtLink>
     </div>
     <v-card-title class="circular-image-card__title">
@@ -14,26 +18,26 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps } from "vue";
 
 const props = defineProps({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   text: {
     type: String,
-    default: ''
+    default: "",
   },
   image: {
     type: String,
-    required: true
+    required: true,
   },
   link: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
 
 <style scoped>

@@ -2,12 +2,12 @@
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
 
-    <div class="top-section">
-    </div>
+    <div class="top-section"></div>
     <div>
       <text-component
         title="Our Team"
-        text="At Guiding Light, we believe in the power of community and compassion. Our dedicated team of professionals and volunteers work tirelessly to support women facing family maltreatment. With a blend of personal experience, professional expertise, and a shared mission to create a safer world, each team member plays a crucial role in driving our cause forward." >
+        text="At Guiding Light, we believe in the power of community and compassion. Our dedicated team of professionals and volunteers work tirelessly to support women facing family maltreatment. With a blend of personal experience, professional expertise, and a shared mission to create a safer world, each team member plays a crucial role in driving our cause forward."
+      >
       </text-component>
     </div>
 
@@ -25,60 +25,73 @@
         </v-col>
       </v-row>
     </v-container>
-    <PersonDetail v-if="showDetail" :person="selectedPerson" @back="closeDetail" />
+    <PersonDetail
+      v-if="showDetail"
+      :person="selectedPerson"
+      @back="closeDetail"
+    />
   </div>
 </template>
 
 <script>
-import Breadcrumbs from '@/components/Breadcrumbs.vue';
-import PersonCard from '~/components/PersonCard.vue';
-import PersonDetail from '~/components/PersonDetail.vue';
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
+import PersonCard from "~/components/PersonCard.vue";
+import PersonDetail from "~/components/PersonDetail.vue";
 
 export default {
   head() {
     return {
-      title: 'Team - Guiding-Light',
+      title: "Team - Guiding-Light",
       meta: [
-        { hid: 'description', name: 'description', content: 'Meet the dedicated team members of Guiding-Light who work tirelessly for our cause.' },
-        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Team, Meet Our Team, Nonprofit' },
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Meet the dedicated team members of Guiding-Light who work tirelessly for our cause.",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "Guiding-Light, Team, Meet Our Team, Nonprofit",
+        },
       ],
     };
   },
   components: {
     Breadcrumbs,
     PersonCard,
-    PersonDetail
+    PersonDetail,
   },
   data() {
     return {
       breadcrumbs: [
-        { label: 'About Us', path: '/About-us' },
-        { label: 'Team', path: '/About_us/team' },
+        { label: "About Us", path: "/About-us" },
+        { label: "Team", path: "/About_us/team" },
       ],
       persons: [],
       selectedPerson: null,
-      showDetail: false
+      showDetail: false,
     };
   },
   async mounted() {
     const { data, error } = await this.$supabase
-      .from('persons')
-      .select('*')
-      .order('priority', { ascending: true })
-      .order('id', { ascending: true }); // Ensure a stable order when priorities are the same
+      .from("persons")
+      .select("*")
+      .order("priority", { ascending: true })
+      .order("id", { ascending: true }); // Ensure a stable order when priorities are the same
 
     if (error) {
-      console.error('Error fetching persons:', error);
+      console.error("Error fetching persons:", error);
     } else {
       this.persons = data;
       this.$nextTick(() => {
-        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener("scroll", this.handleScroll);
         this.handleScroll(); // Trigger scroll effect on initial load
       });
     }
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
     openDetail(person) {
@@ -90,22 +103,21 @@ export default {
       this.selectedPerson = null;
     },
     handleScroll() {
-      const cards = document.querySelectorAll('.fade-in-card');
-      cards.forEach(card => {
+      const cards = document.querySelectorAll(".fade-in-card");
+      cards.forEach((card) => {
         const rect = card.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom >= 0) {
-          card.classList.add('fade-in');
+          card.classList.add("fade-in");
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
-
 .top-section {
-  background: url('static/img_team_01.jpg') no-repeat center center fixed;
+  background: url("static/img_team_01.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;
@@ -141,7 +153,7 @@ export default {
 }
 .h2 {
   font-size: 2em !important;
-  margin-left: 1% ;
+  margin-left: 1%;
   font-weight: bold;
 }
 p {

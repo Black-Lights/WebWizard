@@ -11,14 +11,18 @@
             <li><NuxtLink to="/About_us/mission">Mission</NuxtLink></li>
             <li><NuxtLink to="/About_us/team">Team</NuxtLink></li>
             <li><NuxtLink to="/About_us/partnerships">Partners</NuxtLink></li>
-            <li><NuxtLink to="/About_us/annual_reports">Annual Reports</NuxtLink></li>
+            <li>
+              <NuxtLink to="/About_us/annual_reports">Annual Reports</NuxtLink>
+            </li>
           </ul>
         </li>
         <li>
           <NuxtLink to="/projects">Projects</NuxtLink>
           <ul class="dropdown">
             <li v-for="project in projects" :key="project.id">
-              <NuxtLink :to="`/projects/${project.id}`">{{ project.name }}</NuxtLink>
+              <NuxtLink :to="`/projects/${project.id}`">{{
+                project.name
+              }}</NuxtLink>
             </li>
           </ul>
         </li>
@@ -26,7 +30,9 @@
           <NuxtLink to="/services">Services</NuxtLink>
           <ul class="dropdown">
             <li v-for="service in services" :key="service.id">
-              <NuxtLink :to="`/services/${service.id}`">{{ service.name }}</NuxtLink>
+              <NuxtLink :to="`/services/${service.id}`">{{
+                service.name
+              }}</NuxtLink>
             </li>
           </ul>
         </li>
@@ -34,7 +40,9 @@
           <NuxtLink to="/activities">Activities</NuxtLink>
           <ul class="dropdown">
             <li v-for="activity in activities" :key="activity.id">
-              <NuxtLink :to="`/activities/${activity.id}`">{{ activity.name }}</NuxtLink>
+              <NuxtLink :to="`/activities/${activity.id}`">{{
+                activity.name
+              }}</NuxtLink>
             </li>
           </ul>
         </li>
@@ -56,7 +64,7 @@
 
 <script>
 export default {
-  name: 'NavBar',
+  name: "NavBar",
   data() {
     return {
       projects: [],
@@ -69,44 +77,41 @@ export default {
     try {
       // Fetch projects
       const { data: projectData, error: projectError } = await this.$supabase
-        .from('projects')
-        .select('id, name, priority')
-        .order('priority', { ascending: true });
+        .from("projects")
+        .select("id, name, priority")
+        .order("priority", { ascending: true });
       if (projectError) throw projectError;
       this.projects = projectData;
 
       // Fetch services
       const { data: serviceData, error: serviceError } = await this.$supabase
-        .from('services')  // Change 'services' to the correct table name
-        .select('id, name, priority')
-        .order('priority', { ascending: true });
+        .from("services") // Change 'services' to the correct table name
+        .select("id, name, priority")
+        .order("priority", { ascending: true });
       if (serviceError) throw serviceError;
       this.services = serviceData;
 
       // Fetch activities
       const { data: activityData, error: activityError } = await this.$supabase
-        .from('activities')  // Change 'activities' to the correct table name
-        .select('id, name, priority')
-        .order('priority', { ascending: true });
+        .from("activities") // Change 'activities' to the correct table name
+        .select("id, name, priority")
+        .order("priority", { ascending: true });
       if (activityError) throw activityError;
       this.activities = activityData;
 
       // Fetch blogs
       const { data: blogData, error: blogError } = await this.$supabase
-        .from('blogs')  // Change 'blogs' to the correct table name
-        .select('id, name, priority')
-        .order('priority', { ascending: true });
+        .from("blogs") // Change 'blogs' to the correct table name
+        .select("id, name, priority")
+        .order("priority", { ascending: true });
       if (blogError) throw blogError;
       this.blogs = blogData;
-
-
     } catch (error) {
-      console.error('Error fetching data:', error.message);
+      console.error("Error fetching data:", error.message);
     }
   },
 };
 </script>
-
 
 <style scoped>
 .navbar {
@@ -123,7 +128,7 @@ export default {
 */
 .nav-links {
   list-style: none;
-  display: flex;;
+  display: flex;
   gap: 4rem;
 }
 
@@ -172,13 +177,11 @@ export default {
   font-size: 18px;
   color: #2d2d31;
   text-decoration: none;
-
 }
 
 .dropdown li a:hover {
   color: #69c3a0;
   background-color: rgba(87, 87, 90, 0.03);
   display: inline-block;
-
 }
 </style>

@@ -1,9 +1,8 @@
 <script setup>
-import circularImgContentBoxLeft from '~/components/circularImgContentBoxLeft.vue';
-import circularImgContentBoxRight from '~/components/circularImgContentBoxRight.vue';
-import CircularImageCard from '~/components/CircularImageCard.vue';
-import textComponent from '~/components/textComponent.vue';
-
+import circularImgContentBoxLeft from "~/components/circularImgContentBoxLeft.vue";
+import circularImgContentBoxRight from "~/components/circularImgContentBoxRight.vue";
+import CircularImageCard from "~/components/CircularImageCard.vue";
+import textComponent from "~/components/textComponent.vue";
 </script>
 
 <template>
@@ -11,14 +10,19 @@ import textComponent from '~/components/textComponent.vue';
     <Breadcrumbs :crumbs="breadcrumbs" />
     <div class="top-section">
       <div>
-      <h1>Our Projects</h1>
+        <h1>Our Projects</h1>
       </div>
-      <p>Guiding Light is managing numerous impactful projects with a dedicated team. We strive to create positive change in the community through our various initiatives.</p>
+      <p>
+        Guiding Light is managing numerous impactful projects with a dedicated
+        team. We strive to create positive change in the community through our
+        various initiatives.
+      </p>
     </div>
     <div>
       <text-component
         title="Our Projects"
-        text="Guiding Light is managing numerous impactful projects with a dedicated team. We strive to create positive change in the community through our various initiatives.">
+        text="Guiding Light is managing numerous impactful projects with a dedicated team. We strive to create positive change in the community through our various initiatives."
+      >
       </text-component>
     </div>
     <div class="card-section">
@@ -40,7 +44,8 @@ import textComponent from '~/components/textComponent.vue';
     <div>
       <text-component
         title="Other Activities and Services"
-        text="Besides managing projects, we offer various services and activities aimed at enhancing community well-being. Our initiatives include educational programs, healthcare services, and community outreach efforts.">
+        text="Besides managing projects, we offer various services and activities aimed at enhancing community well-being. Our initiatives include educational programs, healthcare services, and community outreach efforts."
+      >
       </text-component>
     </div>
     <div class="circular-card-section">
@@ -63,16 +68,25 @@ import textComponent from '~/components/textComponent.vue';
 </template>
 
 <script>
-import Breadcrumbs from '@/components/Breadcrumbs.vue';
-import { createClient } from '@supabase/supabase-js';
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
+import { createClient } from "@supabase/supabase-js";
 
 export default {
   head() {
     return {
-      title: 'Projects - Guiding-Light',
+      title: "Projects - Guiding-Light",
       meta: [
-        { hid: 'description', name: 'description', content: 'Explore the various projects undertaken by Guiding-Light to make a positive impact.' },
-        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Projects, Community Initiatives, Impact' },
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Explore the various projects undertaken by Guiding-Light to make a positive impact.",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "Guiding-Light, Projects, Community Initiatives, Impact",
+        },
       ],
     };
   },
@@ -86,18 +100,19 @@ export default {
   },
   computed: {
     breadcrumbs() {
-      return [
-        { label: 'Projects', path: '/projects' },
-      ];
+      return [{ label: "Projects", path: "/projects" }];
     },
   },
   methods: {
     async fetchLatestProjects() {
-      const supabase = createClient(this.$config.SUPABASE_URL, this.$config.SUPABASE_KEY);
+      const supabase = createClient(
+        this.$config.SUPABASE_URL,
+        this.$config.SUPABASE_KEY
+      );
       const { data, error } = await supabase
-        .from('projects')
-        .select('*')
-        .order('date', { ascending: false })
+        .from("projects")
+        .select("*")
+        .order("date", { ascending: false })
         .limit(2);
 
       if (error) {
@@ -107,7 +122,7 @@ export default {
       }
     },
     truncateText(text, length = 50) {
-      return text.split(' ').slice(0, length).join(' ') + '...';
+      return text.split(" ").slice(0, length).join(" ") + "...";
     },
   },
   async mounted() {
@@ -118,7 +133,7 @@ export default {
 
 <style scoped>
 .top-section {
-  background: url('static/img_project_01.jpg') no-repeat center center fixed;
+  background: url("static/img_project_01.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;
@@ -148,7 +163,7 @@ export default {
 }
 
 .card-section {
-  background: url('static/img_project_02.jpg') no-repeat center center fixed;
+  background: url("static/img_project_02.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -177,7 +192,7 @@ export default {
 }
 
 .circular-card-section {
-  background: url('static/img_project_03.jpg') no-repeat center center fixed;
+  background: url("static/img_project_03.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;

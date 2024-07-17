@@ -1,41 +1,80 @@
 <template>
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
-    <div class="top-section">
-    </div>
+    <div class="top-section"></div>
     <div class="text-section">
       <div class="mission-container">
         <div class="mission-inner">
           <h1>Our Mission</h1>
           <p>
-            At <strong>Guiding Light</strong>, our mission is to empower and support survivors of domestic violence by providing comprehensive resources and services that address their physical, emotional, and psychological needs. We are committed to fostering a safe and nurturing environment where individuals can heal, rebuild their lives, and regain their sense of self-worth and independence.
+            At <strong>Guiding Light</strong>, our mission is to empower and
+            support survivors of domestic violence by providing comprehensive
+            resources and services that address their physical, emotional, and
+            psychological needs. We are committed to fostering a safe and
+            nurturing environment where individuals can heal, rebuild their
+            lives, and regain their sense of self-worth and independence.
           </p>
 
           <h2>Holistic Care Programs</h2>
           <ul>
-            <li><strong>Individual Counseling:</strong> Personalized sessions to help survivors navigate their healing journey.</li>
-            <li><strong>Skill-Building Workshops:</strong> Programs designed to promote resilience and personal development.</li>
-            <li><strong>Self-Defense Training:</strong> Practical training to enhance safety and confidence.</li>
-            <li><strong>Yoga and Meditation:</strong> Sessions aimed at promoting mental and physical wellness.</li>
-            <li><strong>Medical Camps and Health Check-ups:</strong> Ensuring access to essential healthcare services.</li>
-            <li><strong>Advocacy Services:</strong> Protecting survivors' rights and connecting them with vital resources.</li>
+            <li>
+              <strong>Individual Counseling:</strong> Personalized sessions to
+              help survivors navigate their healing journey.
+            </li>
+            <li>
+              <strong>Skill-Building Workshops:</strong> Programs designed to
+              promote resilience and personal development.
+            </li>
+            <li>
+              <strong>Self-Defense Training:</strong> Practical training to
+              enhance safety and confidence.
+            </li>
+            <li>
+              <strong>Yoga and Meditation:</strong> Sessions aimed at promoting
+              mental and physical wellness.
+            </li>
+            <li>
+              <strong>Medical Camps and Health Check-ups:</strong> Ensuring
+              access to essential healthcare services.
+            </li>
+            <li>
+              <strong>Advocacy Services:</strong> Protecting survivors' rights
+              and connecting them with vital resources.
+            </li>
           </ul>
 
           <h2>Education and Awareness</h2>
           <ul>
-            <li><strong>Targeted Awareness Campaigns:</strong> Educating the community about domestic violence and reducing stigma.</li>
-            <li><strong>Community Engagement:</strong> Encouraging collective action and support for those affected by abuse.</li>
+            <li>
+              <strong>Targeted Awareness Campaigns:</strong> Educating the
+              community about domestic violence and reducing stigma.
+            </li>
+            <li>
+              <strong>Community Engagement:</strong> Encouraging collective
+              action and support for those affected by abuse.
+            </li>
           </ul>
 
           <h2>Community and Connection</h2>
           <ul>
-            <li><strong>Supportive Networks:</strong> Fostering a sense of belonging and mutual support among survivors.</li>
-            <li><strong>Empathy and Empowerment:</strong> Promoting a culture of empathy and empowerment to pave the way for brighter futures.</li>
+            <li>
+              <strong>Supportive Networks:</strong> Fostering a sense of
+              belonging and mutual support among survivors.
+            </li>
+            <li>
+              <strong>Empathy and Empowerment:</strong> Promoting a culture of
+              empathy and empowerment to pave the way for brighter futures.
+            </li>
           </ul>
 
           <h2>Significant Impact</h2>
           <p>
-            The impact of our mission is profound. We aim to create a supportive and informed community that stands together against domestic violence and supports those affected by it. By addressing the diverse needs of survivors and promoting a culture of empathy and empowerment, we strive to pave the way for brighter, healthier futures for all those impacted by domestic violence.
+            The impact of our mission is profound. We aim to create a supportive
+            and informed community that stands together against domestic
+            violence and supports those affected by it. By addressing the
+            diverse needs of survivors and promoting a culture of empathy and
+            empowerment, we strive to pave the way for brighter, healthier
+            futures for all those impacted by domestic violence.
           </p>
         </div>
       </div>
@@ -44,14 +83,18 @@
 </template>
 
 <script>
-import Breadcrumbs from '@/components/Breadcrumbs.vue';
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
 
 export default {
   head() {
     return {
-      title: 'Mission - Guiding-Light',
+      title: "Mission - Guiding-Light",
       meta: [
-        { hid: 'description', name: 'description', content: 'Learn about our mission at Guiding-Light.' },
+        {
+          hid: "description",
+          name: "description",
+          content: "Learn about our mission at Guiding-Light.",
+        },
       ],
     };
   },
@@ -61,17 +104,18 @@ export default {
   computed: {
     breadcrumbs() {
       return [
-        { label: 'About Us', path: '/About-us' },
-        { label: 'Mission', path: '/About_us/mission' },
+        { label: "About Us", path: "/About-us" },
+        { label: "Mission", path: "/About_us/mission" },
       ];
-    }
+    },
   },
-}
+};
 </script>
 
 <style scoped>
 .top-section {
-  background: url('https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_about_mission_01.jpg') no-repeat center center fixed;
+  background: url("https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_about_mission_01.jpg")
+    no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;
@@ -130,7 +174,6 @@ export default {
   border-left: 5px solid #00796b;
   border-radius: 4px;
 }
-
 
 @media (max-width: 600px) {
   .top-section {

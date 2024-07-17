@@ -1,11 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-      temporary
-      class="d-lg-none"
-    >
+    <v-navigation-drawer v-model="drawer" app temporary class="d-lg-none">
       <v-list dense>
         <v-list-item>
           <v-list-item-content>
@@ -41,7 +36,9 @@
           <v-list-item v-for="project in projects" :key="project.id">
             <v-list-item-content>
               <v-list-item-title>
-                <NuxtLink :to="`/projects/${project.id}`">{{ project.name }}</NuxtLink>
+                <NuxtLink :to="`/projects/${project.id}`">{{
+                  project.name
+                }}</NuxtLink>
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -57,7 +54,9 @@
           <v-list-item v-for="service in services" :key="service.id">
             <v-list-item-content>
               <v-list-item-title>
-                <NuxtLink :to="`/services/${service.id}`">{{ service.name }}</NuxtLink>
+                <NuxtLink :to="`/services/${service.id}`">{{
+                  service.name
+                }}</NuxtLink>
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -73,7 +72,9 @@
           <v-list-item v-for="activity in activities" :key="activity.id">
             <v-list-item-content>
               <v-list-item-title>
-                <NuxtLink :to="`/activities/${activity.id}`">{{ activity.name }}</NuxtLink>
+                <NuxtLink :to="`/activities/${activity.id}`">{{
+                  activity.name
+                }}</NuxtLink>
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -94,13 +95,13 @@
             </v-list-item-content>
           </v-list-item>
         </v-list-group>
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title>
-                <NuxtLink to="/Contact-us">Contact Us</NuxtLink>
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title>
+              <NuxtLink to="/Contact-us">Contact Us</NuxtLink>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -122,10 +123,10 @@ export default {
     return {
       drawer: false,
       aboutUsItems: [
-        { title: 'Mission', link: '/About_us/mission' },
-        { title: 'Team', link: '/About_us/team' },
-        { title: 'Partners', link: '/About_us/partnerships' },
-        { title: 'Annual Reports', link: '/About_us/annual_reports' },
+        { title: "Mission", link: "/About_us/mission" },
+        { title: "Team", link: "/About_us/team" },
+        { title: "Partners", link: "/About_us/partnerships" },
+        { title: "Annual Reports", link: "/About_us/annual_reports" },
       ],
 
       projects: [],
@@ -138,37 +139,37 @@ export default {
     try {
       // Fetch projects
       const { data: projectData, error: projectError } = await this.$supabase
-        .from('projects')
-        .select('id, name, priority')
-        .order('priority', { ascending: true });
+        .from("projects")
+        .select("id, name, priority")
+        .order("priority", { ascending: true });
       if (projectError) throw projectError;
       this.projects = projectData;
 
       // Fetch services
       const { data: serviceData, error: serviceError } = await this.$supabase
-        .from('services')
-        .select('id, name, priority')
-        .order('priority', { ascending: true });
+        .from("services")
+        .select("id, name, priority")
+        .order("priority", { ascending: true });
       if (serviceError) throw serviceError;
       this.services = serviceData;
 
       // Fetch activities
       const { data: activityData, error: activityError } = await this.$supabase
-        .from('activities')
-        .select('id, name, priority')
-        .order('priority', { ascending: true });
+        .from("activities")
+        .select("id, name, priority")
+        .order("priority", { ascending: true });
       if (activityError) throw activityError;
       this.activities = activityData;
 
       // Fetch blogs
       const { data: blogData, error: blogError } = await this.$supabase
-        .from('blogs')
-        .select('id, name, priority')
-        .order('priority', { ascending: true });
+        .from("blogs")
+        .select("id, name, priority")
+        .order("priority", { ascending: true });
       if (blogError) throw blogError;
       this.blogs = blogData;
     } catch (error) {
-      console.error('Error fetching data:', error.message);
+      console.error("Error fetching data:", error.message);
     }
   },
 };

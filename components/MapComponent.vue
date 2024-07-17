@@ -1,4 +1,3 @@
-
 <template>
   <v-container fluid>
     <v-row>
@@ -21,14 +20,19 @@
     <!-- Get Current Location Button -->
     <v-row>
       <v-col cols="12" md="12">
-        <v-btn @click="getCurrentLocation" color="primary" class="location-button">Get Current Location</v-btn>
+        <v-btn
+          @click="getCurrentLocation"
+          color="primary"
+          class="location-button"
+          >Get Current Location</v-btn
+        >
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import { Loader } from '@googlemaps/js-api-loader';
+import { Loader } from "@googlemaps/js-api-loader";
 
 export default {
   data() {
@@ -36,10 +40,10 @@ export default {
       map: null,
       marker: null,
       searchBox: null,
-      searchQuery: '',
+      searchQuery: "",
       directionsService: null,
       directionsRenderer: null,
-      defaultLocation: { lat: 45.4642, lng: 9.1900 }, // Milan, Italy
+      defaultLocation: { lat: 45.4642, lng: 9.19 }, // Milan, Italy
       infoWindow: null,
     };
   },
@@ -50,8 +54,8 @@ export default {
     async loadGoogleMaps() {
       const loader = new Loader({
         apiKey: process.env.GOOGLE_MAPS_API_KEY,
-        version: 'weekly',
-        libraries: ['places'],
+        version: "weekly",
+        libraries: ["places"],
       });
       await loader.load();
       this.initMap();
@@ -78,13 +82,13 @@ export default {
             </v-card-text>
           </v-card>
         `,
-        ariaLabel: 'Guiding Light Office',
+        ariaLabel: "Guiding Light Office",
       });
 
       this.addDefaultMarker();
       this.initSearchBox();
 
-      this.map.addListener('click', (event) => {
+      this.map.addListener("click", (event) => {
         this.placeMarker(event.latLng);
       });
 
@@ -98,18 +102,20 @@ export default {
       this.marker = new google.maps.Marker({
         position: this.defaultLocation,
         map: this.map,
-        title: 'Guiding Light Office',
+        title: "Guiding Light Office",
       });
 
       // Add a click listener to the marker to reopen the info window
-      this.marker.addListener('click', () => {
+      this.marker.addListener("click", () => {
         this.infoWindow.open(this.map, this.marker);
       });
     },
     initSearchBox() {
-      this.searchBox = new google.maps.places.SearchBox(this.$refs.searchBoxContainer.querySelector('input'));
+      this.searchBox = new google.maps.places.SearchBox(
+        this.$refs.searchBoxContainer.querySelector("input")
+      );
 
-      this.searchBox.addListener('places_changed', () => {
+      this.searchBox.addListener("places_changed", () => {
         const places = this.searchBox.getPlaces();
         if (places.length === 0) {
           return;
@@ -118,7 +124,7 @@ export default {
         const bounds = new google.maps.LatLngBounds();
         places.forEach((place) => {
           if (!place.geometry || !place.geometry.location) {
-            console.log('Returned place contains no geometry');
+            console.log("Returned place contains no geometry");
             return;
           }
 
@@ -153,7 +159,9 @@ export default {
           this.placeMarker(location);
           this.map.setCenter(location);
         } else {
-          console.error('Geocode was not successful for the following reason: ' + status);
+          console.error(
+            "Geocode was not successful for the following reason: " + status
+          );
         }
       });
     },
@@ -173,7 +181,7 @@ export default {
             this.calculateAndDisplayRoute(pos, this.defaultLocation);
           },
           () => {
-            console.error('Error getting the current location.');
+            console.error("Error getting the current location.");
           }
         );
       } else {
@@ -191,7 +199,7 @@ export default {
             this.calculateAndDisplayRoute(start, this.defaultLocation);
           },
           () => {
-            console.error('Error getting the current location for directions.');
+            console.error("Error getting the current location for directions.");
           }
         );
       } else {
@@ -209,7 +217,7 @@ export default {
           if (status === google.maps.DirectionsStatus.OK) {
             this.directionsRenderer.setDirections(response);
           } else {
-            console.error('Directions request failed due to ' + status);
+            console.error("Directions request failed due to " + status);
           }
         }
       );
@@ -219,7 +227,6 @@ export default {
 </script>
 
 <style>
-
 .map {
   width: 60%;
   height: 60vh; /* Adjusted height to be responsive */
@@ -240,7 +247,6 @@ export default {
   width: 90%; /* Responsive width */
   max-width: 400px; /* Maximum width */
 }
-
 
 .search-box {
   width: 100%;

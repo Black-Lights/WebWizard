@@ -31,14 +31,13 @@
   </div>
 </template>
 
-
 <script>
-import Footer from '@/components/Footer.vue';
-import Header from '@/components/Header.vue';
-import Chatbot from '@/components/Chatbot.vue';
-import MobileNavbar from '@/components/MobileNavbar.vue';
-import Navbar from '@/components/NavBar.vue';
-import QuickExit from '@/components/QuickExit.vue'; // Import QuickExit component
+import Footer from "@/components/Footer.vue";
+import Header from "@/components/Header.vue";
+import Chatbot from "@/components/Chatbot.vue";
+import MobileNavbar from "@/components/MobileNavbar.vue";
+import Navbar from "@/components/NavBar.vue";
+import QuickExit from "@/components/QuickExit.vue"; // Import QuickExit component
 
 export default {
   components: {
@@ -52,8 +51,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
-
 /* Add any global styles here if needed */
 </style>

@@ -1,7 +1,10 @@
 <template>
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
-    <div class="top-section" :style="{ backgroundImage: `url(${service.img_url})` }">
+    <div
+      class="top-section"
+      :style="{ backgroundImage: `url(${service.img_url})` }"
+    >
       <div>
         <h1>{{ service.name }}</h1>
       </div>
@@ -15,31 +18,39 @@
 </template>
 
 <script>
-import Breadcrumbs from '@/components/Breadcrumbs.vue';
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
 
 export default {
   head() {
     return {
       title: `${this.service.name} - Services - Guiding-Light`,
       meta: [
-        { hid: 'description', name: 'description', content: `Learn more about our ${this.service.name} service and how it can help you.` },
-        { hid: 'keywords', name: 'keywords', content: `${this.service.name}, Guiding-Light, Services, Service Details` },
+        {
+          hid: "description",
+          name: "description",
+          content: `Learn more about our ${this.service.name} service and how it can help you.`,
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: `${this.service.name}, Guiding-Light, Services, Service Details`,
+        },
       ],
     };
   },
 
   async asyncData({ params, $supabase }) {
     const { data: service, error } = await $supabase
-      .from('services')
-      .select('*, persons!services_maintained_by_fkey(id, name)')
-      .eq('id', params.id)
+      .from("services")
+      .select("*, persons!services_maintained_by_fkey(id, name)")
+      .eq("id", params.id)
       .single();
     if (error) throw error;
 
     // Create breadcrumbs with only the service name
     const breadcrumbs = [
-      { label: 'Services', path: '/services' },
-      { label: service.name, path: `/services/${service.id}` }
+      { label: "Services", path: "/services" },
+      { label: service.name, path: `/services/${service.id}` },
     ];
 
     return {
@@ -54,11 +65,10 @@ export default {
 };
 </script>
 
-
-
 <style scoped>
 .top-section {
-  background: url('static/img_proj_counsel_01.jpg') no-repeat center center fixed;
+  background: url("static/img_proj_counsel_01.jpg") no-repeat center center
+    fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;
@@ -117,7 +127,8 @@ export default {
 }
 
 .card-section {
-  background: url('static/img_proj_counsel_02.jpg') no-repeat center center fixed;
+  background: url("static/img_proj_counsel_02.jpg") no-repeat center center
+    fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -146,7 +157,8 @@ export default {
 }
 
 .circular-card-section {
-  background: url('static/img_proj_counsel_03.jpg') no-repeat center center fixed;
+  background: url("static/img_proj_counsel_03.jpg") no-repeat center center
+    fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;

@@ -1,16 +1,25 @@
 <script setup>
-import Breadcrumbs from '@/components/Breadcrumbs.vue';
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
 
 const breadcrumbs = [
-  { label: 'About Us', path: '/About-us' },
-  { label: 'Partnerships', path: '/About_us/partnerships' },
+  { label: "About Us", path: "/About-us" },
+  { label: "Partnerships", path: "/About_us/partnerships" },
 ];
 
 const head = {
-  title: 'Partners - Guiding-Light',
+  title: "Partners - Guiding-Light",
   meta: [
-    { hid: 'description', name: 'description', content: 'Discover the partners and collaborators of Guiding-Light who support our mission.' },
-    { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Partners, Collaborations, Supporters' },
+    {
+      hid: "description",
+      name: "description",
+      content:
+        "Discover the partners and collaborators of Guiding-Light who support our mission.",
+    },
+    {
+      hid: "keywords",
+      name: "keywords",
+      content: "Guiding-Light, Partners, Collaborations, Supporters",
+    },
   ],
 };
 </script>
@@ -18,53 +27,96 @@ const head = {
 <template>
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
-    <div class="top-section">
-    </div>
+    <div class="top-section"></div>
     <div class="text-section">
       <div class="partnerships-container">
         <div class="partnerships-inner">
           <h1>Guiding Light Partnerships</h1>
           <p>
-            At <strong>Guiding Light</strong>, our mission to support and empower survivors of domestic violence is strengthened by the invaluable partnerships we forge with a diverse array of organizations and individuals. Our partners play a crucial role in enhancing our programs, expanding our reach, and ensuring that survivors receive the comprehensive care and support they need.
+            At <strong>Guiding Light</strong>, our mission to support and
+            empower survivors of domestic violence is strengthened by the
+            invaluable partnerships we forge with a diverse array of
+            organizations and individuals. Our partners play a crucial role in
+            enhancing our programs, expanding our reach, and ensuring that
+            survivors receive the comprehensive care and support they need.
           </p>
 
           <h2>Healthcare Collaborations</h2>
           <ul>
-            <li><strong>Local Healthcare Providers:</strong> Delivering essential medical services through health check-ups and medical camps, enabling free or low-cost care for survivors.</li>
+            <li>
+              <strong>Local Healthcare Providers:</strong> Delivering essential
+              medical services through health check-ups and medical camps,
+              enabling free or low-cost care for survivors.
+            </li>
           </ul>
 
           <h2>Legal Support Partnerships</h2>
           <ul>
-            <li><strong>Legal Professionals and Advocacy Groups:</strong> Providing survivors with necessary legal support, representation, and advice to ensure their rights are protected.</li>
+            <li>
+              <strong>Legal Professionals and Advocacy Groups:</strong>
+              Providing survivors with necessary legal support, representation,
+              and advice to ensure their rights are protected.
+            </li>
           </ul>
 
           <h2>Educational Collaborations</h2>
           <ul>
-            <li><strong>Educational Institutions and Community Organizations:</strong> Partnering for skill-building workshops on financial literacy, job readiness, and personal development, empowering survivors to build brighter futures.</li>
+            <li>
+              <strong
+                >Educational Institutions and Community Organizations:</strong
+              >
+              Partnering for skill-building workshops on financial literacy, job
+              readiness, and personal development, empowering survivors to build
+              brighter futures.
+            </li>
           </ul>
 
           <h2>Mental Health Support</h2>
           <ul>
-            <li><strong>Mental Health Professionals and Counseling Centers:</strong> Offering trauma-informed therapy to help survivors process experiences and build resilience.</li>
+            <li>
+              <strong
+                >Mental Health Professionals and Counseling Centers:</strong
+              >
+              Offering trauma-informed therapy to help survivors process
+              experiences and build resilience.
+            </li>
           </ul>
 
           <h2>Wellness Partnerships</h2>
           <ul>
-            <li><strong>Fitness Centers and Wellness Experts:</strong> Contributing to yoga, meditation, and self-defense programs, creating safe environments that promote healing and confidence.</li>
+            <li>
+              <strong>Fitness Centers and Wellness Experts:</strong>
+              Contributing to yoga, meditation, and self-defense programs,
+              creating safe environments that promote healing and confidence.
+            </li>
           </ul>
 
           <h2>Community Support Networks</h2>
           <ul>
-            <li><strong>Community-Based Organizations and Shelters:</strong> Ensuring access to safe housing, childcare services, and other critical resources to address the diverse needs of survivors.</li>
+            <li>
+              <strong>Community-Based Organizations and Shelters:</strong>
+              Ensuring access to safe housing, childcare services, and other
+              critical resources to address the diverse needs of survivors.
+            </li>
           </ul>
 
           <h2>Impact of Partnerships</h2>
           <p>
-            The impact of our partnerships is profound. By leveraging the expertise and resources of our partners, <strong>Guiding Light</strong> can offer a wide range of services that address the physical, emotional, and psychological needs of survivors. Together, we create a stronger, more supportive community that empowers individuals to reclaim their lives and build a hopeful future.
+            The impact of our partnerships is profound. By leveraging the
+            expertise and resources of our partners,
+            <strong>Guiding Light</strong> can offer a wide range of services
+            that address the physical, emotional, and psychological needs of
+            survivors. Together, we create a stronger, more supportive community
+            that empowers individuals to reclaim their lives and build a hopeful
+            future.
           </p>
 
           <p>
-            Guiding Light is deeply grateful for the dedication and collaboration of our partners. Their commitment to our mission enhances our ability to support survivors of domestic violence and fosters a collective effort towards healing, empowerment, and systemic change.
+            Guiding Light is deeply grateful for the dedication and
+            collaboration of our partners. Their commitment to our mission
+            enhances our ability to support survivors of domestic violence and
+            fosters a collective effort towards healing, empowerment, and
+            systemic change.
           </p>
         </div>
       </div>
@@ -74,7 +126,8 @@ const head = {
 
 <style scoped>
 .top-section {
-  background: url('https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_about_partners_01.jpg') no-repeat center center fixed;
+  background: url("https://csuapvtpzklxyzwrwttj.supabase.co/storage/v1/object/public/Images/img_about_partners_01.jpg")
+    no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;

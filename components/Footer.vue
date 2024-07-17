@@ -1,4 +1,3 @@
-
 <template>
   <footer class="site-footer" role="contentinfo">
     <div class="footer-content">
@@ -10,67 +9,116 @@
       <div class="footer-column">
         <h3>Resources</h3>
         <ul>
-          <li><a href="/path/to/documentation.pdf" target="_blank" aria-label="Documentation">Documentation</a></li>
-          <li><NuxtLink to="/Contact-us#faq" aria-label="FAQ">FAQ</NuxtLink></li>
-          <li><NuxtLink to="/Contact-us#map" aria-label="Map">Map</NuxtLink></li>
+          <li>
+            <a
+              href="/path/to/documentation.pdf"
+              target="_blank"
+              aria-label="Documentation"
+              >Documentation</a
+            >
+          </li>
+          <li>
+            <NuxtLink to="/Contact-us#faq" aria-label="FAQ">FAQ</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/Contact-us#map" aria-label="Map">Map</NuxtLink>
+          </li>
         </ul>
       </div>
       <div class="footer-column">
         <h3>Services</h3>
         <ul>
           <li v-for="service in services" :key="service.id">
-            <NuxtLink :to="`/services/${service.id}`" aria-label="Service">{{ service.name }}</NuxtLink>
+            <NuxtLink :to="`/services/${service.id}`" aria-label="Service">{{
+              service.name
+            }}</NuxtLink>
           </li>
         </ul>
       </div>
       <div class="footer-column">
         <h3>Organization</h3>
         <ul>
-          <li><NuxtLink to="/contact-us" aria-label="Contact Us">Contact Us</NuxtLink></li>
-          <li><NuxtLink to="/projects" aria-label="Projects">Projects</NuxtLink></li>
+          <li>
+            <NuxtLink to="/contact-us" aria-label="Contact Us"
+              >Contact Us</NuxtLink
+            >
+          </li>
+          <li>
+            <NuxtLink to="/projects" aria-label="Projects">Projects</NuxtLink>
+          </li>
           <li><NuxtLink to="/blogs" aria-label="Blogs">Blogs</NuxtLink></li>
-          <li><NuxtLink to="/activities" aria-label="Activities">Activities</NuxtLink></li>
+          <li>
+            <NuxtLink to="/activities" aria-label="Activities"
+              >Activities</NuxtLink
+            >
+          </li>
         </ul>
       </div>
       <div class="footer-column">
         <h3>Social</h3>
         <div class="social-links" aria-labelledby="footer-social">
-          <v-btn icon href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+          <v-btn
+            icon
+            href="https://www.instagram.com/"
+            target="_blank"
+            aria-label="Instagram"
+          >
             <v-icon size="24">mdi-instagram</v-icon>
           </v-btn>
-          <v-btn icon href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+          <v-btn
+            icon
+            href="https://www.facebook.com/"
+            target="_blank"
+            aria-label="Facebook"
+          >
             <v-icon size="24">mdi-facebook</v-icon>
           </v-btn>
-          <v-btn icon href="https://twitter.com/" target="_blank" aria-label="Twitter">
+          <v-btn
+            icon
+            href="https://twitter.com/"
+            target="_blank"
+            aria-label="Twitter"
+          >
             <v-icon size="24">mdi-twitter</v-icon>
           </v-btn>
-          <v-btn icon href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+          <v-btn
+            icon
+            href="https://www.linkedin.com/"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
             <v-icon size="24">mdi-linkedin</v-icon>
           </v-btn>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p style="color: #b5acac; opacity: 0.7"> &copy; 2024 Guiding Light. All rights reserved. | Chatbot icon from <a href="https://www.freepik.com" target="_blank" rel="noopener noreferrer">FreePik</a></p>
-
-
+      <p style="color: #b5acac; opacity: 0.7">
+        &copy; 2024 Guiding Light. All rights reserved. | Chatbot icon from
+        <a
+          href="https://www.freepik.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >FreePik</a
+        >
+      </p>
     </div>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'Footer',
+  name: "Footer",
   data() {
     return {
-      services: []
+      services: [],
     };
   },
   async fetch() {
     const { data, error } = await this.$supabase
-      .from('services')
-      .select('id, name')
-      .order('priority', { ascending: true })
+      .from("services")
+      .select("id, name")
+      .order("priority", { ascending: true })
       .limit(4);
 
     if (error) {
@@ -78,8 +126,8 @@ export default {
     } else {
       this.services = data;
     }
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
@@ -150,7 +198,6 @@ export default {
 
 .social-links .v-btn:hover {
   color: #afeeee !important;
-
 }
 
 .footer-bottom {

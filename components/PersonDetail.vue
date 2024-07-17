@@ -1,9 +1,16 @@
-
 <template>
   <transition name="fade-zoom">
-    <v-dialog  v-model="show" max-width="900px" max-height="80vh" scrollable @click:outside="closeDetail">
+    <v-dialog
+      v-model="show"
+      max-width="900px"
+      max-height="80vh"
+      scrollable
+      @click:outside="closeDetail"
+    >
       <v-card class="dialog-box">
-        <v-card-title class="text-h5">{{ person.name }} {{ person.surname }}</v-card-title>
+        <v-card-title class="text-h5"
+          >{{ person.name }} {{ person.surname }}</v-card-title
+        >
         <v-card-subtitle class="contact-info">
           <div>Phone: {{ person.telephone }}</div>
           <div>Email: {{ person.email }}</div>
@@ -11,7 +18,12 @@
         <v-card-text>
           <v-row>
             <v-col cols="12" md="4" class="text-center">
-              <v-img :src="person.img_url" class="rounded-circle person-detail-image" height="300px" width="300px" />
+              <v-img
+                :src="person.img_url"
+                class="rounded-circle person-detail-image"
+                height="300px"
+                width="300px"
+              />
             </v-col>
             <v-col cols="12" md="8" class="person-desc">
               <p>{{ person.description }}</p>
@@ -28,24 +40,24 @@
 
 <script>
 export default {
-  name: 'PersonDetail',
+  name: "PersonDetail",
   props: {
     person: {
       type: Object,
       required: true,
-    }
+    },
   },
   data() {
     return {
-      show: true
+      show: true,
     };
   },
   methods: {
     closeDetail() {
-      this.$emit('back');
-    }
-  }
-}
+      this.$emit("back");
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -65,8 +77,8 @@ export default {
   gap: 4px; /* Small gap between the items */
 }
 
-
-.fade-zoom-enter-active, .fade-zoom-leave-active {
+.fade-zoom-enter-active,
+.fade-zoom-leave-active {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 

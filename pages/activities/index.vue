@@ -1,10 +1,9 @@
 <script setup>
 // Import components to be used within this component
-import circularImgContentBoxLeft from '~/components/circularImgContentBoxLeft.vue';
-import circularImgContentBoxRight from '~/components/circularImgContentBoxRight.vue';
-import CircularImageCard from '~/components/CircularImageCard.vue';
-import textComponent from '~/components/textComponent.vue';
-
+import circularImgContentBoxLeft from "~/components/circularImgContentBoxLeft.vue";
+import circularImgContentBoxRight from "~/components/circularImgContentBoxRight.vue";
+import CircularImageCard from "~/components/CircularImageCard.vue";
+import textComponent from "~/components/textComponent.vue";
 </script>
 
 <template>
@@ -18,13 +17,18 @@ import textComponent from '~/components/textComponent.vue';
       <div>
         <h1>Our Activities</h1>
       </div>
-      <p>Guiding Light organizes a range of activities aimed at community engagement and personal development. Join us in making a positive impact.</p>
+      <p>
+        Guiding Light organizes a range of activities aimed at community
+        engagement and personal development. Join us in making a positive
+        impact.
+      </p>
     </div>
     <!-- Activities text component -->
     <div>
       <text-component
         title="About Our Activities"
-        text="Our activities are designed to foster community engagement and personal growth. We offer workshops, seminars, and events to help individuals and the community thrive.">
+        text="Our activities are designed to foster community engagement and personal growth. We offer workshops, seminars, and events to help individuals and the community thrive."
+      >
       </text-component>
     </div>
     <!-- Section displaying top services with circular image content boxes -->
@@ -49,7 +53,8 @@ import textComponent from '~/components/textComponent.vue';
     <div>
       <text-component
         title="Other Projects and Services"
-        text="In addition to our activities, we manage various projects and offer services that aim to improve community well-being. Explore our initiatives to learn more.">
+        text="In addition to our activities, we manage various projects and offer services that aim to improve community well-being. Explore our initiatives to learn more."
+      >
       </text-component>
     </div>
 
@@ -73,16 +78,25 @@ import textComponent from '~/components/textComponent.vue';
 </template>
 
 <script>
-import Breadcrumbs from '@/components/Breadcrumbs.vue';
-import { createClient } from '@supabase/supabase-js';
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
+import { createClient } from "@supabase/supabase-js";
 
 export default {
   head() {
     return {
-      title: 'Activities - Guiding-Light',
+      title: "Activities - Guiding-Light",
       meta: [
-        { hid: 'description', name: 'description', content: 'Discover the various activities organized by Guiding-Light for community engagement and personal development.' },
-        { hid: 'keywords', name: 'keywords', content: 'Guiding-Light, Activities, Community Engagement, Workshops' },
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Discover the various activities organized by Guiding-Light for community engagement and personal development.",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "Guiding-Light, Activities, Community Engagement, Workshops",
+        },
       ],
     };
   },
@@ -96,18 +110,19 @@ export default {
   },
   computed: {
     breadcrumbs() {
-      return [
-        { label: 'Activities', path: '/activities' },
-      ];
+      return [{ label: "Activities", path: "/activities" }];
     },
   },
   methods: {
     async fetchTopActivities() {
-      const supabase = createClient(this.$config.SUPABASE_URL, this.$config.SUPABASE_KEY);
+      const supabase = createClient(
+        this.$config.SUPABASE_URL,
+        this.$config.SUPABASE_KEY
+      );
       const { data, error } = await supabase
-        .from('activities')
-        .select('*')
-        .order('priority', { ascending: false })
+        .from("activities")
+        .select("*")
+        .order("priority", { ascending: false })
         .limit(2);
 
       if (error) {
@@ -117,7 +132,7 @@ export default {
       }
     },
     truncateText(text, length = 50) {
-      return text.split(' ').slice(0, length).join(' ') + '...';
+      return text.split(" ").slice(0, length).join(" ") + "...";
     },
   },
   async mounted() {
@@ -128,7 +143,7 @@ export default {
 
 <style scoped>
 .top-section {
-  background: url('static/img_activities_01.jpg') no-repeat center center fixed;
+  background: url("static/img_activities_01.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;
@@ -158,7 +173,7 @@ export default {
 }
 
 .card-section {
-  background: url('static/img_activities_02.jpg') no-repeat center center fixed;
+  background: url("static/img_activities_02.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -187,7 +202,7 @@ export default {
 }
 
 .circular-card-section {
-  background: url('static/img_activities_03.jpg') no-repeat center center fixed;
+  background: url("static/img_activities_03.jpg") no-repeat center center fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;

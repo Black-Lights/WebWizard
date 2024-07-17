@@ -4,7 +4,12 @@
       <v-col cols="12" md="4">
         <div class="rectangular-content-box__image">
           <NuxtLink :to="link">
-            <v-img :src="image" class="rectangular-content-box__img" width="250px" height="250px"></v-img>
+            <v-img
+              :src="image"
+              class="rectangular-content-box__img"
+              width="250px"
+              height="250px"
+            ></v-img>
           </NuxtLink>
         </div>
       </v-col>
@@ -13,7 +18,9 @@
           <v-card-title class="rectangular-content-box__title">
             <NuxtLink :to="link" class="title-link">{{ title }}</NuxtLink>
           </v-card-title>
-          <v-card-text class="rectangular-content-box__text">{{ text }}</v-card-text>
+          <v-card-text class="rectangular-content-box__text">{{
+            text
+          }}</v-card-text>
         </v-card>
       </v-col>
     </v-row>
@@ -22,25 +29,25 @@
 
 <script>
 export default {
-  name: 'RectangularContentBoxRight',
+  name: "RectangularContentBoxRight",
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     text: {
       type: String,
-      required: true
+      required: true,
     },
     image: {
       type: String,
-      required: true
+      required: true,
     },
     link: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 

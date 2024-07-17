@@ -1,4 +1,3 @@
-
 <template>
   <v-container>
     <v-row justify="center">
@@ -11,26 +10,32 @@
             <v-text-field
               v-model="name"
               label="Name"
-              :rules="[v => !!v || 'Name is required']"
+              :rules="[(v) => !!v || 'Name is required']"
               required
             ></v-text-field>
             <v-select
               v-model="subject"
               :items="subjects"
               label="Subject"
-              :rules="[v => !!v || 'Subject is required']"
+              :rules="[(v) => !!v || 'Subject is required']"
               required
             ></v-select>
             <v-text-field
               v-model="email"
               label="Email"
-              :rules="[v => !!v || 'Email is required', v => /.+@.+\..+/.test(v) || 'E-mail must be valid']"
+              :rules="[
+                (v) => !!v || 'Email is required',
+                (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+              ]"
               required
             ></v-text-field>
             <v-textarea
               v-model="message"
               label="Message"
-              :rules="[v => !!v || 'Message is required', v => v.length <= 150 || 'Message must be less than 150 words']"
+              :rules="[
+                (v) => !!v || 'Message is required',
+                (v) => v.length <= 150 || 'Message must be less than 150 words',
+              ]"
               required
             ></v-textarea>
             <v-btn :disabled="!valid" @click="submitForm">Send</v-btn>
@@ -45,12 +50,12 @@
 export default {
   data() {
     return {
-      name: '',
-      subject: '',
-      email: '',
-      message: '',
+      name: "",
+      subject: "",
+      email: "",
+      message: "",
       valid: false,
-      subjects: ['General Inquiry', 'Support', 'Sales', 'Feedback']
+      subjects: ["General Inquiry", "Support", "Sales", "Feedback"],
     };
   },
   methods: {
@@ -58,24 +63,29 @@ export default {
       if (this.$refs.form.validate()) {
         try {
           const { data, error } = await this.$supabase
-            .from('contact_form')
+            .from("contact_form")
             .insert([
-              { name: this.name, subject: this.subject, email: this.email, message: this.message }
+              {
+                name: this.name,
+                subject: this.subject,
+                email: this.email,
+                message: this.message,
+              },
             ]);
 
           if (error) throw error;
 
-          this.$toast.success('Message sent successfully!');
-          this.name = '';
-          this.subject = '';
-          this.email = '';
-          this.message = '';
+          this.$toast.success("Message sent successfully!");
+          this.name = "";
+          this.subject = "";
+          this.email = "";
+          this.message = "";
         } catch (error) {
-          this.$toast.error('Failed to send message.');
+          this.$toast.error("Failed to send message.");
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -108,4 +118,3 @@ export default {
   }
 }
 </style>
-

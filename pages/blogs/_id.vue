@@ -1,7 +1,10 @@
 <template>
   <div>
     <Breadcrumbs :crumbs="breadcrumbs" />
-    <div class="top-section" :style="{ backgroundImage: `url(${blog.img_url})` }">
+    <div
+      class="top-section"
+      :style="{ backgroundImage: `url(${blog.img_url})` }"
+    >
       <div>
         <h1>{{ blog.name }}</h1>
       </div>
@@ -16,16 +19,24 @@
 </template>
 
 <script>
-import Breadcrumbs from '@/components/Breadcrumbs.vue'
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
 
 export default {
   head() {
     return {
       title: `${this.blog.title} - Blogs - Guiding-Light`,
       meta: [
-        { hid: 'description', name: 'description', content: `Read more about "${this.blog.title}" and explore insights from our team.` },
-        { hid: 'keywords', name: 'keywords', content: `${this.blog.title}, Guiding-Light, Blogs, Insights, Team Updates` },
-     ],
+        {
+          hid: "description",
+          name: "description",
+          content: `Read more about "${this.blog.title}" and explore insights from our team.`,
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: `${this.blog.title}, Guiding-Light, Blogs, Insights, Team Updates`,
+        },
+      ],
     };
   },
 
@@ -33,35 +44,35 @@ export default {
     try {
       // Fetch the blog with the given id
       const { data: blog, error } = await $supabase
-        .from('blogs')
-        .select('*')  // No need to join with persons table anymore
-        .eq('id', params.id)
-        .single()
+        .from("blogs")
+        .select("*") // No need to join with persons table anymore
+        .eq("id", params.id)
+        .single();
 
-      if (error) throw error
+      if (error) throw error;
 
       // Create breadcrumbs with the blog name
       const breadcrumbs = [
-        { label: 'Blogs', path: '/blogs' },
-        { label: blog.name, path: `/blogs/${blog.id}` }
-      ]
+        { label: "Blogs", path: "/blogs" },
+        { label: blog.name, path: `/blogs/${blog.id}` },
+      ];
 
       return {
         blog,
-        breadcrumbs
-      }
+        breadcrumbs,
+      };
     } catch (error) {
-      console.error('Error fetching blog data:', error.message)
+      console.error("Error fetching blog data:", error.message);
       return {
         blog: {},
-        breadcrumbs: []
-      }
+        breadcrumbs: [],
+      };
     }
   },
   components: {
-    Breadcrumbs
-  }
-}
+    Breadcrumbs,
+  },
+};
 </script>
 
 <style scoped>
@@ -77,10 +88,10 @@ export default {
 }
 </style>
 
-
 <style scoped>
 .top-section {
-  background: url('static/img_proj_counsel_01.jpg') no-repeat center center fixed;
+  background: url("static/img_proj_counsel_01.jpg") no-repeat center center
+    fixed;
   background-size: cover;
   padding: 40px;
   height: 600px;
@@ -139,7 +150,8 @@ export default {
 }
 
 .card-section {
-  background: url('static/img_proj_counsel_02.jpg') no-repeat center center fixed;
+  background: url("static/img_proj_counsel_02.jpg") no-repeat center center
+    fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;
@@ -168,7 +180,8 @@ export default {
 }
 
 .circular-card-section {
-  background: url('static/img_proj_counsel_03.jpg') no-repeat center center fixed;
+  background: url("static/img_proj_counsel_03.jpg") no-repeat center center
+    fixed;
   background-size: cover;
   padding: 40px;
   margin: 0 auto;

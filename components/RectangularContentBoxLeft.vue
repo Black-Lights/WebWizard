@@ -1,4 +1,3 @@
-
 <template>
   <v-container>
     <v-row align="center" class="rectangular-content-box__row">
@@ -8,7 +7,9 @@
           <v-card-title class="rectangular-content-box__title">
             <NuxtLink :to="link" class="title-link">{{ title }}</NuxtLink>
           </v-card-title>
-          <v-card-text class="rectangular-content-box__text">{{ text }}</v-card-text>
+          <v-card-text class="rectangular-content-box__text">{{
+            text
+          }}</v-card-text>
         </v-card>
       </v-col>
       <!-- Image Column -->
@@ -25,25 +26,25 @@
 
 <script>
 export default {
-  name: 'RectangularContentBoxLeft',
+  name: "RectangularContentBoxLeft",
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     text: {
       type: String,
-      required: true
+      required: true,
     },
     image: {
       type: String,
-      required: true
+      required: true,
     },
     link: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 

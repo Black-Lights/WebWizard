@@ -10,14 +10,14 @@
 export default {
   data() {
     return {
-      color: 'red'
-    }
+      color: "red",
+    };
   },
   methods: {
     handleQuickExit() {
-      window.location.href = 'https://www.google.com';
-    }
-  }
+      window.location.href = "https://www.google.com";
+    },
+  },
 };
 </script>
 
