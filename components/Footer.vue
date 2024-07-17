@@ -10,14 +10,6 @@
         <h3>Resources</h3>
         <ul>
           <li>
-            <a
-              href="/path/to/documentation.pdf"
-              target="_blank"
-              aria-label="Documentation"
-              >Documentation</a
-            >
-          </li>
-          <li>
             <NuxtLink to="/Contact-us#faq" aria-label="FAQ">FAQ</NuxtLink>
           </li>
           <li>
