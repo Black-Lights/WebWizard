@@ -19,7 +19,7 @@
     "@supabase/supabase-js": "^2.44.3",
     "@vue/composition-api": "^1.7.2",
     "nuxt": "^2.15.8",
-    "vue": "^2.7.10",
+    "vue": "^3.5.6",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10",
     "vue-toastification": "^1.7.14",
